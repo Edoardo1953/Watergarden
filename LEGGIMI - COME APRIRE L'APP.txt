@@ -1,0 +1,46 @@
+======================================================================
+   WATERGARDEN MANAGEMENT SÀRL — GUIDA RAPIDA ALL'AVVIO SU PC
+======================================================================
+
+COME APRIRE L'APPLICAZIONE (NESSUNA INSTALLAZIONE RICHIESTA):
+
+1. Estrai l'intera cartella dal file ZIP sul tuo computer (ad esempio
+   sul Desktop o nei Documenti). Non avviare il file direttamente
+   da dentro lo ZIP senza prima averlo estratto!
+
+2. Entra nella cartella estratta e fai doppio clic su:
+   👉 Avvia Watergarden.bat  (oppure avvia_app_portatile.bat)
+
+3. Si aprirà una finestra del server locale integrato di Windows e il
+   tuo browser si aprirà automaticamente sull'indirizzo:
+   http://localhost:8089/index.html
+
+   NOTA: Non serve installare alcun programma (non serve né Node.js
+   né Python). Funziona su qualsiasi PC Windows pronto all'uso.
+   In alternativa, puoi anche fare doppio clic direttamente su
+   "index.html" per aprirla nel browser.
+
+   Se Windows Defender (SmartScreen) mostra un avviso "PC protetto
+   da Windows", clicca su "Ulteriori informazioni" -> "Esegui comunque".
+
+4. Lascia aperta la finestra del server finché usi l'applicazione.
+   Quando hai finito, ti basta chiudere la finestra.
+
+======================================================================
+   CREDENZIALI DI ACCESSO (se il blocco password viene attivato)
+======================================================================
+Di default l'applicazione si apre direttamente senza richiedere login
+(Modalità Standby attiva). Qualora venisse attivato il login:
+
+- Amministratore (Lettura/Modifica):
+  Utente:   admin  (oppure tubia.edoardo@gmail.com)
+  Password: edo2bia
+
+- Fiduciaire / Operativo:
+  Utente:   fidu   (oppure fidu.compta@luxfiduciaire.lu)
+  Password: Fidu*Lux2026#Watergarden
+
+- Consultazione Pubblica / Audit (Sola Lettura):
+  Utente:   public (oppure public@watergarden.lu)
+  Password: WatergardenPublic2026
+======================================================================

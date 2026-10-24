@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Kit & Identité Visuelle - Watergarden Management Sàrl</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        :root {
+            --color-navy: #0a2540;
+            --color-emerald: #0b6651;
+            --color-gold: #c6a366;
+            --color-beige: #f7f2e6;
+            --color-charcoal: #0f172a;
+            --color-card: #ffffff;
+            --color-border: #e2e8f0;
+            --color-muted: #64748b;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f8fafc;
+            color: var(--color-charcoal);
+            line-height: 1.6;
+            padding-bottom: 5rem;
+        }
+
+        .header-hero {
+            background: linear-gradient(135deg, #091e32, #062b24);
+            color: #ffffff;
+            padding: 3.5rem 1.5rem 4rem;
+            text-align: center;
+            border-bottom: 3px solid var(--color-gold);
+            position: relative;
+        }
+
+        .header-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .header-logo-preview {
+            width: 90px;
+            height: auto;
+            margin-bottom: 1.25rem;
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+        }
+
+        .hero-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            color: #94a3b8;
+            max-width: 650px;
+            margin: 0 auto 1.75rem;
+            font-weight: 400;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.4rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #c6a366, #b08d4b);
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(198, 163, 102, 0.35);
+        }
+
+        .btn-gold:hover {
+            background: linear-gradient(135deg, #d4b276, #bf9c5a);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(198, 163, 102, 0.45);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: -2rem auto 0;
+            padding: 0 1.5rem;
+        }
+
+        .section-card {
+            background: var(--color-card);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.35rem;
+            color: var(--color-navy);
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+        }
+
+        .section-badge {
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 0.25rem 0.65rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        /* Asset Grid */
+        .asset-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .asset-item {
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            overflow: hidden;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.2s ease;
+        }
+
+        .asset-item:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            border-color: #cbd5e1;
+        }
+
+        .preview-box {
+            padding: 2rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 220px;
+            position: relative;
+        }
+
+        .preview-box.bg-beige {
+            background: var(--color-beige);
+        }
+
+        .preview-box.bg-white {
+            background: #ffffff;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .preview-box.bg-dark {
+            background: #091e32;
+        }
+
+        .preview-box.bg-checkered {
+            background-color: #f8fafc;
+            background-image: 
+                linear-gradient(45deg, #e2e8f0 25%, transparent 25%), 
+                linear-gradient(-45deg, #e2e8f0 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, #e2e8f0 75%), 
+                linear-gradient(-45deg, transparent 75%, #e2e8f0 75%);
+            background-size: 16px 16px;
+            background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+        }
+
+        .preview-box img {
+            max-width: 85%;
+            max-height: 180px;
+            object-fit: contain;
+            transition: transform 0.2s ease;
+        }
+
+        .asset-item:hover .preview-box img {
+            transform: scale(1.03);
+        }
+
+        .asset-meta {
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            justify-content: space-between;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .asset-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--color-charcoal);
+            margin-bottom: 0.25rem;
+        }
+
+        .asset-desc {
+            font-size: 0.8rem;
+            color: var(--color-muted);
+            margin-bottom: 1rem;
+        }
+
+        .asset-downloads {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-dl {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.45rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-decoration: none;
+            background: #f1f5f9;
+            color: #334155;
+            border: 1px solid #cbd5e1;
+            transition: all 0.15s ease;
+        }
+
+        .btn-dl:hover {
+            background: var(--color-navy);
+            color: #ffffff;
+            border-color: var(--color-navy);
+        }
+
+        .btn-dl-gold {
+            background: #fef9ee;
+            color: #926917;
+            border-color: #f3d79b;
+        }
+
+        .btn-dl-gold:hover {
+            background: #b08d4b;
+            color: #ffffff;
+            border-color: #b08d4b;
+        }
+
+        /* Color Swatches */
+        .color-palette-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+
+        .color-swatch-card {
+            border: 1px solid var(--color-border);
+            border-radius: 10px;
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        .swatch-fill {
+            height: 80px;
+            width: 100%;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .swatch-fill::after {
+            content: 'Cliquer pour copier';
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .swatch-fill:hover::after {
+            opacity: 1;
+        }
+
+        .swatch-details {
+            padding: 0.85rem;
+        }
+
+        .swatch-name {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--color-charcoal);
+        }
+
+        .swatch-hex {
+            font-family: monospace;
+            font-size: 0.8rem;
+            color: var(--color-muted);
+            margin-top: 0.15rem;
+        }
+
+        /* Toast notification */
+        #toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #0f172a;
+            color: #fff;
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            display: none;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Hero -->
+    <header class="header-hero">
+        <img src="watergarden_symbol_transparent.png" alt="Watergarden Management" class="header-logo-preview">
+        <h1 class="hero-title">WATERGARDEN MANAGEMENT</h1>
+        <p class="hero-subtitle">Kit d'Identité Visuelle & Archives Officielles de Marque • Roberto Burle Marx Modernist Monogram (W & G)</p>
+        <div class="hero-actions">
+            <a href="Watergarden_Management_Brand_Kit.zip" download class="btn btn-gold">
+                <i class="fa-solid fa-file-zipper"></i> Télécharger le Pack Complet (.ZIP)
+            </a>
+            <a href="../index.html" class="btn btn-secondary">
+                <i class="fa-solid fa-arrow-left"></i> Retour au Tableau de Bord
+            </a>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- SECTION 1: SOLO MONOGRAMME -->
+        <section class="section-card">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-gem" style="color: var(--color-gold);"></i> 1. Solo Logo (Monogramme Burle Marx W & G)
+                </h2>
+                <span class="section-badge">Usage : Icône, Profils, Sceau, Favicon</span>
+            </div>
+
+            <div class="asset-grid">
+                <!-- 1.1 Beige -->
+                <div class="asset-item">
+                    <div class="preview-box bg-beige">
+                        <img src="watergarden_symbol_beige.jpg" alt="Solo Logo Beige">
+                    </div>
+                    <div class="asset-meta">
+                        <div>
+                            <div class="asset-title">Solo Logo — Fond Beige</div>
+                            <div class="asset-desc">Sfondo istituzionale Burle Marx (#F7F2E6), centrato 1024x1024 px.</div>
+                        </div>
+                        <div class="asset-downloads">
+                            <a href="watergarden_symbol_beige.jpg" download class="btn-dl">
+                                <i class="fa-solid fa-download"></i> JPG (1024px)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1.2 Blanc -->
+                <div class="asset-item">
+                    <div class="preview-box bg-white">
+                        <img src="watergarden_symbol_white.jpg" alt="Solo Logo Blanc">
+                    </div>
+                    <div class="asset-meta">
+                        <div>
+                            <div class="asset-title">Solo Logo — Fond Blanc Pur</div>
+                            <div class="asset-desc">Sfondo bianco puro (#FFFFFF), ideale per documenti e stampa.</div>
+                        </div>
+                        <div class="asset-downloads">
+                            <a href="watergarden_symbol_white.jpg" download class="btn-dl">
+                                <i class="fa-solid fa-download"></i> JPG (1024px)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1.3 Transparent & Vector -->
+                <div class="asset-item">
+                    <div class="preview-box bg-checkered">
+                        <img src="watergarden_symbol_transparent.png" alt="Solo Logo Transparent">
+                    </div>
+                    <div class="asset-meta">
+                        <div>
+                            <div class="asset-title">Solo Logo — Détouré Transparent & SVG</div>
+                            <div class="asset-desc">Senza sfondo (PNG alpha channel) + formato vettoriale scalabile SVG.</div>
+                        </div>
+                        <div class="asset-downloads">
+                            <a href="watergarden_symbol_transparent.png" download class="btn-dl btn-dl-gold">
+                                <i class="fa-solid fa-download"></i> PNG (1024px)
+                            </a>
+                            <a href="watergarden_symbol_cropped.png" download class="btn-dl">
+                                <i class="fa-solid fa-crop"></i> PNG Rogné
+                            </a>
+                            <a href="watergarden_symbol.svg" download class="btn-dl btn-dl-gold">
+                                <i class="fa-solid fa-bezier-curve"></i> SVG Vectoriel
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: LOCKUP HORIZONTAL -->
+        <section class="section-card">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-arrows-left-right" style="color: var(--color-emerald);"></i> 2. Logo Horizontal (Logo à gauche + Texte à droite)
+                </h2>
+                <span class="section-badge">Usage : Barre de navigation, Entête de site, Signature Email</span>
+            </div>
+
+            <div class="asset-grid">
+                <!-- 2.1 Beige -->
+                <div class="asset-item">
+                    <div class="preview-box bg-beige">
+                        <img src="watergarden_horizontal_beige.jpg" alt="Horizontal Beige">
+                    </div>
+                    <div class="asset-meta">
+                        <div>
+                            <div class="asset-title">Lockup Horizontal — Fond Beige</div>
+                            <div class="asset-desc">Proportions équilibrées (1569x400 px), fond beige chaud.</div>
+                        </div>
+                        <div class="asset-downloads">
+                            <a href="watergarden_horizontal_beige.jpg" download class="btn-dl">
+                                <i class="fa-solid fa-download"></i> JPG HD
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2.2 Blanc -->
+                <div class="asset-item">
+                    <div class="preview-box bg-white">
+                        <img src="watergarden_horizontal_white.jpg" alt="Horizontal Blanc">
+                    </div>
+                    <div class="asset-meta">
+                        <div>
+                            <div class="asset-title">Lockup Horizontal — Fond Blanc</div>
+                            <div class="asset-desc">Fond blanc immaculé, haute définition pour rapports et fiches.</div>
+                        </div>
+                        <div class="asset-downloads">
+                            <a href="watergarden_horizontal_white.jpg" download class="btn-dl">
+                                <i class="fa-solid fa-download"></i> JPG HD
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2.3 Transparent & SVG -->
+                <div class="asset-item">
+                    <div class="preview-box bg-checkered">
+                        <img src="watergarden_horizontal_transparent.png" alt="Horizontal Transparent">
+                    </div>
+                    <div class="asset-meta">
+                        <div>
+                            <div class="asset-title">Lockup Horizontal — Détouré & SVG</div>
+                            <div class="asset-desc">Sans fond pour tout type de support sombre ou clair.</div>
+                        </div>
+                        <div class="asset-downloads">
+                            <a href="watergarden_horizontal_transparent.png" download class="btn-dl btn-dl-gold">
+                                <i class="fa-solid fa-download"></i> PNG HD
+                            </a>
+                            <a href="watergarden_horizontal.svg" download class="btn-dl btn-dl-gold">
+                                <i class="fa-solid fa-bezier-curve"></i> SVG Vectoriel
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: LOCKUP VERTICAL -->
+        <section class="section-card">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-arrows-up-down" style="color: var(--color-navy);"></i> 3. Logo Vertical (Logo au-dessus + Texte en-dessous)
+                </h2>
+                <span class="section-badge">Usage : Page de garde, Présentations, Écrans de Login</span>
+            </div>
+
+            <div class="asset-grid">
+                <!-- 3.1 Beige -->
+                <div class="asset-item">
+                    <div class="preview-box bg-beige">
+                        <img src="watergarden_vertical_beige.jpg" alt="Vertical Beige">
+                    </div>
+                    <div class="asset-meta">
+                        <div>
+                            <div class="asset-title">Lockup Vertical — Fond Beige Master</div>
+                            <div class="asset-desc">Version de référence maîtresse 1024x1024 px.</div>
+                        </div>
+                        <div class="asset-downloads">
+                            <a href="watergarden_vertical_beige.jpg" download class="btn-dl">
+                                <i class="fa-solid fa-download"></i> JPG (1024px)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3.2 Blanc -->
+                <div class="asset-item">
+                    <div class="preview-box bg-white">
+                        <img src="watergarden_vertical_white.jpg" alt="Vertical Blanc">
+                    </div>
+                    <div class="asset-meta">
+                        <div>
+                            <div class="asset-title">Lockup Vertical — Fond Blanc Pur</div>
+                            <div class="asset-desc">1024x1024 px sur fond blanc, optimal pour bilans et PV.</div>
+                        </div>
+                        <div class="asset-downloads">
+                            <a href="watergarden_vertical_white.jpg" download class="btn-dl">
+                                <i class="fa-solid fa-download"></i> JPG (1024px)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3.3 Transparent & SVG -->
+                <div class="asset-item">
+                    <div class="preview-box bg-checkered">
+                        <img src="watergarden_vertical_transparent.png" alt="Vertical Transparent">
+                    </div>
+                    <div class="asset-meta">
+                        <div>
+                            <div class="asset-title">Lockup Vertical — Détouré & SVG</div>
+                            <div class="asset-desc">1024x1024 px avec canal alpha et version vectorielle.</div>
+                        </div>
+                        <div class="asset-downloads">
+                            <a href="watergarden_vertical_transparent.png" download class="btn-dl btn-dl-gold">
+                                <i class="fa-solid fa-download"></i> PNG (1024px)
+                            </a>
+                            <a href="watergarden_vertical.svg" download class="btn-dl btn-dl-gold">
+                                <i class="fa-solid fa-bezier-curve"></i> SVG Vectoriel
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: BANNIÈRES & EN-TÊTES -->
+        <section class="section-card">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-envelopes-bulk" style="color: var(--color-gold);"></i> 4. Bannières En-tête (Letterhead & Signature Email)
+                </h2>
+                <span class="section-badge">Usage : Papier à en-tête, Courriers, Signature Outlook/Gmail</span>
+            </div>
+
+            <div class="asset-grid">
+                <div class="asset-item">
+                    <div class="preview-box bg-beige" style="min-height: 140px;">
+                        <img src="watergarden_header_banner_beige.jpg" alt="Header Banner Beige" style="max-height: 90px;">
+                    </div>
+                    <div class="asset-meta">
+                        <div>
+                            <div class="asset-title">Bannière En-tête — Fond Beige (1200x240 px)</div>
+                            <div class="asset-desc">Format bandeau pour correspondances officielles et signatures.</div>
+                        </div>
+                        <div class="asset-downloads">
+                            <a href="watergarden_header_banner_beige.jpg" download class="btn-dl">
+                                <i class="fa-solid fa-download"></i> JPG (1200x240)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="asset-item">
+                    <div class="preview-box bg-white" style="min-height: 140px;">
+                        <img src="watergarden_header_banner_white.jpg" alt="Header Banner Blanc" style="max-height: 90px;">
+                    </div>
+                    <div class="asset-meta">
+                        <div>
+                            <div class="asset-title">Bannière En-tête — Fond Blanc (1200x240 px)</div>
+                            <div class="asset-desc">Format bandeau neutre pour factures, e-mails et documents Word/PDF.</div>
+                        </div>
+                        <div class="asset-downloads">
+                            <a href="watergarden_header_banner_white.jpg" download class="btn-dl">
+                                <i class="fa-solid fa-download"></i> JPG (1200x240)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: FAVICONS & ICÔNES D'APPLICATION -->
+        <section class="section-card">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-mobile-screen-button" style="color: var(--color-emerald);"></i> 5. Favicons & Icônes Web
+                </h2>
+                <span class="section-badge">Usage : Navigateurs, Onglets, Écran d'accueil iPhone & Android</span>
+            </div>
+
+            <div style="display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; margin-bottom: 1.5rem; padding: 1.25rem; background: #f8fafc; border-radius: 12px; border: 1px solid var(--color-border);">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <img src="favicon-32x32.png" alt="32" style="width: 32px; height: 32px; border: 1px solid #cbd5e1; border-radius: 6px; padding: 2px; background: white;">
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.85rem;">Favicon Web</div>
+                        <div style="font-size: 0.75rem; color: var(--color-muted);">16x16 px & 32x32 px</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <img src="apple-touch-icon.png" alt="Apple Touch" style="width: 48px; height: 48px; border: 1px solid #cbd5e1; border-radius: 10px; padding: 4px; background: white;">
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.85rem;">Apple Touch Icon</div>
+                        <div style="font-size: 0.75rem; color: var(--color-muted);">180x180 px (iOS Home Screen)</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <img src="watergarden_favicon_192.png" alt="PWA 192" style="width: 48px; height: 48px; border: 1px solid #cbd5e1; border-radius: 10px; padding: 4px; background: white;">
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.85rem;">Android & PWA</div>
+                        <div style="font-size: 0.75rem; color: var(--color-muted);">192x192 px & 512x512 px</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                <a href="favicon.ico" download class="btn-dl btn-dl-gold">
+                    <i class="fa-solid fa-download"></i> Télécharger favicon.ico
+                </a>
+                <a href="apple-touch-icon.png" download class="btn-dl">
+                    <i class="fa-brands fa-apple"></i> apple-touch-icon.png (180px)
+                </a>
+                <a href="watergarden_favicon_512.png" download class="btn-dl">
+                    <i class="fa-brands fa-android"></i> Icone Haute Résolution (512px)
+                </a>
+            </div>
+        </section>
+
+        <!-- SECTION 6: CHARTE CHROMATIQUE -->
+        <section class="section-card">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-palette" style="color: var(--color-gold);"></i> 6. Charte Chromatique Officielle
+                </h2>
+                <span class="section-badge">Codes couleurs certifiés</span>
+            </div>
+
+            <div class="color-palette-grid">
+                <!-- Navy -->
+                <div class="color-swatch-card">
+                    <div class="swatch-fill" style="background: #0c2c5a;" onclick="copyColor('#0c2c5a')"></div>
+                    <div class="swatch-details">
+                        <div class="swatch-name">Bleu Atlantique</div>
+                        <div class="swatch-hex">#0c2c5a</div>
+                    </div>
+                </div>
+
+                <!-- Forest Emerald -->
+                <div class="color-swatch-card">
+                    <div class="swatch-fill" style="background: #084d41;" onclick="copyColor('#084d41')"></div>
+                    <div class="swatch-details">
+                        <div class="swatch-name">Vert Émeraude Brésil</div>
+                        <div class="swatch-hex">#084d41</div>
+                    </div>
+                </div>
+
+                <!-- Brushed Gold -->
+                <div class="color-swatch-card">
+                    <div class="swatch-fill" style="background: #c6a366;" onclick="copyColor('#c6a366')"></div>
+                    <div class="swatch-details">
+                        <div class="swatch-name">Or Champagne Brossé</div>
+                        <div class="swatch-hex">#c6a366</div>
+                    </div>
+                </div>
+
+                <!-- Warm Beige -->
+                <div class="color-swatch-card">
+                    <div class="swatch-fill" style="background: #f7f2e6;" onclick="copyColor('#f7f2e6')"></div>
+                    <div class="swatch-details">
+                        <div class="swatch-name">Beige Institutionnel</div>
+                        <div class="swatch-hex">#f7f2e6</div>
+                    </div>
+                </div>
+
+                <!-- Deep Charcoal -->
+                <div class="color-swatch-card">
+                    <div class="swatch-fill" style="background: #0f172a;" onclick="copyColor('#0f172a')"></div>
+                    <div class="swatch-details">
+                        <div class="swatch-name">Noir Typographie</div>
+                        <div class="swatch-hex">#0f172a</div>
+                    </div>
+                </div>
+
+                <!-- Pure White -->
+                <div class="color-swatch-card">
+                    <div class="swatch-fill" style="background: #ffffff; border-bottom: 1px solid #e2e8f0;" onclick="copyColor('#ffffff')"></div>
+                    <div class="swatch-details">
+                        <div class="swatch-name">Blanc Pur</div>
+                        <div class="swatch-hex">#ffffff</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <div id="toast">Code couleur copié dans le presse-papier !</div>
+
+    <script>
+        function copyColor(hex) {
+            navigator.clipboard.writeText(hex).then(() => {
+                const toast = document.getElementById('toast');
+                toast.innerText = 'Code couleur ' + hex + ' copié !';
+                toast.style.display = 'block';
+                setTimeout(() => { toast.style.display = 'none'; }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

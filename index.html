@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watergarden Management Sàrl - Holding de Participations</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css?v=20261023c">
+    <!-- Auth Guard -->
+    <script src="auth.js?v=20261023c"></script>
+    <link rel="shortcut icon" href="brand_assets/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="brand_assets/apple-touch-icon.png">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar glass-panel">
+            <div class="logo-container">
+                <a href="brand_assets/index.html" title="Charte Graphique et Brand Assets" style="text-decoration: none; display: flex; flex-direction: column; align-items: center;">
+                    <img src="brand_assets/watergarden_symbol_cropped.png" alt="Logo Watergarden" class="logo-img">
+                    <div class="logo-title">Watergarden</div>
+                    <div class="logo-subtitle">Management Sàrl • Lux</div>
+                </a>
+            </div>
+
+            <nav class="nav-menu">
+                <!-- AREA SOCIÉTÉ -->
+                <div class="nav-section-title" data-i18n="nav_section_societe">AREA SOCIÉTÉ</div>
+                <div class="nav-item-container" data-page="index.html">
+                    <a href="index.html" class="nav-item active">
+                        <i class="fa-solid fa-chart-pie text-emerald"></i>
+                        <span data-i18n="nav_societe">La Société</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('index.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="partecipazioni.html">
+                    <a href="partecipazioni.html" class="nav-item">
+                        <i class="fa-solid fa-umbrella-beach text-amber"></i>
+                        <span data-i18n="nav_partecipazioni">Participation ArcoIris (Brésil)</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('partecipazioni.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="sombra_floresta.html">
+                    <a href="sombra_floresta.html" class="nav-item">
+                        <i class="fa-solid fa-photo-film text-pink"></i>
+                        <span data-i18n="nav_sombra_floresta">SPA Sombra Floresta</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('sombra_floresta.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+
+                <!-- AREA FINANCES -->
+                <div class="nav-section-title" data-i18n="nav_section_finances">AREA FINANCES</div>
+                <div class="nav-item-container" data-page="contabilita.html">
+                    <a href="contabilita.html" class="nav-item">
+                        <i class="fa-solid fa-book-bookmark text-blue"></i>
+                        <span data-i18n="nav_contabilita">Comptabilité</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('contabilita.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="banca.html">
+                    <a href="banca.html" class="nav-item">
+                        <i class="fa-solid fa-building-columns text-cyan"></i>
+                        <span data-i18n="nav_banca">Comptes Bancaires</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('banca.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="ammortamenti.html">
+                    <a href="ammortamenti.html" class="nav-item">
+                        <i class="fa-solid fa-calculator text-emerald"></i>
+                        <span data-i18n="nav_ammortamenti">Amortissements</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('ammortamenti.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+
+                <!-- AREA DOCUMENTATION -->
+                <div class="nav-section-title" data-i18n="nav_section_documentation">AREA DOCUMENTATION</div>
+                <div class="nav-item-container" data-page="aml.html">
+                    <a href="aml.html" class="nav-item">
+                        <i class="fa-solid fa-shield-halved text-emerald"></i>
+                        <span data-i18n="nav_aml">Conformité AML</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('aml.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="documenti.html">
+                    <a href="documenti.html" class="nav-item">
+                        <i class="fa-solid fa-folder-open text-blue"></i>
+                        <span data-i18n="nav_documenti">Documents & Archives</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('documenti.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+
+                <div class="nav-section-title" data-i18n="nav_section_tools">GESTION</div>
+                <button class="btn-sidebar-action" onclick="refreshAppGlobalData(this)">
+                    <i class="fa-solid fa-rotate-right"></i>
+                    <span data-i18n="nav_refresh_data">Actualiser</span>
+                </button>
+                <button class="btn-sidebar-action" onclick="openSchemaSocietarioModal()" style="margin-top: 0.4rem; background: rgba(52, 211, 153, 0.1); border-color: rgba(52, 211, 153, 0.3);">
+                    <i class="fa-solid fa-sitemap text-emerald"></i>
+                    <span data-i18n="kpi_schema_societario">Schéma Sociétaire</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="update-badge">
+                    <span data-i18n="last_update">Dernière mise à jour :</span>
+                    <strong id="sidebar-updated-at">17/10/2026</strong>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Topbar -->
+            <header class="topbar glass-panel homepage-max-width">
+                <div class="topbar-title-area">
+                    <h1><img src="brand_assets/watergarden_symbol_cropped.png" alt="Logo WG" style="width: 28px; height: 28px; object-fit: contain; border-radius: 6px; box-shadow: 0 2px 8px rgba(16, 185, 129, 0.35); flex-shrink: 0;"> Watergarden Management S.à r.l.</h1>
+                    <p data-i18n="dash_welcome">Société Holding de participations • RCS Luxembourg B 149.151 • Gestion financière, comptable PCN, filiale ArcoIris Ltda et conformité AML.</p>
+                </div>
+
+                <div class="topbar-actions">
+                    <!-- Language Selector -->
+                    <div class="lang-selector">
+                        <button class="lang-btn active" data-lang="fr" title="Français">
+                            <img src="https://flagcdn.com/w40/fr.png" alt="FR">
+                        </button>
+                        <button class="lang-btn" data-lang="it" title="Italiano">
+                            <img src="https://flagcdn.com/w40/it.png" alt="IT">
+                        </button>
+                        <button class="lang-btn" data-lang="pt" title="Português">
+                            <img src="https://flagcdn.com/w40/br.png" alt="PT">
+                        </button>
+                        <button class="lang-btn" data-lang="en" title="English">
+                            <img src="https://flagcdn.com/w40/gb.png" alt="EN">
+                        </button>
+                    </div>
+
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle-btn" id="theme-toggle-btn" onclick="toggleTheme()" title="Mode Sombre/Clair">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+
+                    <!-- User & Logout -->
+                    <button class="btn-primary" onclick="logout()" style="padding: 0.45rem 0.85rem; font-size: 0.85rem; background: rgba(244, 63, 94, 0.2); border-color: rgba(244, 63, 94, 0.4); color: #f43f5e;">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span data-i18n="btn_logout">Déconnexion</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- KPI Cards Overview -->
+            <section class="kpi-grid homepage-max-width">
+                <!-- Capital Souscrit -->
+                <div class="kpi-card glass-panel">
+                    <div class="kpi-icon bg-blue"><i class="fa-solid fa-coins"></i></div>
+                    <div class="kpi-data">
+                        <h3 data-i18n="kpi_capitale_sociale">Capital Souscrit</h3>
+                        <p class="kpi-value">4.342.640,00 €</p>
+                        <span class="badge badge-success" data-i18n="kpi_sub_prime" style="width: fit-content; font-size: 0.72rem;">+ 1.144.389 € Prime Émission</span>
+                    </div>
+                </div>
+
+                <!-- Parts Sociales -->
+                <div class="kpi-card glass-panel">
+                    <div class="kpi-icon bg-emerald"><i class="fa-solid fa-certificate"></i></div>
+                    <div class="kpi-data">
+                        <h3 data-i18n="kpi_quote_totali">Total Actions (Classe A & B)</h3>
+                        <p class="kpi-value">2.171.320 <span style="font-size: 0.85rem; font-weight: 500; color: var(--text-muted);" data-i18n="table_actions">actions</span></p>
+                        <span style="font-size: 0.75rem; color: var(--text-muted);" data-i18n="kpi_sub_nominal">Nominal : 2,00 € (A: 76,57% | B: 23,43%)</span>
+                    </div>
+                </div>
+
+                <!-- Actif de Bilan -->
+                <div class="kpi-card glass-panel" onclick="window.location.href='contabilita.html'" style="cursor: pointer;" title="Voir le bilan PCN">
+                    <div class="kpi-icon bg-cyan"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <div class="kpi-data">
+                        <h3 data-i18n="kpi_total_actif">Total Actif de Bilan</h3>
+                        <p class="kpi-value text-emerald">6.420.816,28 €</p>
+                        <span style="font-size: 0.75rem; color: var(--text-muted);" data-i18n="kpi_sub_immo">Immobilisations Financières : <strong>6,20 M€</strong></span>
+                    </div>
+                </div>
+
+                <!-- Schéma Sociétaire Shortcut Card -->
+                <div class="kpi-card glass-panel" onclick="openSchemaSocietarioModal()" style="cursor: pointer; border-color: rgba(52, 211, 153, 0.4); background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(2, 132, 199, 0.08));">
+                    <div class="kpi-icon bg-emerald"><i class="fa-solid fa-sitemap"></i></div>
+                    <div class="kpi-data">
+                        <h3 data-i18n="kpi_schema_societario" style="color: #34d399; font-weight: 700;">Schéma Sociétaire</h3>
+                        <p style="font-size: 0.92rem; font-weight: 700; color: var(--text-main); margin: 0.2rem 0;">Watergarden ➔ ArcoIris</p>
+                        <span style="font-size: 0.75rem; color: #38bdf8;" data-i18n="sub_filiale_detenue">Filiale Détenue à 99,09% • Sombra SPA</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cap Table & Azionariato (Style Green Enerbras) -->
+            <section class="glass-panel homepage-max-width" style="padding: 1.5rem; margin-bottom: 2rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                        <h2 style="font-size: 1.25rem; font-weight: 700; display: flex; align-items: center; gap: 0.6rem;">
+                            <i class="fa-solid fa-chart-pie text-emerald"></i>
+                            <span data-i18n="title_distribuzione_quote">Répartition du Capital & Registre des Associés (15 Actionnaires)</span>
+                        </h2>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem;" data-i18n="cap_table_desc">
+                            Cap Table officielle certifiée selon Registre des Associés (Actions Classe A & Classe B) et déclaration eCDF / RBE.
+                        </p>
+                    </div>
+                    <div style="display: flex; gap: 0.75rem; margin-right: 1.5rem;">
+                        <a href="uploads/NEW Shareholders Watergarden-Arcoiris 05.2026.xlsx" class="btn-primary" style="background: rgba(16, 185, 129, 0.2); border-color: rgba(16, 185, 129, 0.4); color: #34d399; text-decoration: none;" download>
+                            <i class="fa-solid fa-file-excel"></i> <span data-i18n="btn_download_excel">Télécharger Excel</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cap-table-charts-flex">
+                    <!-- Table Section (Compatta Orizzontalmente) -->
+                    <div class="table-wrapper cap-table-wrapper" style="overflow-x: auto;">
+                        <table class="data-table cap-table-tight" id="partners-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 36px; text-align: center;" data-i18n="th_num">#</th>
+                                    <th class="th-partner" data-i18n="table_partner">Actionnaire / Partenaire</th>
+                                    <th class="th-classe" data-i18n="table_tipo">Classe</th>
+                                    <th class="th-actions text-right" data-i18n="table_actions">Actions</th>
+                                    <th class="th-det text-right" data-i18n="table_det">Détention %</th>
+                                    <th class="th-val text-right" data-i18n="table_valore_nominale">Valeur Nominale</th>
+                                    <th class="th-vote text-center" data-i18n="table_voto">Droits de Vote</th>
+                                    <th class="th-kyc text-center" data-i18n="th_statut_kyc">Statut KYC</th>
+                                </tr>
+                            </thead>
+                            <tbody id="partners-table-body">
+                                <!-- Populated dynamically by app.js -->
+                            </tbody>
+                            <tfoot style="background: rgba(0,0,0,0.3); font-weight: 700;">
+                                <tr>
+                                    <td colspan="3" style="text-align: right; padding: 0.6rem 0.65rem;" data-i18n="cap_total_general">TOTAL GÉNÉRAL :</td>
+                                    <td class="text-right text-cyan text-bold col-actions" id="foot-total-shares">2.171.320</td>
+                                    <td class="text-right text-emerald text-bold col-det" id="foot-total-det">100,00 %</td>
+                                    <td class="text-right text-bold col-val" id="foot-total-val">4.342.640,00 €</td>
+                                    <td class="text-center col-vote">100,00 %</td>
+                                    <td class="text-center col-kyc"><span class="badge badge-success" data-i18n="cap_compliant">100% Conforme</span></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    <!-- Charts Column: Two Dedicated Charts (Classe A and Classe B) -->
+                    <div class="cap-charts-column">
+                        <!-- 1. GRAPH 1: ACTIONS CLASSE A -->
+                        <div class="glass-panel" style="padding: 1.35rem; display: flex; flex-direction: column; align-items: center; border-color: rgba(16, 185, 129, 0.35);">
+                            <div style="width: 100%; border-bottom: 1px solid var(--border-color); padding-bottom: 0.65rem; margin-bottom: 0.85rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <h3 style="font-size: 0.95rem; font-weight: 700; color: #34d399; margin: 0; display: flex; align-items: center; gap: 0.45rem;">
+                                        <i class="fa-solid fa-shield text-emerald"></i>
+                                        <span data-i18n="chart_classe_a_title">Actions Classe A (Ordinaires)</span>
+                                    </h3>
+                                    <span class="badge" data-i18n="chart_classe_a_badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399; font-weight: 700;">76,57% Capital</span>
+                                </div>
+                                <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 0.25rem;" data-i18n="chart_classe_a_sub">
+                                    1.662.541 actions avec droit de vote • Valeur nominale: 3.325.082 €
+                                </div>
+                            </div>
+
+                            <!-- Donut A with Center 100% Overlay -->
+                            <div style="position: relative; width: 100%; height: 230px;">
+                                <canvas id="chartClasseA"></canvas>
+                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; pointer-events: none;">
+                                    <div style="font-size: 1.55rem; font-weight: 900; color: #34d399; font-family: 'JetBrains Mono', monospace; line-height: 1;">100 %</div>
+                                    <div style="font-size: 0.65rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 0.2rem;">CLASSE A</div>
+                                    <div style="font-size: 0.72rem; color: #38bdf8; font-weight: 700; font-family: 'JetBrains Mono', monospace;">1.662.541 act.</div>
+                                </div>
+                            </div>
+
+                            <!-- Legend A -->
+                            <div id="chart-legend-classe-a" style="margin-top: 0.85rem; font-size: 0.76rem; width: 100%; display: flex; flex-direction: column; gap: 0.3rem;"></div>
+                        </div>
+
+                        <!-- 2. GRAPH 2: ACTIONS CLASSE B -->
+                        <div class="glass-panel" style="padding: 1.35rem; display: flex; flex-direction: column; align-items: center; border-color: rgba(2, 132, 199, 0.35);">
+                            <div style="width: 100%; border-bottom: 1px solid var(--border-color); padding-bottom: 0.65rem; margin-bottom: 0.85rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <h3 style="font-size: 0.95rem; font-weight: 700; color: #38bdf8; margin: 0; display: flex; align-items: center; gap: 0.45rem;">
+                                        <i class="fa-solid fa-star text-cyan"></i>
+                                        <span data-i18n="chart_classe_b_title">Actions Classe B (Préférentielles)</span>
+                                    </h3>
+                                    <span class="badge" data-i18n="chart_classe_b_badge" style="background: rgba(2, 132, 199, 0.2); color: #38bdf8; font-weight: 700;">23,43% Capital</span>
+                                </div>
+                                <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 0.25rem;" data-i18n="chart_classe_b_sub">
+                                    508.779 actions de préférence • Valeur nominale: 1.017.558 €
+                                </div>
+                            </div>
+
+                            <!-- Donut B with Center 100% Overlay -->
+                            <div style="position: relative; width: 100%; height: 230px;">
+                                <canvas id="chartClasseB"></canvas>
+                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; pointer-events: none;">
+                                    <div style="font-size: 1.55rem; font-weight: 900; color: #38bdf8; font-family: 'JetBrains Mono', monospace; line-height: 1;">100 %</div>
+                                    <div style="font-size: 0.65rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 0.2rem;">CLASSE B</div>
+                                    <div style="font-size: 0.72rem; color: #34d399; font-weight: 700; font-family: 'JetBrains Mono', monospace;">508.779 act.</div>
+                                </div>
+                            </div>
+
+                            <!-- Legend B -->
+                            <div id="chart-legend-classe-b" style="margin-top: 0.85rem; font-size: 0.76rem; width: 100%; display: flex; flex-direction: column; gap: 0.3rem;"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Holding Corporate Identity & Mandats -->
+            <section class="dashboard-grid homepage-max-width" style="grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));">
+                <!-- Fiche d'Identité Juridique -->
+                <div class="glass-panel" style="padding: 1.5rem;">
+                    <h2 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fa-solid fa-id-card text-blue"></i>
+                        <span data-i18n="fiche_title">Fiche Permanente d'Immatriculation RCSL</span>
+                    </h2>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.88rem;">
+                        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.4rem;">
+                            <span style="color: var(--text-muted);" data-i18n="fiche_denom">Dénomination :</span>
+                            <strong>Watergarden Management S.à r.l.</strong>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.4rem;">
+                            <span style="color: var(--text-muted);" data-i18n="fiche_forme">Forme Juridique :</span>
+                            <span data-i18n="fiche_forme_val">Société à Responsabilité Limitée (Holding)</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.4rem;">
+                            <span style="color: var(--text-muted);" data-i18n="fiche_rcs">RCS Luxembourg :</span>
+                            <span class="text-bold text-emerald">B 149.151</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.4rem;">
+                            <span style="color: var(--text-muted);" data-i18n="fiche_matricule">Matricule National :</span>
+                            <span>2009 2430 473</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.4rem;">
+                            <span style="color: var(--text-muted);" data-i18n="fiche_siege">Siège Social :</span>
+                            <span>26, Boulevard Royal, L-2449 Luxembourg</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.4rem;">
+                            <span style="color: var(--text-muted);" data-i18n="fiche_domiciliation">Domiciliation :</span>
+                            <span>c/o ESSEDI PARTNERS SA - Luxembourg</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem;">
+                            <span style="color: var(--text-muted); white-space: nowrap;" data-i18n="fiche_administrateurs">Administrateurs :</span>
+                            <span class="text-bold text-emerald" style="text-align: right;">TUBIA Edoardo, STERZI Marco, TOSCANO Franco & VIGNOLLE Giorgio</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comptes Bancaires & Prestataires -->
+                <div class="glass-panel" style="padding: 1.5rem;">
+                    <h2 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fa-solid fa-building-columns text-cyan"></i>
+                        <span data-i18n="fiche_banques_title">Établissements Bancaires de la Holding</span>
+                    </h2>
+                    
+                    <!-- Olky Pay Box -->
+                    <div style="background: rgba(2, 132, 199, 0.08); border: 1px solid rgba(2, 132, 199, 0.3); border-radius: 10px; padding: 1rem; margin-bottom: 1rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <strong style="color: #38bdf8; font-size: 0.95rem;"><i class="fa-solid fa-credit-card"></i> Olky Pay (Compte EUR)</strong>
+                            <span class="badge" style="background: #0284c7; color: #fff;">Luxembourg</span>
+                        </div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.4rem;">
+                            IBAN : <code style="color: var(--text-main); font-weight: 600;">LU54 6060 0020 0000 3393</code>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem; font-size: 0.85rem;">
+                            <span data-i18n="solde_courant_eur">Solde courant EUR :</span>
+                            <strong style="color: #38bdf8; font-size: 1.05rem;">11.440,97 €</strong>
+                        </div>
+                    </div>
+
+                    <!-- Revolut Business Box -->
+                    <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 10px; padding: 1rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <strong style="color: #34d399; font-size: 0.95rem;"><i class="fa-solid fa-building-columns"></i> Revolut Business (Compte EUR)</strong>
+                            <span class="badge" style="background: #059669; color: #fff;">Lituanie (EUR)</span>
+                        </div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.4rem;">
+                            IBAN : <code style="color: var(--text-main); font-weight: 600;">LT92 3250 0340 9644 5618</code>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem; font-size: 0.85rem;">
+                            <span data-i18n="solde_courant_eur">Solde courant EUR :</span>
+                            <strong style="color: #34d399; font-size: 1.05rem;">652,25 €</strong>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal Schéma Sociétaire Fullscreen (Style Green Enerbras) -->
+    <div id="schemaSocietarioModal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.88); z-index: 99999; align-items: center; justify-content: center; backdrop-filter: blur(8px);">
+        <div class="glass-panel" style="width: 92%; max-width: 1050px; max-height: 90vh; overflow-y: auto; padding: 2rem; border-color: rgba(52, 211, 153, 0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.6);">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+                <h2 style="font-size: 1.35rem; font-weight: 700; display: flex; align-items: center; gap: 0.6rem; color: #34d399;">
+                    <i class="fa-solid fa-sitemap"></i>
+                    <span data-i18n="title_schema_societario">Schéma d'Investissement & Gouvernance Luxembourg - Brésil</span>
+                </h2>
+                <button type="button" onclick="closeSchemaSocietarioModal()" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border-color); color: #fff; width: 36px; height: 36px; border-radius: 8px; cursor: pointer; font-size: 1.1rem;">
+                    &times;
+                </button>
+            </div>
+
+            <!-- Organigram Content -->
+            <div style="display: flex; flex-direction: column; gap: 1.5rem; align-items: center;">
+                <!-- LEVEL 1: Actionnaires -->
+                <div style="width: 100%; text-align: center; background: rgba(255,255,255,0.04); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.25rem;">
+                    <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 0.5rem;" data-i18n="modal_schema_level1">
+                        <i class="fa-solid fa-users"></i> Actionnariat Privé & Institutionnel (15 Actionnaires - 2.171.320 Actions)
+                    </div>
+                    <div style="display: flex; justify-content: center; gap: 0.6rem; flex-wrap: wrap; font-size: 0.8rem;">
+                        <span class="badge" style="background: rgba(52, 211, 153, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3);">GLENELG SA (13,92%)</span>
+                        <span class="badge" style="background: rgba(52, 211, 153, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3);">Enrico TUBIA (10,21%)</span>
+                        <span class="badge" style="background: rgba(52, 211, 153, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3);">Salvatore DESIDERIO (8,30%)</span>
+                        <span class="badge" style="background: rgba(2, 132, 199, 0.15); color: #38bdf8; border: 1px solid rgba(2, 132, 199, 0.3);">Edoardo TUBIA (6,96%)</span>
+                        <span class="badge" style="background: rgba(2, 132, 199, 0.15); color: #38bdf8; border: 1px solid rgba(2, 132, 199, 0.3);">Marco STERZI (5,37%)</span>
+                        <span class="badge" style="background: rgba(2, 132, 199, 0.15); color: #38bdf8; border: 1px solid rgba(2, 132, 199, 0.3);">Belardi, Vandi, Murgia, Bosi, Canton, Hemawiti (6,96% cad.)</span>
+                        <span class="badge" style="background: rgba(255, 255, 255, 0.1); color: #fff;">MMM Finance Sàrl (4,89%)</span>
+                    </div>
+                </div>
+
+                <div style="font-size: 1.5rem; color: #34d399;"><i class="fa-solid fa-arrow-down"></i> <span style="font-size: 0.8rem; color: var(--text-muted); margin-left: 0.5rem;" data-i18n="modal_schema_funds">Capital 4.342.640 € + Prime 1.144.389 € = Fonds Propres 5,39 M€</span></div>
+
+                <!-- LEVEL 2: Holding Luxembourg -->
+                <div style="width: 100%; max-width: 760px; background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(2, 132, 199, 0.15)); border: 2px solid #10b981; border-radius: 14px; padding: 1.5rem; text-align: center;">
+                    <div style="font-size: 1.35rem; font-weight: 800; color: #34d399; margin-bottom: 0.3rem;">
+                        Watergarden Management S.à r.l.
+                    </div>
+                    <div style="font-size: 0.85rem; color: var(--text-muted);" data-i18n="modal_schema_holding_sub">
+                        Holding Luxembourgeoise (Sàrl) • RCS Luxembourg B 149.151 • Matricule 2009 2430 473
+                    </div>
+                    <div style="margin-top: 0.75rem; display: flex; justify-content: center; gap: 1.5rem; font-size: 0.85rem;">
+                        <span data-i18n="modal_schema_admins">Administrateurs : <strong>E. TUBIA, M. STERZI, F. TOSCANO & G. VIGNOLLE</strong></span>
+                        <span data-i18n="modal_schema_total_actif">Total Actif : <strong>6.420.816,28 €</strong></span>
+                    </div>
+                </div>
+
+                <div style="font-size: 1.5rem; color: #38bdf8;"><i class="fa-solid fa-arrow-down"></i> <span style="font-size: 0.8rem; color: var(--text-muted); margin-left: 0.5rem;" data-i18n="modal_schema_control">Contrôle Quasi-Total à 99,0896% (Parts : 5.657.646 € + Prêts : 548.306 €)</span></div>
+
+                <!-- LEVEL 3: Filiale Opérationnelle Brésil -->
+                <div style="width: 100%; max-width: 760px; background: rgba(0,0,0,0.3); border: 2px solid #0284c7; border-radius: 14px; padding: 1.5rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                        <div>
+                            <div style="font-size: 1.25rem; font-weight: 800; color: #38bdf8;">
+                                🇧🇷 ARCOIRIS ADMINISTRADORA DE BENS E IMÓVEIS LTDA
+                            </div>
+                            <div style="font-size: 0.82rem; color: var(--text-muted);">
+                                CNPJ 06.036.746/0001-31 • Praia de Pipa, Tibau do Sul (RN) • Capital R$ 10.984.044,00
+                            </div>
+                        </div>
+                        <span class="badge" style="background: #0284c7; color: #fff; font-size: 0.8rem; padding: 0.35rem 0.75rem;" data-i18n="sub_filiale_detenue">Filiale Détenue à 99,09% • Sombra SPA</span>
+                    </div>
+
+                    <div style="margin-top: 1.25rem; border-top: 1px solid var(--border-color); padding-top: 1rem; background: rgba(255,255,255,0.03); border-radius: 8px; padding: 1rem; display: flex; gap: 1rem; align-items: flex-start;">
+                        <img src="uploads/Loghi/Logo Sombra palma.png" alt="Sombra" style="width: 48px; height: 48px; object-fit: contain; border-radius: 8px; background: rgba(255,255,255,0.06); padding: 3px; border: 1px solid rgba(255,255,255,0.12); flex-shrink: 0;">
+                        <div style="flex: 1;">
+                            <strong style="color: #f59e0b; display: block; margin-bottom: 0.35rem;" data-i18n="modal_schema_hotel_title">
+                                <i class="fa-solid fa-hotel"></i> Actif Immobilier & Hôtelier : SOMBRA SPA RESORT
+                            </strong>
+                            <p style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: 0.5rem;" data-i18n="modal_schema_hotel_desc">
+                                Boutique Resort 5 étoiles & Spa de luxe à Praia de Pipa : 22 chalets et suites, centre thalasso/spa de 8 cabines, piscines d'eau de mer chauffées avec vue sur falaise et océan.
+                            </p>
+                            <div style="display: flex; justify-content: space-between; font-size: 0.82rem; color: var(--text-main); flex-wrap: gap; gap: 0.5rem;">
+                                <span data-i18n="modal_schema_expo">Exposition Totale Holding : <strong>6.205.953,37 €</strong></span>
+                                <span data-i18n="modal_schema_licence">Licence IDEMA : <strong>N° 2024/098-RN</strong></span>
+                                <span data-i18n="modal_schema_matricula">Matrícula Imobiliária : <strong>Cartório N° 12.485</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid var(--border-color); display: flex; justify-content: flex-end; align-items: center;">
+                <button type="button" class="btn-schema-close" onclick="closeSchemaSocietarioModal()">
+                    <i class="fa-solid fa-xmark"></i>
+                    <span data-i18n="btn_close">Fermer</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="i18n.js"></script>
+    <script src="app.js?v=20261023c"></script>
+</body>
+</html>

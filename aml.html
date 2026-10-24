@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conformité AML / LBC-FT - Watergarden Management Sàrl</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css?v=20261023c">
+    <!-- Auth Guard -->
+    <script src="auth.js?v=20261023c"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar glass-panel">
+            <div class="logo-container">
+                <a href="brand_assets/index.html" title="Charte Graphique et Brand Assets" style="text-decoration: none; display: flex; flex-direction: column; align-items: center;">
+                    <img src="brand_assets/watergarden_symbol_cropped.png" alt="Logo Watergarden" class="logo-img">
+                    <div class="logo-title">Watergarden</div>
+                    <div class="logo-subtitle">Management Sàrl • Lux</div>
+                </a>
+            </div>
+
+            <nav class="nav-menu">
+                <!-- AREA SOCIÉTÉ -->
+                <div class="nav-section-title" data-i18n="nav_section_societe">AREA SOCIÉTÉ</div>
+                <div class="nav-item-container" data-page="index.html">
+                    <a href="index.html" class="nav-item">
+                        <i class="fa-solid fa-chart-pie text-emerald"></i>
+                        <span data-i18n="nav_societe">La Société</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('index.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="partecipazioni.html">
+                    <a href="partecipazioni.html" class="nav-item">
+                        <i class="fa-solid fa-umbrella-beach text-amber"></i>
+                        <span data-i18n="nav_partecipazioni">Participation ArcoIris (Brésil)</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('partecipazioni.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="sombra_floresta.html">
+                    <a href="sombra_floresta.html" class="nav-item">
+                        <i class="fa-solid fa-photo-film text-pink"></i>
+                        <span data-i18n="nav_sombra_floresta">SPA Sombra Floresta</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('sombra_floresta.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+
+                <!-- AREA FINANCES -->
+                <div class="nav-section-title" data-i18n="nav_section_finances">AREA FINANCES</div>
+                <div class="nav-item-container" data-page="contabilita.html">
+                    <a href="contabilita.html" class="nav-item">
+                        <i class="fa-solid fa-book-bookmark text-blue"></i>
+                        <span data-i18n="nav_contabilita">Comptabilité</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('contabilita.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="banca.html">
+                    <a href="banca.html" class="nav-item">
+                        <i class="fa-solid fa-building-columns text-cyan"></i>
+                        <span data-i18n="nav_banca">Comptes Bancaires</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('banca.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="ammortamenti.html">
+                    <a href="ammortamenti.html" class="nav-item">
+                        <i class="fa-solid fa-calculator text-emerald"></i>
+                        <span data-i18n="nav_ammortamenti">Amortissements</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('ammortamenti.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+
+                <!-- AREA DOCUMENTATION -->
+                <div class="nav-section-title" data-i18n="nav_section_documentation">AREA DOCUMENTATION</div>
+                <div class="nav-item-container" data-page="aml.html">
+                    <a href="aml.html" class="nav-item active">
+                        <i class="fa-solid fa-shield-halved text-emerald"></i>
+                        <span data-i18n="nav_aml">Conformité AML</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('aml.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="documenti.html">
+                    <a href="documenti.html" class="nav-item">
+                        <i class="fa-solid fa-folder-open text-blue"></i>
+                        <span data-i18n="nav_documenti">Documents & Archives</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('documenti.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+
+                <div class="nav-section-title" data-i18n="nav_section_tools">GESTION</div>
+                <button class="btn-sidebar-action" onclick="refreshAppGlobalData(this)">
+                    <i class="fa-solid fa-rotate-right"></i>
+                    <span data-i18n="nav_refresh_data">Actualiser</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="update-badge">
+                    <span data-i18n="last_update">Dernière mise à jour :</span>
+                    <strong id="sidebar-updated-at">17/10/2026</strong>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Topbar -->
+            <header class="topbar glass-panel">
+                <div class="topbar-title-area">
+                    <h1><i class="fa-solid fa-shield-halved text-emerald"></i> <span data-i18n="aml_title">Conformité AML / LBC-FT (Luxembourg)</span></h1>
+                    <p data-i18n="aml_desc">Dispositif de Lutte contre le Blanchiment et le Financement du Terrorisme (Loi du 12 nov 2004, AED, CSSF).</p>
+                </div>
+
+                <div class="topbar-actions">
+                    <!-- Language Selector -->
+                    <div class="lang-selector">
+                        <button class="lang-btn active" data-lang="fr" title="Français">
+                            <img src="https://flagcdn.com/w40/fr.png" alt="FR">
+                        </button>
+                        <button class="lang-btn" data-lang="it" title="Italiano">
+                            <img src="https://flagcdn.com/w40/it.png" alt="IT">
+                        </button>
+                        <button class="lang-btn" data-lang="pt" title="Português">
+                            <img src="https://flagcdn.com/w40/br.png" alt="PT">
+                        </button>
+                        <button class="lang-btn" data-lang="en" title="English">
+                            <img src="https://flagcdn.com/w40/gb.png" alt="EN">
+                        </button>
+                    </div>
+
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle-btn" id="theme-toggle-btn" onclick="toggleTheme()" title="Mode Sombre/Clair">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- AML KPI Strip -->
+            <section class="kpi-grid">
+                <div class="kpi-card glass-panel">
+                    <div class="kpi-icon bg-emerald"><i class="fa-solid fa-shield-check"></i></div>
+                    <div class="kpi-data">
+                        <h3 data-i18n="aml_kpi_score">Score de Conformité</h3>
+                        <p class="kpi-value text-emerald">100 %</p>
+                        <span class="badge badge-success" style="font-size: 0.72rem;" data-i18n="aml_kpi_score_sub">Dossiers Complets (11/11)</span>
+                    </div>
+                </div>
+
+                <div class="kpi-card glass-panel">
+                    <div class="kpi-icon bg-blue"><i class="fa-solid fa-address-book"></i></div>
+                    <div class="kpi-data">
+                        <h3 data-i18n="aml_kpi_beneficiaires">Registre RBE (Luxembourg)</h3>
+                        <p class="kpi-value text-blue">Déposé & Validé</p>
+                        <span style="font-size: 0.75rem; color: var(--text-muted);" data-i18n="aml_kpi_rbe_sub">Loi du 13 janvier 2019</span>
+                    </div>
+                </div>
+
+                <div class="kpi-card glass-panel">
+                    <div class="kpi-icon bg-cyan"><i class="fa-solid fa-gauge-high"></i></div>
+                    <div class="kpi-data">
+                        <h3 data-i18n="aml_kpi_risk_profile">Profil de Risque Global</h3>
+                        <p class="kpi-value text-cyan">Faible (Low)</p>
+                        <span style="font-size: 0.75rem; color: var(--text-muted);" data-i18n="aml_kpi_risk_sub">Vérification Standard Appliquée</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation Tabs -->
+            <div style="display: flex; gap: 0.75rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                <button class="tab-btn active" onclick="switchAmlTab('registry', this)">
+                    <i class="fa-solid fa-users-gear text-emerald"></i> <span data-i18n="tab_aml_registry">1. Registre AML des Associés & Apports</span>
+                </button>
+                <button class="tab-btn" onclick="switchAmlTab('simulator', this)">
+                    <i class="fa-solid fa-calculator text-cyan"></i> <span data-i18n="tab_aml_due_diligence">2. Simulateur de Due Diligence</span>
+                </button>
+                <button class="tab-btn" onclick="switchAmlTab('crossborder', this)">
+                    <i class="fa-solid fa-globe text-amber"></i> <span data-i18n="tab_aml_crossborder">3. Contrôle Transfrontalier Brésil</span>
+                </button>
+            </div>
+
+            <!-- TAB 1: Investor KYC Registry -->
+            <div id="aml-tab-registry" class="aml-tab-content">
+                <section class="glass-panel" style="padding: 1.5rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h2 style="font-size: 1.15rem; font-weight: 700; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fa-solid fa-list-check text-emerald"></i>
+                            <span data-i18n="aml_table_title">Fichier Permanent KYC des Associés & Souscripteurs</span>
+                        </h2>
+                        <span class="badge badge-neutral" data-i18n="aml_table_count">11 Associés Répertoriés</span>
+                    </div>
+
+                    <div class="table-wrapper" style="overflow-x: auto;">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th data-i18n="table_partner">Associé</th>
+                                    <th data-i18n="aml_th_role">Rôle & Part</th>
+                                    <th class="text-right" data-i18n="aml_th_apport">Apport (€)</th>
+                                    <th data-i18n="aml_th_residence">Résidence</th>
+                                    <th data-i18n="aml_th_origin">Origine des Fonds</th>
+                                    <th class="text-center" data-i18n="aml_th_score">Score Risque</th>
+                                    <th class="text-center" data-i18n="aml_th_pep">PEP / Sanctions</th>
+                                    <th class="text-center" data-i18n="aml_th_dossier">Dossier KYC</th>
+                                </tr>
+                            </thead>
+                            <tbody id="aml-investors-tbody">
+                                <!-- Populated dynamically by aml_app.js -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+
+            <!-- TAB 2: Risk Scoring Simulator -->
+            <div id="aml-tab-simulator" class="aml-tab-content" style="display: none;">
+                <div class="dashboard-grid" style="grid-template-columns: 1fr 1fr;">
+                    <!-- Simulator Form -->
+                    <div class="glass-panel" style="padding: 1.75rem;">
+                        <h2 style="font-size: 1.2rem; font-weight: 700; color: #34d399; margin-bottom: 1rem;">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> <span data-i18n="aml_sim_title">Simulateur d'Évaluation du Risque LBC/FT</span>
+                        </h2>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.25rem;" data-i18n="aml_sim_desc">
+                            Évaluez instantanément le niveau de risque AML (0 à 100) pour un nouvel associé ou apport de fonds.
+                        </p>
+
+                        <form id="aml-sim-form" onsubmit="calculateAmlRisk(event)">
+                            <div style="margin-bottom: 1rem;">
+                                <label style="display: block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.3rem;" data-i18n="aml_sim_person_type">Type de Personne / Entité</label>
+                                <select id="sim-person-type" class="filter-input" style="width: 100%;">
+                                    <option value="5">Personne Physique résidente dans l'UE</option>
+                                    <option value="10">Personne Morale immatriculée au Luxembourg ou UE</option>
+                                    <option value="25">Personne Physique résidente hors UE</option>
+                                    <option value="40">Entité fiduciaire / Trust étranger</option>
+                                </select>
+                            </div>
+
+                            <div style="margin-bottom: 1rem;">
+                                <label style="display: block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.3rem;" data-i18n="aml_sim_pep">Personne Politiquement Exposée (PEP)</label>
+                                <select id="sim-pep" class="filter-input" style="width: 100%;">
+                                    <option value="0">Non - Aucune fonction publique ni lien familial direct</option>
+                                    <option value="35">Oui - Fonction publique nationale ou internationale (PEP)</option>
+                                    <option value="20">Lien familial ou professionnel étroit avec une PEP</option>
+                                </select>
+                            </div>
+
+                            <div style="margin-bottom: 1rem;">
+                                <label style="display: block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.3rem;" data-i18n="aml_sim_amount">Montant de la Souscription / Apport</label>
+                                <select id="sim-amount" class="filter-input" style="width: 100%;">
+                                    <option value="5">Inférieur à 25.000 €</option>
+                                    <option value="12">De 25.000 € à 100.000 €</option>
+                                    <option value="25">Supérieur à 100.000 €</option>
+                                </select>
+                            </div>
+
+                            <div style="margin-bottom: 1.5rem;">
+                                <label style="display: block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.3rem;" data-i18n="aml_sim_geo">Provenance Géographique des Fonds</label>
+                                <select id="sim-funds-geo" class="filter-input" style="width: 100%;">
+                                    <option value="0">Établissement bancaire régulé au Luxembourg / Zone SEPA</option>
+                                    <option value="15">Compte bancaire régulé au Brésil / Amériques</option>
+                                    <option value="35">Juridiction sous surveillance renforcée GAFI</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 0.75rem;">
+                                <i class="fa-solid fa-calculator"></i> <span data-i18n="btn_run_risk_sim">Calculer le Risque AML</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Simulator Results Box -->
+                    <div class="glass-panel" style="padding: 1.75rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                        <div style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 0.5rem;" data-i18n="aml_sim_res_title">Résultat de l'Évaluation</div>
+                        
+                        <div id="sim-score-circle" style="width: 130px; height: 130px; border-radius: 50%; border: 6px solid #10b981; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 1rem; background: rgba(16, 185, 129, 0.1);">
+                            <span id="sim-score-num" style="font-size: 2.2rem; font-weight: 800; color: #10b981;">10</span>
+                            <span style="font-size: 0.72rem; color: var(--text-muted);">/ 100</span>
+                        </div>
+
+                        <h3 id="sim-level-title" style="font-size: 1.3rem; font-weight: 700; color: #10b981; margin-bottom: 0.5rem;" data-i18n="aml_risk_low_title">RISQUE FAIBLE (Low Risk)</h3>
+                        <p id="sim-level-desc" style="font-size: 0.88rem; color: var(--text-muted); max-width: 360px; line-height: 1.5; margin-bottom: 1.25rem;" data-i18n="aml_risk_low_desc">
+                            Mesures de vigilance normale / standard : pièce d'identité certifiée en cours de validité, justificatif d'adresse et vérification sur listes sanctions.
+                        </p>
+
+                        <div style="width: 100%; border-top: 1px solid var(--border-color); padding-top: 1rem; font-size: 0.8rem; text-align: left;">
+                            <strong style="color: var(--text-main); display: block; margin-bottom: 0.3rem;" data-i18n="aml_sim_checklist_title">Check-list des documents requis :</strong>
+                            <div style="display: flex; flex-direction: column; gap: 0.3rem; color: var(--text-muted);">
+                                <span><i class="fa-solid fa-check text-emerald"></i> <span data-i18n="aml_chk_id">Pièce d'identité officielle (Passeport / CNI)</span></span>
+                                <span><i class="fa-solid fa-check text-emerald"></i> <span data-i18n="aml_chk_address">Justificatif de domicile de moins de 3 mois</span></span>
+                                <span><i class="fa-solid fa-check text-emerald"></i> <span data-i18n="aml_chk_origin">Déclaration d'origine des fonds et de fortune</span></span>
+                                <span><i class="fa-solid fa-check text-emerald"></i> <span data-i18n="aml_chk_rbe">Inscription obligatoire au Registre des Bénéficiaires Effectifs (RBE)</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 3: Cross-border Brazil Check -->
+            <div id="aml-tab-crossborder" class="aml-tab-content" style="display: none;">
+                <div class="glass-panel" style="padding: 1.75rem;">
+                    <h2 style="font-size: 1.25rem; font-weight: 700; color: #38bdf8; margin-bottom: 1rem;">
+                        <i class="fa-solid fa-globe"></i> <span data-i18n="aml_cb_title">Due Diligence Investissement Direct Étranger (Luxembourg ➔ Brésil)</span>
+                    </h2>
+                    <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.5rem;" data-i18n="aml_cb_desc">
+                        Contrôle de conformité requis pour les flux de capitaux entre l'Union Européenne et la filiale opérationnelle ArcoIris Ltda au Brésil.
+                    </p>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.25rem;">
+                        <div style="background: rgba(0,0,0,0.25); border: 1px solid var(--border-color); border-radius: 10px; padding: 1.25rem;">
+                            <strong style="color: #34d399; font-size: 0.95rem; display: block; margin-bottom: 0.4rem;" data-i18n="aml_cb_bacen_title">
+                                <i class="fa-solid fa-building-columns"></i> Registre Bacen RDE-IED
+                            </strong>
+                            <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5;" data-i18n="aml_cb_bacen_desc">
+                                L'investissement en capital (180.000 €) est formellement immatriculé auprès de la Banque Centrale du Brésil via le module <em>Registro Declaratório Eletrônico - Investimento Estrangeiro Direto</em> (RDE-IED N° 2026/BR-984210).
+                            </p>
+                        </div>
+
+                        <div style="background: rgba(0,0,0,0.25); border: 1px solid var(--border-color); border-radius: 10px; padding: 1.25rem;">
+                            <strong style="color: #38bdf8; font-size: 0.95rem; display: block; margin-bottom: 0.4rem;" data-i18n="aml_cb_receita_title">
+                                <i class="fa-solid fa-receipt"></i> Déclaration Fiscale Receita Federal
+                            </strong>
+                            <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5;" data-i18n="aml_cb_receita_desc">
+                                ArcoIris Ltda est en situation de régularité fiscale intégrale (Certidão Negativa de Débitos) sous le CNPJ 06.036.746/0001-31, sans aucune infraction signalée par le COAF (Conselho de Controle de Atividades Financeiras).
+                            </p>
+                        </div>
+
+                        <div style="background: rgba(0,0,0,0.25); border: 1px solid var(--border-color); border-radius: 10px; padding: 1.25rem;">
+                            <strong style="color: #f59e0b; font-size: 0.95rem; display: block; margin-bottom: 0.4rem;" data-i18n="aml_cb_flux_title">
+                                <i class="fa-solid fa-arrows-split-up-and-left"></i> Flux Bancaires Transfrontaliers
+                            </strong>
+                            <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5;" data-i18n="aml_cb_flux_desc">
+                                Les transferts de fonds sont exécutés exclusivement via les canaux bancaires régulés (Olky Pay Luxembourg et Revolut Business) avec contrat de change officiel (Contrato de Câmbio Bacen).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal Dossier KYC Associé -->
+    <div id="kycModal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.85); z-index: 99999; align-items: center; justify-content: center; backdrop-filter: blur(6px);">
+        <div class="glass-panel" style="width: 90%; max-width: 600px; padding: 2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 1.25rem;">
+                <h3 id="kyc-modal-name" style="font-size: 1.25rem; font-weight: 700; color: #34d399;">
+                    <i class="fa-solid fa-shield-halved"></i> <span data-i18n="aml_modal_kyc_title">Dossier Permanent KYC</span>
+                </h3>
+                <button type="button" onclick="closeKycModal()" style="background: none; border: none; color: #fff; font-size: 1.2rem; cursor: pointer;">&times;</button>
+            </div>
+
+            <div id="kyc-modal-content" style="font-size: 0.88rem; display: flex; flex-direction: column; gap: 0.85rem;">
+                <!-- Populated dynamically -->
+            </div>
+
+            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-color); display: flex; justify-content: flex-end; align-items: center;">
+                <button type="button" class="btn-schema-close" onclick="closeKycModal()">
+                    <i class="fa-solid fa-xmark"></i>
+                    <span data-i18n="btn_close">Fermer</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="aml_data.js"></script>
+    <script src="i18n.js"></script>
+    <script src="aml_app.js"></script>
+</body>
+</html>

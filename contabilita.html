@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comptabilité PCN & Bilans Comparatifs - Watergarden Management Sàrl</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css?v=20261023c">
+    <!-- Auth Guard -->
+    <script src="auth.js?v=20261023c"></script>
+    <link rel="shortcut icon" href="brand_assets/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="brand_assets/apple-touch-icon.png">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar glass-panel">
+            <div class="logo-container">
+                <a href="brand_assets/index.html" title="Charte Graphique et Brand Assets" style="text-decoration: none; display: flex; flex-direction: column; align-items: center;">
+                    <img src="brand_assets/watergarden_symbol_cropped.png" alt="Logo Watergarden" class="logo-img">
+                    <div class="logo-title">Watergarden</div>
+                    <div class="logo-subtitle">Management Sàrl • Lux</div>
+                </a>
+            </div>
+
+            <nav class="nav-menu">
+                <!-- AREA SOCIÉTÉ -->
+                <div class="nav-section-title" data-i18n="nav_section_societe">AREA SOCIÉTÉ</div>
+                <div class="nav-item-container" data-page="index.html">
+                    <a href="index.html" class="nav-item">
+                        <i class="fa-solid fa-chart-pie text-emerald"></i>
+                        <span data-i18n="nav_societe">La Société</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('index.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="partecipazioni.html">
+                    <a href="partecipazioni.html" class="nav-item">
+                        <i class="fa-solid fa-umbrella-beach text-amber"></i>
+                        <span data-i18n="nav_partecipazioni">Participation ArcoIris (Brésil)</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('partecipazioni.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="sombra_floresta.html">
+                    <a href="sombra_floresta.html" class="nav-item">
+                        <i class="fa-solid fa-photo-film text-pink"></i>
+                        <span data-i18n="nav_sombra_floresta">SPA Sombra Floresta</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('sombra_floresta.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+
+                <!-- AREA FINANCES -->
+                <div class="nav-section-title" data-i18n="nav_section_finances">AREA FINANCES</div>
+                <div class="nav-item-container" data-page="contabilita.html">
+                    <a href="contabilita.html" class="nav-item active">
+                        <i class="fa-solid fa-book-bookmark text-blue"></i>
+                        <span data-i18n="nav_contabilita">Comptabilité</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('contabilita.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="banca.html">
+                    <a href="banca.html" class="nav-item">
+                        <i class="fa-solid fa-building-columns text-cyan"></i>
+                        <span data-i18n="nav_banca">Comptes Bancaires</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('banca.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="ammortamenti.html">
+                    <a href="ammortamenti.html" class="nav-item">
+                        <i class="fa-solid fa-calculator text-emerald"></i>
+                        <span data-i18n="nav_ammortamenti">Amortissements</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('ammortamenti.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+
+                <!-- AREA DOCUMENTATION -->
+                <div class="nav-section-title" data-i18n="nav_section_documentation">AREA DOCUMENTATION</div>
+                <div class="nav-item-container" data-page="aml.html">
+                    <a href="aml.html" class="nav-item">
+                        <i class="fa-solid fa-shield-halved text-emerald"></i>
+                        <span data-i18n="nav_aml">Conformité AML</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('aml.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="documenti.html">
+                    <a href="documenti.html" class="nav-item">
+                        <i class="fa-solid fa-folder-open text-blue"></i>
+                        <span data-i18n="nav_documenti">Documents & Archives</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('documenti.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+
+                <div class="nav-section-title" data-i18n="nav_section_tools">GESTION</div>
+                <button class="btn-sidebar-action" onclick="refreshAppGlobalData(this)">
+                    <i class="fa-solid fa-rotate-right"></i>
+                    <span data-i18n="nav_refresh_data">Actualiser</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="update-badge">
+                    <span data-i18n="last_update">Dernière mise à jour :</span>
+                    <strong id="sidebar-updated-at">17/10/2026</strong>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Topbar -->
+            <header class="topbar glass-panel">
+                <div class="topbar-title-area">
+                    <h1><i class="fa-solid fa-book-bookmark text-blue"></i> <span data-i18n="compta_title">Comptabilité Générale PCN Luxembourg</span></h1>
+                    <p data-i18n="compta_desc">États financiers officiels déposés eCDF • Comparatif certifié des exercices clos au 31/12/2024 et 31/12/2025.</p>
+                </div>
+
+                <div class="topbar-actions">
+                    <!-- Language Selector -->
+                    <div class="lang-selector">
+                        <button class="lang-btn active" data-lang="fr" title="Français">
+                            <img src="https://flagcdn.com/w40/fr.png" alt="FR">
+                        </button>
+                        <button class="lang-btn" data-lang="it" title="Italiano">
+                            <img src="https://flagcdn.com/w40/it.png" alt="IT">
+                        </button>
+                        <button class="lang-btn" data-lang="pt" title="Português">
+                            <img src="https://flagcdn.com/w40/br.png" alt="PT">
+                        </button>
+                        <button class="lang-btn" data-lang="en" title="English">
+                            <img src="https://flagcdn.com/w40/gb.png" alt="EN">
+                        </button>
+                    </div>
+
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle-btn" id="theme-toggle-btn" onclick="toggleTheme()" title="Mode Sombre/Clair">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+
+                    <!-- PDF Official Download Link -->
+                    <a href="uploads/Documenti/Bilans Watergarden/2025/watergarden - DEF 2025.pdf" target="_blank" class="btn-primary" style="background: rgba(2, 132, 199, 0.2); border-color: rgba(2, 132, 199, 0.4); color: #38bdf8; text-decoration: none;">
+                        <i class="fa-solid fa-file-pdf"></i> <span data-i18n="compta_btn_download_ecdf">Liasse Fiscale 2025 (PDF)</span>
+                    </a>
+                </div>
+            </header>
+
+            <!-- KPI Strip Comparatif -->
+            <section class="kpi-grid">
+                <div class="kpi-card glass-panel">
+                    <div class="kpi-icon bg-emerald"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <div class="kpi-data">
+                        <h3 data-i18n="kpi_total_actif">Total Actif de Bilan</h3>
+                        <p class="kpi-value text-emerald" id="kpi-total-actif">6.420.816,28 €</p>
+                        <span id="kpi-sub-actif" style="font-size: 0.75rem; color: var(--text-muted);">2024 : 6.399.486,91 € (+21.329 €)</span>
+                    </div>
+                </div>
+
+                <div class="kpi-card glass-panel">
+                    <div class="kpi-icon bg-blue"><i class="fa-solid fa-vault"></i></div>
+                    <div class="kpi-data">
+                        <h3 data-i18n="kpi_capitaux_propres">Capitaux Propres & Réserves</h3>
+                        <p class="kpi-value text-blue" id="kpi-total-passif">5.389.123,05 €</p>
+                        <span id="kpi-sub-passif" style="font-size: 0.75rem; color: var(--text-muted);">Capital 4.342.640 € + Prime 1.144.389 €</span>
+                    </div>
+                </div>
+
+                <div class="kpi-card glass-panel">
+                    <div class="kpi-icon bg-cyan"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="kpi-data">
+                        <h3 data-i18n="kpi_resultat_net">Résultat Net de l'Exercice</h3>
+                        <p class="kpi-value" style="color: #f43f5e;" id="kpi-resultat-net">-3.720,51 €</p>
+                        <span id="kpi-sub-resultat" class="badge badge-success" style="width: fit-content; font-size: 0.72rem;">Nette amélioration vs 2024 (-62.401 €)</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Control Bar: Mode Selector & Year Filters -->
+            <div class="glass-panel" style="padding: 1rem 1.25rem; margin-bottom: 1.5rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+                <!-- Mode Switcher -->
+                <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                    <span style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; color: var(--text-muted);">
+                        <i class="fa-solid fa-sliders text-cyan"></i> <span data-i18n="compta_mode_display">Mode d'affichage :</span>
+                    </span>
+                    <button class="view-mode-pill active" onclick="setComptaMode('single', this)">
+                        <i class="fa-solid fa-calendar-day"></i> <span data-i18n="compta_btn_single_year">Année Individuelle</span>
+                    </button>
+                    <button class="view-mode-pill" onclick="setComptaMode('comparatif', this)">
+                        <i class="fa-solid fa-code-compare"></i> <span data-i18n="compta_btn_compare">Comparateur Personnalisé</span>
+                    </button>
+                </div>
+
+                <!-- Sub-bar 1: Single Year Selection -->
+                <div id="compta-single-bar" style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                    <span style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; color: var(--text-muted);">
+                        <i class="fa-regular fa-calendar text-emerald"></i> <span data-i18n="compta_lbl_exercice">Exercice :</span>
+                    </span>
+                    <button class="year-pill-single" onclick="selectSingleYear('2024', this)">
+                        2024 <span style="font-size: 0.7rem; opacity: 0.8;" data-i18n="compta_depose">(Déposé)</span>
+                    </button>
+                    <button class="year-pill-single active" onclick="selectSingleYear('2025', this)">
+                        2025 <span style="font-size: 0.7rem; opacity: 0.8;" data-i18n="compta_depose">(Déposé)</span>
+                    </button>
+                    <button class="year-pill-single" onclick="selectSingleYear('2026', this)">
+                        <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #38bdf8; margin-right: 2px;"></span>
+                        2026 <span style="font-size: 0.7rem; color: #38bdf8; font-weight: 700;" data-i18n="compta_ytd">(YTD Octobre)</span>
+                    </button>
+                </div>
+
+                <!-- Sub-bar 2: Custom Comparison Selection -->
+                <div id="compta-compare-bar" style="display: none; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
+                    <span style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; color: var(--text-muted);">
+                        <i class="fa-solid fa-scale-unbalanced text-blue"></i> <span data-i18n="compta_lbl_comparer">Comparer :</span>
+                    </span>
+                    <select id="compare-year-1" class="form-select" style="background: rgba(0, 0, 0, 0.4); border: 1px solid var(--border-color); color: var(--text-main); border-radius: 6px; padding: 0.35rem 0.65rem; font-size: 0.82rem; font-weight: 600;">
+                        <option value="2024">2024</option>
+                        <option value="2025" selected>2025</option>
+                        <option value="2026">2026 (YTD)</option>
+                    </select>
+                    <span style="color: var(--text-muted); font-size: 0.8rem; font-weight: 600;">vs</span>
+                    <select id="compare-year-2" class="form-select" style="background: rgba(0, 0, 0, 0.4); border: 1px solid var(--border-color); color: var(--text-main); border-radius: 6px; padding: 0.35rem 0.65rem; font-size: 0.82rem; font-weight: 600;">
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026" selected>2026 (YTD)</option>
+                    </select>
+                    <button class="btn-primary" onclick="applyCompareYears()" style="padding: 0.38rem 0.85rem; font-size: 0.8rem;">
+                        <i class="fa-solid fa-arrows-rotate"></i> <span data-i18n="compta_btn_do_compare">Comparer</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Navigation Tabs (Bilan, PP, Balance) -->
+            <div style="display: flex; gap: 0.75rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                <button class="tab-btn active" onclick="switchComptaTab('bilan', this)">
+                    <i class="fa-solid fa-balance-scale"></i> <span data-i18n="tab_bilan">Bilan (Actif / Passif)</span>
+                </button>
+                <button class="tab-btn" onclick="switchComptaTab('pp', this)">
+                    <i class="fa-solid fa-arrow-trend-up"></i> <span data-i18n="tab_pp">Pertes & Profits (P&L)</span>
+                </button>
+                <button class="tab-btn" onclick="switchComptaTab('balance', this)">
+                    <i class="fa-solid fa-list-ol"></i> <span data-i18n="tab_balance">Balance des Comptes Clés</span>
+                </button>
+            </div>
+
+            <!-- TAB 1: Bilan (Actif & Passif) -->
+            <div id="tab-bilan" class="compta-tab-content">
+                <!-- Control Toolbar for Bilan Level of Detail -->
+                <div class="glass-panel" style="padding: 0.85rem 1.25rem; margin-bottom: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                        <span style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; color: var(--text-muted);">
+                            <i class="fa-solid fa-layer-group text-blue"></i> <span data-i18n="bilan_level_title">Niveau de Détail du Bilan :</span>
+                        </span>
+                        <button class="view-mode-pill active" id="btn-bilan-level-1" onclick="setBilanLevel(1, this)">
+                            <i class="fa-solid fa-list"></i> <span data-i18n="bilan_level_1">Niveau 1 (Postes eCDF)</span>
+                        </button>
+                        <button class="view-mode-pill" id="btn-bilan-level-2" onclick="setBilanLevel(2, this)">
+                            <i class="fa-solid fa-sitemap text-cyan"></i> <span data-i18n="bilan_level_2">Niveau 2 (Conti Dettagliati PCN & Soci)</span>
+                        </button>
+                    </div>
+                    <div style="display: flex; gap: 0.45rem; align-items: center;">
+                        <button class="btn btn-secondary btn-sm" onclick="toggleAllBilanDrilldown(true)" style="font-size: 0.75rem; padding: 0.3rem 0.7rem;">
+                            <i class="fa-solid fa-angles-down text-emerald"></i> <span data-i18n="btn_expand_all_bilan">Espandi Tutti i Conti</span>
+                        </button>
+                        <button class="btn btn-secondary btn-sm" onclick="toggleAllBilanDrilldown(false)" style="font-size: 0.75rem; padding: 0.3rem 0.7rem;">
+                            <i class="fa-solid fa-angles-up"></i> <span data-i18n="btn_collapse_all_bilan">Comprimi Tutti</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid" style="grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));">
+                    <!-- ACTIF -->
+                    <div class="glass-panel" style="padding: 1.5rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #10b981; padding-bottom: 0.75rem; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.5rem;">
+                            <h2 style="font-size: 1.2rem; font-weight: 700; color: #34d399; margin: 0;">
+                                <i class="fa-solid fa-plus-circle"></i> <span data-i18n="title_actif">ACTIF DU BILAN</span>
+                            </h2>
+                            <div style="display: flex; gap: 0.4rem; align-items: center;">
+                                <button type="button" class="btn btn-secondary btn-sm" onclick="toggleBilanSection('actif', true)" title="Espandi tutti i conti dell'Attivo" style="font-size: 0.72rem; padding: 0.25rem 0.55rem;">
+                                    <i class="fa-solid fa-angles-down text-emerald"></i> <span data-i18n="btn_dettaglio">Dettaglio</span>
+                                </button>
+                                <button type="button" class="btn btn-secondary btn-sm" onclick="toggleBilanSection('actif', false)" title="Comprimi conti dell'Attivo" style="font-size: 0.72rem; padding: 0.25rem 0.55rem;">
+                                    <i class="fa-solid fa-angles-up"></i>
+                                </button>
+                                <span class="badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399; font-size: 0.82rem; font-weight: 700;">PCN Lux</span>
+                            </div>
+                        </div>
+
+                        <div class="table-wrapper">
+                            <table class="data-table data-table-compact">
+                                <thead id="actif-table-head">
+                                    <tr>
+                                        <th style="width: 125px; min-width: 125px; white-space: nowrap;" data-i18n="th_compte">Compte</th>
+                                        <th style="padding-left: 1.25rem;" data-i18n="th_poste_intitule">Poste & Intitulé Officiel</th>
+                                        <th class="text-right col-year">31/12/2025</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="actif-tbody-comp"></tbody>
+                                <tfoot id="actif-table-foot"></tfoot>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- PASSIF -->
+                    <div class="glass-panel" style="padding: 1.5rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #0284c7; padding-bottom: 0.75rem; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.5rem;">
+                            <h2 style="font-size: 1.2rem; font-weight: 700; color: #38bdf8; margin: 0;">
+                                <i class="fa-solid fa-shield"></i> <span data-i18n="title_passif">PASSIF DU BILAN</span>
+                            </h2>
+                            <div style="display: flex; gap: 0.4rem; align-items: center;">
+                                <button type="button" class="btn btn-secondary btn-sm" onclick="toggleBilanSection('passif', true)" title="Espandi tutti i conti del Passivo" style="font-size: 0.72rem; padding: 0.25rem 0.55rem;">
+                                    <i class="fa-solid fa-angles-down text-blue"></i> <span data-i18n="btn_dettaglio">Dettaglio</span>
+                                </button>
+                                <button type="button" class="btn btn-secondary btn-sm" onclick="toggleBilanSection('passif', false)" title="Comprimi conti del Passivo" style="font-size: 0.72rem; padding: 0.25rem 0.55rem;">
+                                    <i class="fa-solid fa-angles-up"></i>
+                                </button>
+                                <span class="badge" style="background: rgba(2, 132, 199, 0.2); color: #38bdf8; font-size: 0.82rem; font-weight: 700;">PCN Lux</span>
+                            </div>
+                        </div>
+
+                        <div class="table-wrapper">
+                            <table class="data-table data-table-compact">
+                                <thead id="passif-table-head">
+                                    <tr>
+                                        <th style="width: 125px; min-width: 125px; white-space: nowrap;" data-i18n="th_compte">Compte</th>
+                                        <th style="padding-left: 1.25rem;" data-i18n="th_poste_intitule">Poste & Intitulé Officiel</th>
+                                        <th class="text-right col-year">31/12/2025</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="passif-tbody-comp"></tbody>
+                                <tfoot id="passif-table-foot"></tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: Compte de Pertes & Profits -->
+            <div id="tab-pp" class="compta-tab-content" style="display: none;">
+                <!-- Control Toolbar for P&L Level of Detail -->
+                <div class="glass-panel" style="padding: 0.85rem 1.25rem; margin-bottom: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; border-left: 4px solid #f43f5e;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                        <span style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; color: var(--text-muted);">
+                            <i class="fa-solid fa-layer-group text-rose"></i> <span data-i18n="pnl_level_title">Niveau de Détail du P&L :</span>
+                        </span>
+                        <button class="view-mode-pill active" id="btn-pnl-level-1" onclick="setPnLLevel(1, this)">
+                            <i class="fa-solid fa-list"></i> <span data-i18n="pnl_level_1">Niveau 1 (Postes eCDF)</span>
+                        </button>
+                        <button class="view-mode-pill" id="btn-pnl-level-2" onclick="setPnLLevel(2, this)">
+                            <i class="fa-solid fa-sitemap text-amber"></i> <span data-i18n="pnl_level_2">Niveau 2 (Détail Comptes & Soci)</span>
+                        </button>
+                    </div>
+                    <div style="display: flex; gap: 0.45rem; align-items: center;">
+                        <button class="btn btn-secondary btn-sm" onclick="setPnLLevel(2)" style="font-size: 0.75rem; padding: 0.3rem 0.7rem;">
+                            <i class="fa-solid fa-angles-down text-rose"></i> <span data-i18n="btn_expand_all_pnl">Espandi Tutti i Conti</span>
+                        </button>
+                        <button class="btn btn-secondary btn-sm" onclick="setPnLLevel(1)" style="font-size: 0.75rem; padding: 0.3rem 0.7rem;">
+                            <i class="fa-solid fa-angles-up"></i> <span data-i18n="btn_collapse_all_pnl">Comprimi Tutti</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bilan-grid">
+                    <!-- PRODUITS (Classe 7) -->
+                    <div class="glass-panel chart-card" style="padding: 1.5rem; margin-bottom: 0;">
+                        <div class="chart-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; border-bottom: 2px solid #10b981; padding-bottom: 0.75rem; margin-bottom: 1.25rem;">
+                            <h2 class="chart-title" style="color: #34d399; font-size: 1.1rem; margin: 0;">
+                                <i class="fa-solid fa-sack-dollar text-emerald"></i>
+                                <span data-i18n="pnl_produits_title">PRODUITS D'EXPLOITATION & FINANCIERS</span>
+                            </h2>
+                            <div style="display: flex; gap: 0.35rem; align-items: center;">
+                                <button type="button" class="btn btn-secondary btn-sm" onclick="toggleAllPnLSection('pnl-produits-container', true)" title="Espandi tutte le voci di ricavo" style="font-size: 0.72rem; padding: 0.25rem 0.55rem;">
+                                    <i class="fa-solid fa-folder-open"></i> <span style="font-size: 0.72rem;" data-i18n="btn_expand">Espandi</span>
+                                </button>
+                                <button type="button" class="btn btn-secondary btn-sm" onclick="toggleAllPnLSection('pnl-produits-container', false)" title="Comprimi tutte le voci" style="font-size: 0.72rem; padding: 0.25rem 0.55rem;">
+                                    <i class="fa-solid fa-folder"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="pnl-produits-container">
+                            <!-- Populated via JS -->
+                        </div>
+
+                        <div class="account-group-header" style="background: rgba(16, 185, 129, 0.15); color: #10b981; font-size: 0.95rem; margin-top: 1.25rem; padding: 0.75rem 1rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; font-weight: 700;">
+                            <span data-i18n="total_produits">TOTAL PRODUITS :</span>
+                            <span id="total-produits-val" style="font-family: 'JetBrains Mono', monospace; font-size: 1.05rem;">0,00 €</span>
+                        </div>
+                    </div>
+
+                    <!-- CHARGES (Classe 6) -->
+                    <div class="glass-panel chart-card" style="padding: 1.5rem; margin-bottom: 0;">
+                        <div class="chart-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; border-bottom: 2px solid #f43f5e; padding-bottom: 0.75rem; margin-bottom: 1.25rem;">
+                            <h2 class="chart-title" style="color: #f43f5e; font-size: 1.1rem; margin: 0;">
+                                <i class="fa-solid fa-file-invoice-dollar text-rose"></i>
+                                <span data-i18n="pnl_charges_title">CHARGES D'EXPLOITATION & FINANCIÈRES</span>
+                            </h2>
+                            <div style="display: flex; gap: 0.35rem; align-items: center;">
+                                <button type="button" class="btn btn-secondary btn-sm" onclick="toggleAllPnLSection('pnl-charges-container', true)" title="Espandi tutte le voci di costo" style="font-size: 0.72rem; padding: 0.25rem 0.55rem;">
+                                    <i class="fa-solid fa-folder-open"></i> <span style="font-size: 0.72rem;" data-i18n="btn_expand">Espandi</span>
+                                </button>
+                                <button type="button" class="btn btn-secondary btn-sm" onclick="toggleAllPnLSection('pnl-charges-container', false)" title="Comprimi tutte le voci" style="font-size: 0.72rem; padding: 0.25rem 0.55rem;">
+                                    <i class="fa-solid fa-folder"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="pnl-charges-container">
+                            <!-- Populated via JS -->
+                        </div>
+
+                        <div class="account-group-header" style="background: rgba(244, 63, 94, 0.15); color: #f43f5e; font-size: 0.95rem; margin-top: 1.25rem; padding: 0.75rem 1rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; font-weight: 700;">
+                            <span data-i18n="total_charges">TOTAL CHARGES :</span>
+                            <span id="total-charges-val" style="font-family: 'JetBrains Mono', monospace; font-size: 1.05rem;">0,00 €</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Résultat Net Strip & Pareggio -->
+                <div class="glass-panel" style="margin-top: 1.5rem; padding: 1.35rem 1.75rem; border-radius: 12px; border: 1px solid var(--border-color);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                        <div>
+                            <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
+                                <span style="font-size: 1.15rem; font-weight: 800; color: var(--text-main);" id="pnl-net-result-title" data-i18n="net_accounting_result">RÉSULTAT NET COMPTABLE DE L'EXERCICE</span>
+                                <span id="pnl-pareggio-badge" class="badge" style="background: rgba(16, 185, 129, 0.2); color: #10b981; font-weight: 700; font-size: 0.75rem;">
+                                    <i class="fa-solid fa-scale-balanced"></i> <span data-i18n="badge_pareggiato">PAREGGIATO</span>
+                                </span>
+                            </div>
+                            <p id="pnl-net-result-sub" style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.35rem;" data-i18n="pnl_pareggio_sub">
+                                Solde Produits (Classe 7) moins Charges (Classe 6) • Pareggio: Charges + Résultat Net = Produits
+                            </p>
+                        </div>
+                        <div id="pnl-net-result-box" style="text-align: right;">
+                            <div style="font-size: 2.1rem; font-weight: 800; font-family: 'JetBrains Mono', monospace;" id="pnl-net-result-val">0,00 €</div>
+                            <div id="pnl-net-result-detail" style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 3: Balance des Comptes Clés -->
+            <div id="tab-balance" class="compta-tab-content" style="display: none;">
+                <div class="glass-panel" style="padding: 1.75rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.2rem;">
+                        <h2 style="font-size: 1.2rem; font-weight: 700; margin: 0;">
+                            <i class="fa-solid fa-list-ol text-blue"></i> <span data-i18n="title_grands_comptes">Grands Comptes de la Holding Watergarden</span>
+                        </h2>
+                        <div style="display: flex; gap: 0.5rem; align-items: center;">
+                            <button class="btn btn-secondary btn-sm" onclick="expandAllBalanceDrilldown(true)" style="font-size: 0.75rem;">
+                                <i class="fa-solid fa-angles-down"></i> Tout Déplier (Niveaux 1, 2, 3)
+                            </button>
+                            <button class="btn btn-secondary btn-sm" onclick="expandAllBalanceDrilldown(false)" style="font-size: 0.75rem;">
+                                <i class="fa-solid fa-angles-up"></i> Tout Replier
+                            </button>
+                        </div>
+                    </div>
+                    <div class="table-wrapper">
+                        <table class="data-table data-table-compact">
+                            <thead id="balance-table-head">
+                                <tr>
+                                    <th style="width: 135px; min-width: 135px; white-space: nowrap;" data-i18n="th_num_compte">N° Compte</th>
+                                    <th style="padding-left: 1.25rem;" data-i18n="th_intitule_compte">Intitulé du Compte PCN</th>
+                                    <th class="text-right col-year" data-i18n="th_solde_debiteur">Solde Débiteur</th>
+                                    <th class="text-right col-year" data-i18n="th_solde_crediteur">Solde Créditeur</th>
+                                </tr>
+                            </thead>
+                            <tbody id="balance-tbody-comp"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="i18n.js"></script>
+    <script src="contabilita_app.js"></script>
+</body>
+</html>

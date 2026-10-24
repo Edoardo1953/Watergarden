@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Amortissements & Scritture di Rettifica - Watergarden Management Sàrl</title>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- SheetJS for Excel export -->
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css?v=20261023c">
+    <!-- Auth Guard -->
+    <script src="auth.js?v=20261023c"></script>
+    <style>
+        .asset-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+        .asset-card {
+            background: var(--bg-dark-card, rgba(15, 23, 42, 0.7));
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.25rem;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+        .asset-card:hover {
+            border-color: #10b981;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+        .asset-badge-pcn {
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.2rem 0.5rem;
+            border-radius: 6px;
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+            display: inline-block;
+            margin-bottom: 0.4rem;
+        }
+        .journal-box {
+            background: rgba(0, 0, 0, 0.35);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+        body.theme-light .journal-box {
+            background: #f8fafc;
+        }
+        .journal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        .journal-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+        .journal-table th {
+            text-align: left;
+            padding: 0.65rem 0.75rem;
+            background: rgba(255, 255, 255, 0.04);
+            border-bottom: 2px solid var(--border-color);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+        }
+        .journal-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.05));
+            vertical-align: middle;
+        }
+        .journal-table tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .sim-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+    </style>
+    <link rel="shortcut icon" href="brand_assets/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="brand_assets/apple-touch-icon.png">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar glass-panel">
+            <div class="logo-container">
+                <a href="brand_assets/index.html" title="Charte Graphique et Brand Assets" style="text-decoration: none; display: flex; flex-direction: column; align-items: center;">
+                    <img src="brand_assets/watergarden_symbol_cropped.png" alt="Logo Watergarden" class="logo-img">
+                    <div class="logo-title">Watergarden</div>
+                    <div class="logo-subtitle">Management Sàrl • Lux</div>
+                </a>
+            </div>
+
+            <nav class="nav-menu">
+                <!-- AREA SOCIÉTÉ -->
+                <div class="nav-section-title" data-i18n="nav_section_societe">AREA SOCIÉTÉ</div>
+                <div class="nav-item-container" data-page="index.html">
+                    <a href="index.html" class="nav-item">
+                        <i class="fa-solid fa-chart-pie text-emerald"></i>
+                        <span data-i18n="nav_societe">La Société</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('index.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="partecipazioni.html">
+                    <a href="partecipazioni.html" class="nav-item">
+                        <i class="fa-solid fa-umbrella-beach text-amber"></i>
+                        <span data-i18n="nav_partecipazioni">Participation ArcoIris (Brésil)</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('partecipazioni.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="sombra_floresta.html">
+                    <a href="sombra_floresta.html" class="nav-item">
+                        <i class="fa-solid fa-photo-film text-pink"></i>
+                        <span data-i18n="nav_sombra_floresta">SPA Sombra Floresta</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('sombra_floresta.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+
+                <!-- AREA FINANCES -->
+                <div class="nav-section-title" data-i18n="nav_section_finances">AREA FINANCES</div>
+                <div class="nav-item-container" data-page="contabilita.html">
+                    <a href="contabilita.html" class="nav-item">
+                        <i class="fa-solid fa-book-bookmark text-blue"></i>
+                        <span data-i18n="nav_contabilita">Comptabilité</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('contabilita.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="banca.html">
+                    <a href="banca.html" class="nav-item">
+                        <i class="fa-solid fa-building-columns text-cyan"></i>
+                        <span data-i18n="nav_banca">Comptes Bancaires</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('banca.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="ammortamenti.html">
+                    <a href="ammortamenti.html" class="nav-item active">
+                        <i class="fa-solid fa-calculator text-emerald"></i>
+                        <span data-i18n="nav_ammortamenti">Amortissements</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('ammortamenti.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+
+                <!-- AREA DOCUMENTATION -->
+                <div class="nav-section-title" data-i18n="nav_section_documentation">AREA DOCUMENTATION</div>
+                <div class="nav-item-container" data-page="aml.html">
+                    <a href="aml.html" class="nav-item">
+                        <i class="fa-solid fa-shield-halved text-emerald"></i>
+                        <span data-i18n="nav_aml">Conformité AML</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('aml.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="documenti.html">
+                    <a href="documenti.html" class="nav-item">
+                        <i class="fa-solid fa-folder-open text-blue"></i>
+                        <span data-i18n="nav_documenti">Documents & Archives</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('documenti.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+
+                <div class="nav-section-title" data-i18n="nav_section_tools">GESTION</div>
+                <button class="btn-sidebar-action" onclick="refreshAppGlobalData(this)">
+                    <i class="fa-solid fa-rotate-right"></i>
+                    <span data-i18n="nav_refresh_data">Actualiser</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="update-badge">
+                    <span data-i18n="last_update">Dernière mise à jour :</span>
+                    <strong id="sidebar-updated-at">17/10/2026</strong>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Topbar -->
+            <header class="topbar glass-panel">
+                <div class="topbar-title-area">
+                    <h1 data-i18n="amort_title">
+                        <i class="fa-solid fa-calculator text-emerald"></i>
+                        Registre des Amortissements & Scritture di Rettifica
+                    </h1>
+                    <p data-i18n="amort_desc">
+                        Plan d'amortissement PCN (Frais d'établissement Compte 203) et préparation des écritures de clôture d'exercice.
+                    </p>
+                </div>
+
+                <div class="topbar-actions">
+                    <!-- Language Selector -->
+                    <div class="lang-selector">
+                        <button class="lang-btn" data-lang="fr" title="Français">
+                            <img src="https://flagcdn.com/w40/fr.png" alt="FR">
+                        </button>
+                        <button class="lang-btn" data-lang="it" title="Italiano">
+                            <img src="https://flagcdn.com/w40/it.png" alt="IT">
+                        </button>
+                        <button class="lang-btn" data-lang="pt" title="Português">
+                            <img src="https://flagcdn.com/w40/br.png" alt="PT">
+                        </button>
+                        <button class="lang-btn" data-lang="en" title="English">
+                            <img src="https://flagcdn.com/w40/gb.png" alt="EN">
+                        </button>
+                    </div>
+
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle-btn" id="theme-toggle-btn" title="Changer de thème" onclick="toggleTheme()">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Exercise Filter Bar -->
+            <div class="glass-panel" style="padding: 1rem 1.25rem; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <label style="font-weight: 700; font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">
+                        <i class="fa-solid fa-calendar-check text-emerald"></i> <span data-i18n="filter_year">Exercice de Référence</span> :
+                    </label>
+                    <select id="amort-year-select" class="form-select" style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-color); color: var(--text-main); border-radius: 8px; padding: 0.4rem 0.85rem; font-size: 0.85rem; font-weight: 600;">
+                        <!-- Injected via JS -->
+                    </select>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span class="badge" id="amort-exercise-badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399; font-weight: 700; padding: 0.4rem 0.85rem; border-radius: 8px; font-size: 0.82rem;">
+                        <i class="fa-solid fa-circle-check"></i> Exercice Déposé eCDF : 2025
+                    </span>
+                    <a href="uploads/Documenti/Bilans Watergarden/2025/watergarden - accounting files 2025.xlsx" download class="btn btn-secondary btn-sm" style="font-size: 0.78rem;">
+                        <i class="fa-solid fa-file-excel text-emerald"></i> <span data-i18n="btn_source_excel">Fichier Source Excel</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Summary KPI Strip -->
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div style="display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap;">
+                            <span class="kpi-title" data-i18n="th_val_brute">Valeur Brute Immobilisée</span>
+                            <span class="badge" id="badge-kpi-brute" style="background: rgba(16, 185, 129, 0.15); color: #34d399; font-size: 0.7rem; font-weight: 700;">Compte 203000</span>
+                        </div>
+                        <div class="kpi-icon emerald"><i class="fa-solid fa-cubes"></i></div>
+                    </div>
+                    <div class="kpi-value text-emerald" id="ammo-kpi-brute">10.318,71 €</div>
+                    <span class="kpi-sub" style="font-size: 0.72rem; color: var(--text-muted);">6 postes de frais d'établissement</span>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div style="display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap;">
+                            <span class="kpi-title" data-i18n="th_annuite">Dotation Annuelle</span>
+                            <span class="badge" id="badge-kpi-dotation" style="background: rgba(244, 63, 94, 0.15); color: #f43f5e; font-size: 0.7rem; font-weight: 700;">Compte 631100</span>
+                        </div>
+                        <div class="kpi-icon rose"><i class="fa-solid fa-arrow-down-wide-short"></i></div>
+                    </div>
+                    <div class="kpi-value text-rose" id="ammo-kpi-dotation">1.719,03 €</div>
+                    <span class="kpi-sub" style="font-size: 0.72rem; color: var(--text-muted);" id="ammo-kpi-dotation-sub">Charge P&L de l'exercice</span>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div style="display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap;">
+                            <span class="kpi-title" data-i18n="th_cumul">Amortissements Cumulés</span>
+                            <span class="badge" id="badge-kpi-cumul" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; font-size: 0.7rem; font-weight: 700;">Compte 203900</span>
+                        </div>
+                        <div class="kpi-icon amber"><i class="fa-solid fa-layer-group"></i></div>
+                    </div>
+                    <div class="kpi-value text-amber" id="ammo-kpi-cumul">7.978,97 €</div>
+                    <span class="kpi-sub" style="font-size: 0.72rem; color: var(--text-muted);">Valeur soustractive au bilan</span>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div style="display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap;">
+                            <span class="kpi-title" data-i18n="th_vnc">Valeur Nette (VNC)</span>
+                            <span class="badge" id="badge-kpi-vnc" style="background: rgba(6, 182, 212, 0.15); color: #38bdf8; font-size: 0.7rem; font-weight: 700;">Actif Net PCN</span>
+                        </div>
+                        <div class="kpi-icon cyan"><i class="fa-solid fa-shield-halved"></i></div>
+                    </div>
+                    <div class="kpi-value text-cyan" id="ammo-kpi-vnc">2.339,75 €</div>
+                    <span class="kpi-sub" style="font-size: 0.72rem; color: var(--text-muted);" id="ammo-kpi-vnc-sub">Poste Actif 203 au bilan</span>
+                </div>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div style="display: flex; gap: 0.75rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                <button class="tab-btn active" onclick="switchAmmoTab('entries', this)">
+                    <i class="fa-solid fa-receipt text-rose"></i> <span data-i18n="tab_rettifiche">1. Scritture di Rettifica (Fine Anno)</span>
+                </button>
+                <button class="tab-btn" onclick="switchAmmoTab('assets', this)">
+                    <i class="fa-solid fa-cubes text-emerald"></i> <span data-i18n="tab_asset_list">2. Fiches Immobilisations (6 Postes)</span>
+                </button>
+                <button class="tab-btn" onclick="switchAmmoTab('totals', this)">
+                    <i class="fa-solid fa-table-list text-cyan"></i> <span data-i18n="tab_amort_totals">3. Tableau Consolidé (2018-2028)</span>
+                </button>
+                <button class="tab-btn" onclick="switchAmmoTab('simulator', this)">
+                    <i class="fa-solid fa-wand-magic-sparkles text-amber"></i> <span data-i18n="tab_amort_simulator">4. Simulateur / Nouveau Bien</span>
+                </button>
+            </div>
+
+            <!-- TAB 1: Scritture di Rettifica di Fine Anno (Accounting Adjusting Entries) -->
+            <div id="ammo-tab-entries" class="ammo-tab-content">
+                <div class="glass-panel" style="padding: 1.75rem; margin-bottom: 1.5rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.75rem;">
+                        <div>
+                            <h2 style="font-size: 1.25rem; font-weight: 800; color: #f43f5e; margin: 0;">
+                                <i class="fa-solid fa-file-signature"></i> <span data-i18n="title_rettifiche">Écritures Comptables d'Inventaire & Régularisation (Fine Anno)</span>
+                            </h2>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">
+                                Écritures en partie double prêtes à être saisies dans le grand livre pour la clôture des comptes annuels PCN eCDF.
+                            </p>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button class="btn btn-primary btn-sm" onclick="copyAdjustingEntry()">
+                                <i class="fa-solid fa-copy"></i> <span id="copy-btn-text" data-i18n="btn_copy_entry">Copier l'Écriture</span>
+                            </button>
+                            <button class="btn btn-secondary btn-sm" onclick="exportAdjustingEntryTxt()">
+                                <i class="fa-solid fa-download"></i> <span data-i18n="btn_export_entry">Exporter TXT</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Journal Entry Box -->
+                    <div class="journal-box">
+                        <div class="journal-header">
+                            <div>
+                                <span class="badge" style="background: rgba(2, 132, 199, 0.2); color: #38bdf8; font-weight: 700; font-size: 0.75rem;" id="entry-journal-badge">
+                                    Journal : Opérations Diverses (OD)
+                                </span>
+                                <strong style="margin-left: 0.5rem; font-size: 0.95rem; color: var(--text-main);" id="entry-ref-piece">N° Pièce : OD-AMM-2025-01</strong>
+                            </div>
+                            <div style="font-size: 0.82rem; color: var(--text-muted);">
+                                Date de valeur : <strong style="color: var(--text-main);" id="entry-date-val">31/12/2025</strong>
+                            </div>
+                        </div>
+
+                        <div style="overflow-x: auto;">
+                            <table class="journal-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 110px;">Compte PCN</th>
+                                        <th>Intitulé du Compte PCN</th>
+                                        <th>Libellé de l'Écriture / Justificatif</th>
+                                        <th class="text-right" style="width: 130px; color: #34d399;">Débit (€)</th>
+                                        <th class="text-right" style="width: 130px; color: #38bdf8;">Crédit (€)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="journal-entry-tbody">
+                                    <!-- Injected via JS -->
+                                </tbody>
+                                <tfoot>
+                                    <tr style="background: rgba(255, 255, 255, 0.05); font-weight: 800; font-size: 0.92rem;">
+                                        <td colspan="3" style="text-align: right; text-transform: uppercase;">Total Écriture (Quadratura a Pareggio) :</td>
+                                        <td class="text-right text-emerald" id="entry-total-debit" style="font-family: 'JetBrains Mono', monospace;">1.719,03 €</td>
+                                        <td class="text-right text-blue" id="entry-total-credit" style="font-family: 'JetBrains Mono', monospace;">1.719,03 €</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Breakdown by Asset Table -->
+                    <div style="margin-top: 1.5rem;">
+                        <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fa-solid fa-list-check text-cyan"></i>
+                            <span data-i18n="title_breakdown_assets">Justification Analytique de la Dotation (Détail par Bien Amortissable)</span>
+                        </h3>
+                        <div class="table-wrapper">
+                            <table class="data-table data-table-compact">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 90px;">Réf Bien</th>
+                                        <th>Immobilisation / Fournisseur</th>
+                                        <th style="width: 120px;">Compte</th>
+                                        <th class="text-right" style="width: 130px;">Valeur Brute</th>
+                                        <th class="text-right" style="width: 140px; color: #f43f5e;">Quote-part Dotation</th>
+                                        <th style="width: 120px; text-align: center;">Statut</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="breakdown-entry-tbody">
+                                    <!-- Injected via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Explanatory Accounting Note -->
+                    <div style="margin-top: 1.5rem; background: rgba(59, 130, 246, 0.08); border-left: 4px solid #38bdf8; padding: 1rem 1.25rem; border-radius: 6px; font-size: 0.82rem; color: var(--text-muted); line-height: 1.5;">
+                        <strong style="color: #38bdf8; display: block; margin-bottom: 0.25rem;">
+                            <i class="fa-solid fa-circle-info"></i> Note aux Annexes Comptables & Déclaration Fiscale eCDF :
+                        </strong>
+                        Conformément au Plan Comptable Normalisé (PCN) luxembourgeois et aux principes comptables applicables aux SOPARFI, les frais de constitution, de fusion et d'augmentation de capital sont immobilisés au compte <strong>203</strong> et amortis de manière linéaire sur une durée maximale de 5 ans (taux de 20% par an pro-rata temporis). La dotation est inscrite en charges d'exploitation au compte <strong>631100</strong> et vient alimenter le fonds d'amortissement soustractif au compte <strong>203900</strong>.
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: Fiches Immobilisations (Asset Cards) -->
+            <div id="ammo-tab-assets" class="ammo-tab-content" style="display: none;">
+                <div class="glass-panel" style="padding: 1.25rem; margin-bottom: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <button class="btn btn-primary btn-sm asset-filter-btn active" data-cat="ALL" onclick="filterAssetCards('ALL', this)">
+                            <i class="fa-solid fa-layer-group"></i> <span data-i18n="filter_all_assets">Tous les Biens</span> (<span id="count-all-assets">6</span>)
+                        </button>
+                        <button class="btn btn-secondary btn-sm asset-filter-btn" data-cat="203100" onclick="filterAssetCards('203100', this)">
+                            <i class="fa-solid fa-file-invoice-dollar text-cyan"></i> <span>2031 - Augmentation Capital</span> (4)
+                        </button>
+                        <button class="btn btn-secondary btn-sm asset-filter-btn" data-cat="203200" onclick="filterAssetCards('203200', this)">
+                            <i class="fa-solid fa-code-merge text-rose"></i> <span>2032 - Frais de Fusion LRD</span> (2)
+                        </button>
+                    </div>
+                    <span style="font-size: 0.8rem; color: var(--text-muted);">
+                        Amortissement linéaire officiel 5 ans (Taux 20%)
+                    </span>
+                </div>
+
+                <div class="asset-grid" id="asset-cards-container">
+                    <!-- Injected dynamically via JS -->
+                </div>
+            </div>
+
+            <!-- TAB 3: Tableau Consolidé (Consolidated Year-by-Year Schedule) -->
+            <div id="ammo-tab-totals" class="ammo-tab-content" style="display: none;">
+                <div class="glass-panel" style="padding: 1.75rem;">
+                    <div class="chart-header" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem; margin-bottom: 1.25rem;">
+                        <h2 class="chart-title" style="margin: 0; font-size: 1.2rem;">
+                            <i class="fa-solid fa-table-list text-emerald"></i>
+                            <span data-i18n="amort_consolidated_title">Échéancier Consolidé des Amortissements (2018 - 2028)</span>
+                        </h2>
+                        <button id="btn-export-amort-excel" class="btn btn-secondary btn-sm" onclick="exportAmortExcel()">
+                            <i class="fa-solid fa-file-excel text-emerald"></i> <span data-i18n="btn_export_excel">Exporter vers Excel</span>
+                        </button>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table class="data-table" id="totals-table">
+                            <thead>
+                                <tr>
+                                    <th data-i18n="col_year_exercise">Exercice</th>
+                                    <th class="text-right" data-i18n="col_acquisitions" style="color: #34d399;">Acquisitions (+)</th>
+                                    <th class="text-right" data-i18n="col_cessions" style="color: var(--text-muted);">Cessions (-)</th>
+                                    <th class="text-right" data-i18n="col_val_brute_totale">Valeur Brute Totale (€)</th>
+                                    <th class="text-right" data-i18n="th_annuite" style="color: #f43f5e;">Dotation Annuelle (€)</th>
+                                    <th class="text-right" data-i18n="th_cumul" style="color: #fbbf24;">Amort. Cumulés (€)</th>
+                                    <th class="text-right" data-i18n="th_vnc" style="color: #38bdf8;">Valeur Nette VNC (€)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="totals-tbody">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 4: Simulateur / Nouveau Bien -->
+            <div id="ammo-tab-simulator" class="ammo-tab-content" style="display: none;">
+                <div class="glass-panel" style="padding: 1.75rem;">
+                    <div class="chart-header" style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem; margin-bottom: 1.25rem;">
+                        <h2 class="chart-title" style="margin: 0; font-size: 1.2rem;">
+                            <i class="fa-solid fa-wand-magic-sparkles text-amber"></i>
+                            <span data-i18n="tab_amort_simulator">Simulateur de Plan d'Amortissement & Nouvelles Immobilisations</span>
+                        </h2>
+                    </div>
+
+                    <div class="sim-grid">
+                        <div>
+                            <label style="font-weight: 600; font-size: 0.82rem; color: var(--text-muted); display: block; margin-bottom: 0.35rem;" data-i18n="form_asset_name">Nom de l'immobilisation / Frais</label>
+                            <input type="text" id="sim-name" class="form-control" style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-color); color: #fff; width: 100%; border-radius: 6px; padding: 0.45rem;" value="Honoraires juridiques restructuration 2026">
+                        </div>
+
+                        <div>
+                            <label style="font-weight: 600; font-size: 0.82rem; color: var(--text-muted); display: block; margin-bottom: 0.35rem;" data-i18n="form_category">Poste d'Actif (Classe PCN)</label>
+                            <select id="sim-category" class="form-select" style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-color); color: #fff; width: 100%; border-radius: 6px; padding: 0.45rem;">
+                                <option value="203 - Frais d'établissement & augmentation capital">203 - Frais d'établissement & augmentation capital (5 ans)</option>
+                                <option value="211 - Frais de développement / Software">211 - Logiciels et informatique (3 ans)</option>
+                                <option value="223 - Mobilier et matériel de bureau">223 - Mobilier et matériel de bureau (5 ans)</option>
+                                <option value="224 - Matériel informatique">224 - Serveurs et matériel informatique (3 ans)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label style="font-weight: 600; font-size: 0.82rem; color: var(--text-muted); display: block; margin-bottom: 0.35rem;" data-i18n="form_acq_val">Valeur d'Acquisition (€ HT)</label>
+                            <input type="number" id="sim-val" class="form-control" style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-color); color: #fff; width: 100%; border-radius: 6px; padding: 0.45rem;" value="5000">
+                        </div>
+
+                        <div>
+                            <label style="font-weight: 600; font-size: 0.82rem; color: var(--text-muted); display: block; margin-bottom: 0.35rem;" data-i18n="form_years">Durée d'amortissement (années)</label>
+                            <input type="number" id="sim-years" class="form-control" style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-color); color: #fff; width: 100%; border-radius: 6px; padding: 0.45rem;" value="5">
+                        </div>
+
+                        <div>
+                            <label style="font-weight: 600; font-size: 0.82rem; color: var(--text-muted); display: block; margin-bottom: 0.35rem;" data-i18n="form_acq_date">Date de mise en service</label>
+                            <input type="date" id="sim-date" class="form-control" style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-color); color: #fff; width: 100%; border-radius: 6px; padding: 0.45rem;" value="2026-01-01">
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <button id="btn-calc-sim" class="btn btn-primary" onclick="calculateSimulation()">
+                            <i class="fa-solid fa-calculator"></i> <span data-i18n="btn_calc_amort">Calculer l'Échéancier</span>
+                        </button>
+                    </div>
+
+                    <!-- Simulator Result Table -->
+                    <div class="table-wrapper">
+                        <table class="data-table" id="sim-result-table">
+                            <thead>
+                                <tr>
+                                    <th>Année</th>
+                                    <th class="text-right">Valeur Début (€)</th>
+                                    <th class="text-right">Taux (%)</th>
+                                    <th class="text-right" style="color: #f43f5e;">Annuité / Dotation (€)</th>
+                                    <th class="text-right" style="color: #fbbf24;">Amort. Cumulés (€)</th>
+                                    <th class="text-right" style="color: #38bdf8;">Valeur Nette Fin (VNC €)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="sim-tbody">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Asset Detail Modal -->
+    <div class="modal-overlay" id="asset-modal" style="display: none;">
+        <div class="modal-container" style="max-width: 850px;">
+            <div class="modal-header">
+                <h3 class="modal-title" id="asset-modal-title" style="margin: 0; font-size: 1.15rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fa-solid fa-cube text-emerald"></i> Fiche Immobilisation
+                </h3>
+                <button class="modal-close-btn" onclick="closeAssetModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="asset-modal-body" style="padding: 1.25rem;">
+                <!-- Injected via JS -->
+            </div>
+            <div class="modal-footer" style="padding: 1rem 1.25rem; border-top: 1px solid var(--border-color); display: flex; justify-content: flex-end;">
+                <button class="btn btn-secondary" onclick="closeAssetModal()">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Data & Scripts -->
+    <script src="data.js"></script>
+    <script src="ammortamenti_data.js"></script>
+    <script src="i18n.js"></script>
+    <script src="ammortamenti_app.js"></script>
+</body>
+</html>

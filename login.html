@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion Sécurisée - Watergarden Management Sàrl</title>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css?v=20261023c">
+    <style>
+        .login-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.25rem;
+            position: relative;
+            background: radial-gradient(circle at 50% 10%, rgba(16, 185, 129, 0.08) 0%, rgba(15, 23, 42, 0.95) 100%), #0b1120;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 920px;
+            padding: 2.5rem 2.25rem;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
+            animation: fadeInLogin 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        @keyframes fadeInLogin {
+            from { opacity: 0; transform: translateY(18px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .login-brand-header {
+            margin-bottom: 1.75rem;
+        }
+
+        .login-title {
+            font-size: 1.65rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+            margin-top: 0.85rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .login-subtitle {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Development Standby Banner */
+        .dev-standby-banner {
+            background: linear-gradient(90deg, rgba(16, 185, 129, 0.12), rgba(56, 189, 248, 0.12));
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 12px;
+            padding: 0.85rem 1.25rem;
+            margin-bottom: 2rem;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+        }
+
+        .dev-standby-banner .banner-icon {
+            font-size: 1.5rem;
+            color: #34d399;
+            flex-shrink: 0;
+        }
+
+        .dev-standby-banner .banner-text {
+            font-size: 0.82rem;
+            color: #e2e8f0;
+            line-height: 1.45;
+        }
+
+        /* 3 Role Selection Cards Grid */
+        .role-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .role-access-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem 1.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .role-access-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+        }
+
+        .role-access-card.card-admin {
+            border-top: 3px solid #a855f7;
+        }
+        .role-access-card.card-admin:hover {
+            border-color: #c084fc;
+            box-shadow: 0 12px 30px rgba(168, 85, 247, 0.2);
+        }
+
+        .role-access-card.card-user {
+            border-top: 3px solid #10b981;
+        }
+        .role-access-card.card-user:hover {
+            border-color: #34d399;
+            box-shadow: 0 12px 30px rgba(16, 185, 129, 0.2);
+        }
+
+        .role-access-card.card-public {
+            border-top: 3px solid #0284c7;
+        }
+        .role-access-card.card-public:hover {
+            border-color: #38bdf8;
+            box-shadow: 0 12px 30px rgba(56, 189, 248, 0.2);
+        }
+
+        .role-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .role-icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .card-admin .role-icon-box {
+            background: rgba(168, 85, 247, 0.15);
+            color: #c084fc;
+        }
+        .card-user .role-icon-box {
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+        }
+        .card-public .role-icon-box {
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+        }
+
+        .role-card-name {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 0.25rem;
+        }
+
+        .role-card-desc {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+            margin-bottom: 1rem;
+            min-height: 44px;
+        }
+
+        .role-cred-box {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            padding: 0.6rem 0.75rem;
+            font-size: 0.74rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .role-cred-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.25rem;
+        }
+        .role-cred-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .role-enter-btn {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: #ffffff;
+        }
+
+        .card-admin .role-enter-btn {
+            background: linear-gradient(135deg, #a855f7, #6366f1);
+        }
+        .card-user .role-enter-btn {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+        .card-public .role-enter-btn {
+            background: linear-gradient(135deg, #0284c7, #0369a1);
+        }
+
+        .role-enter-btn:hover {
+            opacity: 0.95;
+            transform: translateY(-1px);
+        }
+
+        /* Custom / Manual Form Accordion */
+        .manual-login-details {
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 0.75rem 1rem;
+            text-align: left;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .manual-login-summary {
+            cursor: pointer;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            outline: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .manual-login-summary:hover {
+            color: #ffffff;
+        }
+
+        .manual-form-body {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+    </style>
+</head>
+<body>
+    <div class="login-wrapper">
+        <div class="login-card glass-panel">
+            <!-- Brand Header -->
+            <div class="login-brand-header">
+                <img src="brand_assets/watergarden_symbol_transparent.png" alt="Watergarden Management" style="width: 82px; height: auto; margin: 0 auto 0.75rem; display: block; filter: drop-shadow(0 6px 16px rgba(0,0,0,0.35));">
+                <div class="login-title">Watergarden Management S.à r.l.</div>
+                <div class="login-subtitle">Portail de Gestion Sécurisée &amp; Cap Table • Luxembourg</div>
+            </div>
+
+            <!-- Standby Mode Banner -->
+            <div class="dev-standby-banner">
+                <div class="banner-icon">
+                    <i class="fa-solid fa-lock-open"></i>
+                </div>
+                <div class="banner-text">
+                    <strong style="color: #34d399;">MODALITÀ DI SVILUPPO — ACCESSO RAPIDO SENZA PASSWORD</strong><br>
+                    La struttura di ID, Ruoli, Autorizzazioni e Password è configurata e pronta. 
+                    Per facilitare lo sviluppo e i test, l'obbligo di digitare la password è temporaneamente in standby: 
+                    <strong>puoi accedere con un singolo clic</strong> sul profilo desiderato qui sotto.
+                </div>
+            </div>
+
+            <!-- 3 Role Access Cards -->
+            <div class="role-cards-grid">
+                
+                <!-- 1. ADMIN CARD -->
+                <div class="role-access-card card-admin">
+                    <div>
+                        <div class="role-card-top">
+                            <div class="role-icon-box">
+                                <i class="fa-solid fa-user-shield"></i>
+                            </div>
+                            <span class="badge badge-role-admin">
+                                <i class="fa-solid fa-crown"></i> SUPER ADMIN
+                            </span>
+                        </div>
+                        <div class="role-card-name">TUBIA EDOARDO</div>
+                        <div class="role-card-desc">
+                            Gérant Unique. Pieno controllo: modifica e lettura dati, gestione di tutte le password, creazione/blocco utenti e visibilità menu (occhi).
+                        </div>
+                        <div class="role-cred-box">
+                            <div class="role-cred-row">
+                                <span style="color: var(--text-muted);">ID Utente:</span>
+                                <span style="font-family: 'JetBrains Mono', monospace; color: #c084fc; font-weight: 700;">usr_admin</span>
+                            </div>
+                            <div class="role-cred-row">
+                                <span style="color: var(--text-muted);">Login / Email:</span>
+                                <span style="font-weight: 600; color: #ffffff;">tubia.edoardo@gmail.com</span>
+                            </div>
+                            <div class="role-cred-row">
+                                <span style="color: var(--text-muted);">Password pronta:</span>
+                                <span style="font-family: 'JetBrains Mono', monospace; color: #34d399; font-weight: 700;">edo2bia</span>
+                            </div>
+                            <div class="role-cred-row" style="margin-top: 4px; padding-top: 4px; border-top: 1px dashed rgba(255,255,255,0.08);">
+                                <span style="color: var(--text-muted);">Autorizzazione:</span>
+                                <span class="badge badge-perm-rw" style="font-size: 0.68rem;">Modifica &amp; Lettura</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="role-enter-btn" onclick="quickLoginAs('usr_admin')">
+                        <span>Entra come Admin</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- 2. USER CARD -->
+                <div class="role-access-card card-user">
+                    <div>
+                        <div class="role-card-top">
+                            <div class="role-icon-box">
+                                <i class="fa-solid fa-briefcase"></i>
+                            </div>
+                            <span class="badge badge-role-user">
+                                <i class="fa-solid fa-user-check"></i> USER
+                            </span>
+                        </div>
+                        <div class="role-card-name">CABINET FIDUCIAIRE</div>
+                        <div class="role-card-desc">
+                            Utente Operativo / Réviseur. Accesso alle pagine abilitate con occhio verde; facoltà di inserimento/modifica contabile.
+                        </div>
+                        <div class="role-cred-box">
+                            <div class="role-cred-row">
+                                <span style="color: var(--text-muted);">ID Utente:</span>
+                                <span style="font-family: 'JetBrains Mono', monospace; color: #34d399; font-weight: 700;">usr_fidu</span>
+                            </div>
+                            <div class="role-cred-row">
+                                <span style="color: var(--text-muted);">Login / Email:</span>
+                                <span style="font-weight: 600; color: #ffffff;">fidu.compta@luxfiduciaire.lu</span>
+                            </div>
+                            <div class="role-cred-row">
+                                <span style="color: var(--text-muted);">Password pronta:</span>
+                                <span style="font-family: 'JetBrains Mono', monospace; color: #34d399; font-weight: 700;">Fidu*Lux2026#...</span>
+                            </div>
+                            <div class="role-cred-row" style="margin-top: 4px; padding-top: 4px; border-top: 1px dashed rgba(255,255,255,0.08);">
+                                <span style="color: var(--text-muted);">Autorizzazione:</span>
+                                <span class="badge badge-perm-rw" style="font-size: 0.68rem;">Modifica &amp; Lettura</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="role-enter-btn" onclick="quickLoginAs('usr_fidu')">
+                        <span>Entra come User</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- 3. PUBLIC CARD -->
+                <div class="role-access-card card-public">
+                    <div>
+                        <div class="role-card-top">
+                            <div class="role-icon-box">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                            <span class="badge badge-role-public">
+                                <i class="fa-solid fa-eye"></i> PUBLIC
+                            </span>
+                        </div>
+                        <div class="role-card-name">ACCESSO PUBBLICO</div>
+                        <div class="role-card-desc">
+                            Stakeholder / Audit esterno. Visualizzazione cap table, bilanci e report in rigorosa Sola Lettura. Modifiche bloccate.
+                        </div>
+                        <div class="role-cred-box">
+                            <div class="role-cred-row">
+                                <span style="color: var(--text-muted);">ID Utente:</span>
+                                <span style="font-family: 'JetBrains Mono', monospace; color: #38bdf8; font-weight: 700;">usr_public</span>
+                            </div>
+                            <div class="role-cred-row">
+                                <span style="color: var(--text-muted);">Login / Email:</span>
+                                <span style="font-weight: 600; color: #ffffff;">public@watergarden.lu</span>
+                            </div>
+                            <div class="role-cred-row">
+                                <span style="color: var(--text-muted);">Password pronta:</span>
+                                <span style="font-family: 'JetBrains Mono', monospace; color: #34d399; font-weight: 700;">Watergarden...</span>
+                            </div>
+                            <div class="role-cred-row" style="margin-top: 4px; padding-top: 4px; border-top: 1px dashed rgba(255,255,255,0.08);">
+                                <span style="color: var(--text-muted);">Autorizzazione:</span>
+                                <span class="badge badge-perm-ro" style="font-size: 0.68rem;">Solo Lettura</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="role-enter-btn" onclick="quickLoginAs('usr_public')">
+                        <span>Entra come Public</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Optional Manual Login Drawer -->
+            <details class="manual-login-details">
+                <summary class="manual-login-summary">
+                    <span><i class="fa-solid fa-sliders" style="margin-right: 0.4rem;"></i> Oppure accedi inserendo ID o Username personalizzato</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </summary>
+                
+                <div class="manual-form-body">
+                    <form id="manual-login-form" onsubmit="handleManualLoginSubmit(event)">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                            <div class="login-form-group" style="margin-bottom: 0;">
+                                <label style="font-size: 0.78rem; color: var(--text-muted);">ID Utente o Username</label>
+                                <input type="text" id="manual-user-input" class="login-input" placeholder="admin, fidu, public o ID..." required>
+                            </div>
+                            <div class="login-form-group" style="margin-bottom: 0;">
+                                <label style="font-size: 0.78rem; color: var(--text-muted); display: flex; justify-content: space-between;">
+                                    <span>Password</span>
+                                    <span style="color: #10b981; font-size: 0.72rem;">(Opzionale per ora)</span>
+                                </label>
+                                <input type="text" id="manual-pwd-input" class="login-input" placeholder="Password (facoltativa)...">
+                            </div>
+                        </div>
+
+                        <div id="manual-login-error" style="display: none; color: #f43f5e; font-size: 0.8rem; margin-bottom: 0.85rem; padding: 0.45rem; background: rgba(244, 63, 94, 0.1); border-radius: 6px; border: 1px solid rgba(244, 63, 94, 0.3);"></div>
+
+                        <button type="submit" class="login-btn" style="padding: 0.65rem 1rem; font-size: 0.88rem;">
+                            <i class="fa-solid fa-arrow-right-to-bracket" style="margin-right: 0.4rem;"></i> Accedi con questo Profilo
+                        </button>
+                    </form>
+                </div>
+            </details>
+
+            <div style="margin-top: 1.5rem; font-size: 0.74rem; color: var(--text-muted);">
+                Watergarden Security Engine • Modulo Ruoli &amp; Controllo Accessi Attivo
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="auth.js?v=20261023c"></script>
+    <script>
+        // Accesso rapido immediato senza password
+        function quickLoginAs(userId) {
+            const users = getRegisteredUsers();
+            let found = users.find(u => u.id === userId);
+            if (!found) {
+                found = DEFAULT_AUTH_USERS.find(u => u.id === userId);
+            }
+            if (!found) {
+                alert("Utente non trovato.");
+                return;
+            }
+
+            if (found.status === 'blocked') {
+                alert("ACCESSO NEGATO: Questo account è stato bloccato dall'Amministratore.");
+                return;
+            }
+
+            sessionStorage.setItem('wg_session', JSON.stringify(found));
+            sessionStorage.removeItem('wg_admin_original_session');
+            sessionStorage.removeItem('wg_user_preview_mode');
+            localStorage.setItem('wg_remembered_session', JSON.stringify(found));
+            window.location.href = 'index.html';
+        }
+
+        // Accesso manuale con ID o username (senza obbligo password)
+        function handleManualLoginSubmit(e) {
+            e.preventDefault();
+            const inputVal = document.getElementById('manual-user-input').value.trim().toLowerCase();
+            const pwdVal = document.getElementById('manual-pwd-input').value.trim();
+            const errEl = document.getElementById('manual-login-error');
+
+            const users = getRegisteredUsers();
+            const found = users.find(u => {
+                const matchId = u.id && u.id.toLowerCase() === inputVal;
+                const matchUser = u.username && u.username.toLowerCase() === inputVal;
+                const matchAlias = u.aliases && u.aliases.map(a => a.toLowerCase()).includes(inputVal);
+                return matchId || matchUser || matchAlias;
+            });
+
+            if (!found) {
+                errEl.textContent = "Nessun account trovato con questo ID o Username. Controlla la tabella utenti o usa l'accesso rapido.";
+                errEl.style.display = 'block';
+                return;
+            }
+
+            if (found.status === 'blocked') {
+                errEl.textContent = "ACCESSO NEGATO: Questo account è stato bloccato dall'Amministratore.";
+                errEl.style.display = 'block';
+                return;
+            }
+
+            // In fase di sviluppo la password non è vincolante
+            sessionStorage.setItem('wg_session', JSON.stringify(found));
+            sessionStorage.removeItem('wg_admin_original_session');
+            sessionStorage.removeItem('wg_user_preview_mode');
+            localStorage.setItem('wg_remembered_session', JSON.stringify(found));
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPA Sombra Floresta - Social & Media | Watergarden Management</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css?v=20261023c">
+    <!-- Auth Guard -->
+    <script src="auth.js?v=20261023c"></script>
+    <link rel="shortcut icon" href="brand_assets/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="brand_assets/apple-touch-icon.png">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar glass-panel">
+            <div class="logo-container">
+                <a href="brand_assets/index.html" title="Charte Graphique et Brand Assets" style="text-decoration: none; display: flex; flex-direction: column; align-items: center;">
+                    <img src="brand_assets/watergarden_symbol_cropped.png" alt="Logo Watergarden" class="logo-img">
+                    <div class="logo-title">Watergarden</div>
+                    <div class="logo-subtitle">Management Sàrl • Lux</div>
+                </a>
+            </div>
+
+            <nav class="nav-menu">
+                <!-- AREA SOCIÉTÉ -->
+                <div class="nav-section-title" data-i18n="nav_section_societe">AREA SOCIÉTÉ</div>
+                <div class="nav-item-container" data-page="index.html">
+                    <a href="index.html" class="nav-item">
+                        <i class="fa-solid fa-chart-pie text-emerald"></i>
+                        <span data-i18n="nav_societe">La Société</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('index.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="partecipazioni.html">
+                    <a href="partecipazioni.html" class="nav-item">
+                        <i class="fa-solid fa-umbrella-beach text-amber"></i>
+                        <span data-i18n="nav_partecipazioni">Participation ArcoIris (Brésil)</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('partecipazioni.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="sombra_floresta.html">
+                    <a href="sombra_floresta.html" class="nav-item active">
+                        <i class="fa-solid fa-photo-film text-pink"></i>
+                        <span data-i18n="nav_sombra_floresta">SPA Sombra Floresta</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('sombra_floresta.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+
+                <!-- AREA FINANCES -->
+                <div class="nav-section-title" data-i18n="nav_section_finances">AREA FINANCES</div>
+                <div class="nav-item-container" data-page="contabilita.html">
+                    <a href="contabilita.html" class="nav-item">
+                        <i class="fa-solid fa-book-bookmark text-blue"></i>
+                        <span data-i18n="nav_contabilita">Comptabilité</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('contabilita.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="banca.html">
+                    <a href="banca.html" class="nav-item">
+                        <i class="fa-solid fa-building-columns text-cyan"></i>
+                        <span data-i18n="nav_banca">Comptes Bancaires</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('banca.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="ammortamenti.html">
+                    <a href="ammortamenti.html" class="nav-item">
+                        <i class="fa-solid fa-calculator text-emerald"></i>
+                        <span data-i18n="nav_ammortamenti">Amortissements</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('ammortamenti.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+
+                <!-- AREA DOCUMENTATION -->
+                <div class="nav-section-title" data-i18n="nav_section_documentation">AREA DOCUMENTATION</div>
+                <div class="nav-item-container" data-page="aml.html">
+                    <a href="aml.html" class="nav-item">
+                        <i class="fa-solid fa-shield-halved text-emerald"></i>
+                        <span data-i18n="nav_aml">Conformité AML</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('aml.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="documenti.html">
+                    <a href="documenti.html" class="nav-item">
+                        <i class="fa-solid fa-folder-open text-blue"></i>
+                        <span data-i18n="nav_documenti">Documents & Archives</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('documenti.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+
+                <div class="nav-section-title" data-i18n="nav_section_tools">GESTION</div>
+                <button class="btn-sidebar-action" onclick="refreshAppGlobalData(this)">
+                    <i class="fa-solid fa-rotate-right"></i>
+                    <span data-i18n="nav_refresh_data">Actualiser</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="update-badge">
+                    <span data-i18n="last_update">Dernière mise à jour :</span>
+                    <strong id="sidebar-updated-at">19/10/2026</strong>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Topbar -->
+            <header class="topbar glass-panel" style="position: relative; z-index: 100;">
+                <div class="topbar-title-area" style="display: flex; align-items: center; gap: 0.95rem;">
+                    <img src="uploads/Loghi/Logo Sombra palma.png" alt="Sombra Floresta" style="width: 48px; height: 48px; object-fit: contain; border-radius: 12px; background: rgba(255, 255, 255, 0.08); padding: 4px; border: 1.5px solid rgba(16, 185, 129, 0.35); box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);">
+                    <div>
+                        <h1><i class="fa-solid fa-photo-film text-pink"></i> <span data-i18n="sombra_title">SPA Sombra Floresta</span></h1>
+                        <p data-i18n="sombra_desc">Social & Media • Proiezione Video, Diaporama Fotografico HD & Presentazioni</p>
+                    </div>
+                </div>
+
+                <div class="topbar-actions">
+                    <!-- Language Selector -->
+                    <div class="lang-selector">
+                        <button class="lang-btn active" data-lang="fr" title="Français">
+                            <img src="https://flagcdn.com/w40/fr.png" alt="FR">
+                        </button>
+                        <button class="lang-btn" data-lang="it" title="Italiano">
+                            <img src="https://flagcdn.com/w40/it.png" alt="IT">
+                        </button>
+                        <button class="lang-btn" data-lang="pt" title="Português">
+                            <img src="https://flagcdn.com/w40/br.png" alt="PT">
+                        </button>
+                        <button class="lang-btn" data-lang="en" title="English">
+                            <img src="https://flagcdn.com/w40/gb.png" alt="EN">
+                        </button>
+                    </div>
+
+                    <!-- Direct link to Participation ArcoIris -->
+                    <a href="partecipazioni.html" class="btn-topbar-doc" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; padding: 0.5rem 0.95rem; border-radius: 9px; font-size: 0.82rem; font-weight: 700; background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(16, 185, 129, 0.2)); border: 1px solid rgba(245, 158, 11, 0.45); color: #fbbf24; transition: all 0.2s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                        <i class="fa-solid fa-umbrella-beach text-amber"></i>
+                        <span>Fiche Participation ArcoÍris</span>
+                        <i class="fa-solid fa-arrow-right" style="font-size: 0.72rem; opacity: 0.85;"></i>
+                    </a>
+
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle-btn" id="theme-toggle-btn" onclick="toggleTheme()" title="Mode Sombre/Clair">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- ===============================================================
+                 HERO SECTION: IL GRANDE RIQUADRO PER PROIETTARE + I SOCIAL UFFICIALI
+                 =============================================================== -->
+            <div class="sombra-media-grid">
+                
+                <!-- 1. SINISTRA: IL GRANDE RIQUADRO PER PROIETTARE -->
+                <div class="sombra-theater-wrapper" id="sombra-theater-wrapper">
+                    <!-- Theater Header -->
+                    <div class="sombra-theater-header">
+                        <div class="sombra-theater-title-info">
+                            <span class="sombra-projector-indicator" id="theater-format-badge">
+                                <i class="fa-solid fa-clapperboard"></i> VIDEO HD 16:9
+                            </span>
+                            <div class="sombra-current-file-title" id="theater-file-title">
+                                Sombra Floresta Resort - Panoramica Aerea & SPA
+                            </div>
+                        </div>
+
+                        <div class="sombra-theater-tools">
+                            <button type="button" class="sombra-theater-btn sombra-theater-btn-clear" id="btn-theater-clear" onclick="clearProjectionScreen()" title="Interrompi e svuota lo schermo">
+                                <i class="fa-solid fa-circle-xmark"></i> <span id="lbl-theater-clear" data-i18n="sombra_clear_screen">Svuota Schermo</span>
+                            </button>
+                            <button type="button" class="sombra-theater-btn" id="btn-theater-lights" onclick="toggleCinemaLight()" title="Attenua la luminosità della pagina per modalità cinema">
+                                <i class="fa-solid fa-lightbulb"></i> <span id="lbl-theater-lights">Luci Cinema</span>
+                            </button>
+                            <button type="button" class="sombra-theater-btn" id="btn-theater-fullscreen" onclick="toggleTheaterFullscreen()" title="Proietta a schermo intero">
+                                <i class="fa-solid fa-expand"></i> <span id="lbl-theater-fs">Schermo Intero</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Theater Stage Viewport -->
+                    <div class="sombra-screen-stage" id="sombra-screen-stage">
+                        <!-- Clickable Floating Exit Fullscreen Button -->
+                        <button type="button" class="sombra-exit-fs-floating-btn" id="btn-floating-exit-fs" onclick="exitTheaterFullscreen()" title="Esci dalla modalità schermo intero">
+                            <i class="fa-solid fa-compress"></i> <span>Esci da Schermo Intero</span>
+                        </button>
+
+                        <!-- Clickable Floating Clear/Exit Video Button Directly on Stage -->
+                        <button type="button" class="sombra-stage-close-btn" id="btn-stage-clear" onclick="clearProjectionScreen()" title="Chiudi il video proiettato e svuota lo schermo" style="display: inline-flex;">
+                            <i class="fa-solid fa-xmark"></i> <span data-i18n="sombra_close_video">Chiudi Video / Svuota Schermo</span>
+                        </button>
+
+                        <!-- Dynamic Ambient Glow Reflection -->
+                        <div class="sombra-ambient-glow" id="sombra-ambient-glow"></div>
+
+                        <!-- Canvas Media Layer -->
+                        <div class="sombra-media-canvas">
+                            
+                            <!-- A. CONTAINER VIDEO (Orizzontale o Verticale Reel) -->
+                            <div class="sombra-video-container active mode-horizontal" id="sombra-video-container">
+                                <div class="sombra-phone-frame" id="sombra-phone-frame">
+                                    <video id="sombra-main-video" controls playsinline preload="metadata"></video>
+                                </div>
+                            </div>
+
+                            <!-- B. CONTAINER DIAPORAMA FOTO (Con Autoplay e Frecce a Destra e Sinistra) -->
+                            <div class="sombra-diaporama-container" id="sombra-diaporama-container">
+                                <div class="sombra-diaporama-image-wrap">
+                                    <img src="watergarden_burle_marx_horizontal.jpg" alt="Diaporama Sombra" id="sombra-diaporama-img" class="sombra-diaporama-image">
+                                    
+                                    <!-- Freccetta Sinistra -->
+                                    <button type="button" class="sombra-nav-arrow sombra-arrow-prev" onclick="prevSlide()" title="Foto precedente (Freccia Sinistra)">
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </button>
+                                    
+                                    <!-- Freccetta Destra -->
+                                    <button type="button" class="sombra-nav-arrow sombra-arrow-next" onclick="nextSlide()" title="Foto successiva (Freccia Destra)">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    </button>
+
+                                    <!-- Diaporama Floating Controls Dock -->
+                                    <div class="sombra-diaporama-controls">
+                                        <button type="button" class="sombra-btn-autoplay" id="btn-diaporama-autoplay" onclick="toggleDiaporamaAutoplay()">
+                                             <i class="fa-solid fa-pause"></i> Pausa
+                                        </button>
+                                        <span class="sombra-slide-counter" id="diaporama-counter">1 / 8</span>
+                                        <div style="display: flex; gap: 4px; align-items: center; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 8px;">
+                                            <button type="button" class="sombra-theater-btn" style="padding: 2px 7px; font-size: 0.72rem;" onclick="setDiaporamaSpeed(3)" title="Velocità 3s">3s</button>
+                                            <button type="button" class="sombra-theater-btn" style="padding: 2px 7px; font-size: 0.72rem;" onclick="setDiaporamaSpeed(5)" title="Velocità 5s">5s</button>
+                                            <button type="button" class="sombra-theater-btn" style="padding: 2px 7px; font-size: 0.72rem;" onclick="setDiaporamaSpeed(8)" title="Velocità 8s">8s</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Bottom Autoplay Progress Countdown Bar -->
+                                    <div class="sombra-diaporama-progressbar" id="diaporama-progressbar"></div>
+                                </div>
+                            </div>
+
+                            <!-- C. CONTAINER PRESENTAZIONI / PDF -->
+                            <div class="sombra-pdf-container mode-horizontal" id="sombra-pdf-container">
+                                <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.5rem 1rem; background: rgba(30,41,59,0.95); border-bottom: 1px solid rgba(255,255,255,0.1); flex-wrap: wrap; gap: 0.5rem;">
+                                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                        <div style="font-weight: 700; color: #f472b6; font-size: 0.85rem;" id="sombra-pdf-title-tag">
+                                            <i class="fa-solid fa-file-pdf"></i> NEW Présentation structure Brésil.pdf
+                                        </div>
+                                        <!-- Aspect Ratio Switcher (Slide 16:9 vs Documento A4) -->
+                                        <div class="sombra-pdf-aspect-toggle" id="sombra-pdf-aspect-toggle">
+                                            <button type="button" class="sombra-aspect-pill active" id="btn-pdf-aspect-horiz" onclick="setPdfAspect('horizontal')" title="Modalità Slide Orizzontale (Adatta a schermo 16:9)">
+                                                <i class="fa-solid fa-desktop"></i> <span>Slide 16:9</span>
+                                            </button>
+                                            <button type="button" class="sombra-aspect-pill" id="btn-pdf-aspect-vert" onclick="setPdfAspect('vertical')" title="Modalità Documento Verticale (Scorrimento A4)">
+                                                <i class="fa-solid fa-file-lines"></i> <span>Documento A4</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                                        <a href="uploads/Documenti/NEW%20Pr%C3%A9sentation%20structure%20Br%C3%A9sil.pdf" id="sombra-pdf-download-btn" download class="sombra-theater-btn" style="padding: 0.35rem 0.75rem; font-size: 0.75rem;">
+                                            <i class="fa-solid fa-download"></i> Scarica PDF
+                                        </a>
+                                        <a href="uploads/Documenti/NEW%20Pr%C3%A9sentation%20structure%20Br%C3%A9sil.pdf" id="sombra-pdf-ext-btn" target="_blank" class="sombra-theater-btn" style="padding: 0.35rem 0.75rem; font-size: 0.75rem;">
+                                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Apri Esterno
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="sombra-pdf-frame-wrapper" id="sombra-pdf-frame-wrapper">
+                                    <iframe id="sombra-pdf-iframe" class="sombra-pdf-iframe" src="uploads/Documenti/NEW%20Pr%C3%A9sentation%20structure%20Br%C3%A9sil.pdf#page=1&view=Fit"></iframe>
+                                </div>
+                            </div>
+
+                            <!-- D. CONTAINER STANDBY (Schermo in Attesa / Svuotato) -->
+                            <div class="sombra-standby-container" id="sombra-standby-container">
+                                <div class="sombra-standby-inner">
+                                    <div class="sombra-standby-icon-wrap">
+                                        <img src="uploads/Loghi/Logo Sombra palma.png" alt="Sombra Floresta" class="sombra-standby-logo">
+                                        <div class="sombra-standby-pulse"></div>
+                                    </div>
+                                    <h3 class="sombra-standby-title" data-i18n="sombra_standby_title">Écran en Veille • Prêt pour la Projection</h3>
+                                    <p class="sombra-standby-desc" data-i18n="sombra_standby_desc">
+                                        Aucun média projeté. Double-cliquez sur une vidéo, une photo ou une présentation ci-dessous pour lancer la projection.
+                                    </p>
+                                    <div class="sombra-standby-badges">
+                                        <span class="badge" style="background: rgba(52, 211, 153, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3);">
+                                            <i class="fa-solid fa-clapperboard"></i> Vidéos MP4
+                                        </span>
+                                        <span class="badge" style="background: rgba(251, 191, 36, 0.15); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.3);">
+                                            <i class="fa-solid fa-images"></i> Photos HD
+                                        </span>
+                                        <span class="badge" style="background: rgba(236, 72, 153, 0.15); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.3);">
+                                            <i class="fa-solid fa-file-pdf"></i> Présentations PDF
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Theater Footer -->
+                    <div class="sombra-theater-footer">
+                        <div id="theater-footer-info">
+                            <strong>Sombra_Floresta_Resort_Aerial_4K.mp4</strong> &bull; 24.8 MB &bull; Formato: <span style="color: #38bdf8;">MP4 16:9 • Orizzontale</span>
+                        </div>
+                        <div class="sombra-theater-tip">
+                            <i class="fa-solid fa-lightbulb"></i>
+                            <span data-i18n="sombra_dblclick_info">Doppio clic per proiettare</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. DESTRA: RIQUADRO SOCIAL UFFICIALI (Design Replica Allegato con Logo Palma Sombra) -->
+                <div class="sombra-social-card">
+                    <!-- Header -->
+                    <div class="sombra-social-card-header">
+                        <div class="sombra-social-title">
+                            <span class="sombra-social-dot"></span>
+                            <span data-i18n="sombra_liens_officiels">NOS LIENS OFFICIELS</span>
+                        </div>
+                        <span class="sombra-social-pill" data-i18n="sombra_web_social_pill">Web & Social</span>
+                    </div>
+
+                    <!-- Thin Divider -->
+                    <div class="sombra-social-divider"></div>
+
+                    <!-- 1. SITE WEB OFFICIEL (Verde Foresta Scuro) -->
+                    <a href="https://www.sombraeaguafresca.com.br/spa" target="_blank" rel="noopener noreferrer" class="sombra-social-btn sombra-btn-site" title="Accedi al sito ufficiale Sombra SPA Resort">
+                        <div class="sombra-social-avatar">
+                            <img src="uploads/Loghi/Logo Sombra palma.png" alt="Sombra Floresta Palma">
+                        </div>
+                        <div class="sombra-social-texts">
+                            <div class="sombra-social-main">SITE WEB OFFICIEL</div>
+                            <div class="sombra-social-sub">sombraeaguafresca.com.br/spa</div>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square sombra-social-ext"></i>
+                    </a>
+
+                    <!-- 2. FACEBOOK (Blu Royal) -->
+                    <a href="https://www.facebook.com/sombraeaguafresca" target="_blank" rel="noopener noreferrer" class="sombra-social-btn sombra-btn-fb" title="Pagina Facebook ufficiale">
+                        <div class="sombra-social-avatar">
+                            <img src="uploads/Loghi/Logo Sombra palma.png" alt="Sombra Floresta Palma">
+                        </div>
+                        <div class="sombra-social-texts">
+                            <div class="sombra-social-main">
+                                FACEBOOK <i class="fa-brands fa-facebook"></i>
+                            </div>
+                            <div class="sombra-social-sub">@sombraeaguafresca</div>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square sombra-social-ext"></i>
+                    </a>
+
+                    <!-- 3. INSTAGRAM RESORT (Gradiente Instagram Magenta-Arancio) -->
+                    <a href="https://www.instagram.com/sombraeagua" target="_blank" rel="noopener noreferrer" class="sombra-social-btn sombra-btn-ig" title="Profilo Instagram ufficiale Resort Sombra">
+                        <div class="sombra-social-avatar">
+                            <img src="uploads/Loghi/Logo Sombra palma.png" alt="Sombra Floresta Palma">
+                        </div>
+                        <div class="sombra-social-texts">
+                            <div class="sombra-social-main">
+                                INSTAGRAM <i class="fa-brands fa-instagram"></i>
+                            </div>
+                            <div class="sombra-social-sub">@sombraeagua</div>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square sombra-social-ext"></i>
+                    </a>
+
+                    <!-- 4. INSTAGRAM YEU SPA (Gradiente Fucsia-Rosa) -->
+                    <a href="https://www.instagram.com/yeuspapipa" target="_blank" rel="noopener noreferrer" class="sombra-social-btn sombra-btn-yeuspa" title="Profilo Instagram Yeu SPA Pipa">
+                        <div class="sombra-social-avatar">
+                            <img src="uploads/Loghi/YEU LOGOS/logo-horizontal-completa.png" alt="Logo YEU SPA PIPA">
+                        </div>
+                        <div class="sombra-social-texts">
+                            <div class="sombra-social-main">
+                                YEU SPA PIPA <i class="fa-brands fa-instagram"></i>
+                            </div>
+                            <div class="sombra-social-sub">@yeuspapipa • Services & SPA</div>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square sombra-social-ext"></i>
+                    </a>
+
+                    <!-- 5. BOOKING.COM (Card Chiara con Pill Officiel come nella foto) -->
+                    <a href="https://www.booking.com/hotel/br/hostel-sombra-e-agua-fresca.html" target="_blank" rel="noopener noreferrer" class="sombra-social-btn sombra-btn-booking" title="Prenotazione diretta Booking.com">
+                        <div class="sombra-social-avatar">
+                            <img src="uploads/Loghi/Logo Sombra palma.png" alt="Sombra Floresta Palma">
+                        </div>
+                        <div class="sombra-social-texts">
+                            <div class="sombra-social-main" style="color: #0f172a;">
+                                Booking.com <i class="fa-solid fa-bed" style="color: #0284c7; font-size: 0.85rem;"></i>
+                            </div>
+                            <div class="sombra-social-sub" style="color: #64748b;">Sombra Floresta SPA</div>
+                        </div>
+                        <span class="sombra-booking-pill">Officiel</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square sombra-social-ext" style="color: #64748b; margin-left: 8px;"></i>
+                    </a>
+
+                    <!-- Drag & Drop Upload Zone per testare qualsiasi video, foto o PDF locale -->
+                    <div class="sombra-upload-box" id="sombra-file-dropzone" title="Trascina o clicca per caricare file locali (.mp4, .jpg, .pdf)">
+                        <input type="file" id="sombra-file-input" accept=".mp4,.mpg4,.jpg,.jpeg,.png,.pdf" multiple style="display: none;">
+                        <i class="fa-solid fa-cloud-arrow-up text-emerald" style="font-size: 1.5rem; margin-bottom: 0.35rem; display: block;"></i>
+                        <strong style="color: var(--text-main); font-size: 0.84rem; display: block;">Carica o Trascina File Personali</strong>
+                        <span style="font-size: 0.72rem; color: var(--text-muted);">Supporta .mp4, .mpg4, .jpg, .png e .pdf</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ===============================================================
+                 PARTE DOCUMENTI: 3 RIQUADRI PICCOLI "Videos" - "Photos" - "Presentazioni"
+                 CON TENDINA ACCORDION E DOPPIO CLIC PER PROIETTARE
+                 =============================================================== -->
+            <section class="sombra-docs-section">
+                <div class="sombra-docs-section-title" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                        <h2><i class="fa-solid fa-folder-tree text-emerald"></i> <span data-i18n="sombra_docs_heading">DOCUMENTI & MEDIA SOMBRA FLORESTA</span></h2>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem;" data-i18n="sombra_docs_subheading">
+                            Clicca su un riquadro per aprire la lista a tendina • Fai DOPPIO CLIC su un documento per proiettarlo sul grande schermo
+                        </p>
+                    </div>
+                    <button type="button" class="sombra-btn-action-icon" onclick="resetSombraMediaToDefaults()" title="Ripristina file multimediali predefiniti di fabbrica" style="font-size: 0.8rem; padding: 0.45rem 0.85rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-muted); cursor: pointer; display: inline-flex; align-items: center; gap: 6px; width: auto; height: auto;">
+                        <i class="fa-solid fa-rotate-left"></i> <span data-i18n="sombra_btn_reset_defaults">Ripristina Predefiniti</span>
+                    </button>
+                </div>
+
+                <!-- 3 Riquadri Piccoli -->
+                <div class="sombra-doc-cards-grid">
+                    
+                    <!-- 1. Box "Videos" -->
+                    <div class="sombra-doc-cat-card active" id="card-cat-videos" onclick="toggleTendina('videos')">
+                        <div class="sombra-doc-cat-left">
+                            <div class="sombra-cat-icon sombra-cat-icon-video">
+                                <i class="fa-solid fa-film"></i>
+                            </div>
+                            <div class="sombra-cat-meta">
+                                <h3 data-i18n="sombra_cat_videos_title">Videos</h3>
+                                <p data-i18n="sombra_cat_videos_desc">Clip promozionali, Reel verticali e tour</p>
+                            </div>
+                        </div>
+                        <div class="sombra-cat-right">
+                            <span class="sombra-cat-badge" id="count-cat-videos">4 Video</span>
+                            <i class="fa-solid fa-chevron-down sombra-cat-chevron"></i>
+                        </div>
+                    </div>
+
+                    <!-- 2. Box "Photos" -->
+                    <div class="sombra-doc-cat-card" id="card-cat-photos" onclick="toggleTendina('photos')">
+                        <div class="sombra-doc-cat-left">
+                            <div class="sombra-cat-icon sombra-cat-icon-photo">
+                                <i class="fa-solid fa-camera-retro"></i>
+                            </div>
+                            <div class="sombra-cat-meta">
+                                <h3 data-i18n="sombra_cat_photos_title">Photos</h3>
+                                <p data-i18n="sombra_cat_photos_desc">Diaporama fotografico ad alta risoluzione</p>
+                            </div>
+                        </div>
+                        <div class="sombra-cat-right">
+                            <span class="sombra-cat-badge" id="count-cat-photos">8 Foto</span>
+                            <i class="fa-solid fa-chevron-down sombra-cat-chevron"></i>
+                        </div>
+                    </div>
+
+                    <!-- 3. Box "Presentazioni" -->
+                    <div class="sombra-doc-cat-card" id="card-cat-presentazioni" onclick="toggleTendina('presentazioni')">
+                        <div class="sombra-doc-cat-left">
+                            <div class="sombra-cat-icon sombra-cat-icon-pres">
+                                <i class="fa-solid fa-file-pdf"></i>
+                            </div>
+                            <div class="sombra-cat-meta">
+                                <h3 data-i18n="sombra_cat_pres_title">Presentazioni</h3>
+                                <p data-i18n="sombra_cat_pres_desc">Brochure, relazioni e presentazioni PDF</p>
+                            </div>
+                        </div>
+                        <div class="sombra-cat-right">
+                            <span class="sombra-cat-badge" id="count-cat-presentazioni">3 PDF</span>
+                            <i class="fa-solid fa-chevron-down sombra-cat-chevron"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- TENDINE (DROPDOWN ACCORDION LISTS) -->
+
+                <!-- A. Tendina Videos -->
+                <div class="sombra-tendina-container open" id="tendina-videos">
+                    <div class="sombra-tendina-header">
+                        <div class="sombra-tendina-title">
+                            <i class="fa-solid fa-film text-cyan"></i>
+                            <span>Elenco File Video (.mp4 / .mpg4) • Accesso con Doppio Clic</span>
+                        </div>
+                        <button type="button" class="sombra-theater-btn" onclick="document.getElementById('sombra-file-input').click()">
+                            <i class="fa-solid fa-plus text-emerald"></i> Aggiungi Video MP4
+                        </button>
+                    </div>
+                    <div class="sombra-tendina-list" id="list-videos">
+                        <!-- Popolato dinamicamente da sombra_floresta_app.js -->
+                    </div>
+                </div>
+
+                <!-- B. Tendina Photos -->
+                <div class="sombra-tendina-container" id="tendina-photos">
+                    <div class="sombra-tendina-header">
+                        <div class="sombra-tendina-title">
+                            <i class="fa-solid fa-camera-retro text-amber"></i>
+                            <span>Galleria Diaporama Foto (.jpg / .png) • Accesso con Doppio Clic</span>
+                        </div>
+                        <button type="button" class="sombra-theater-btn" onclick="document.getElementById('sombra-file-input').click()">
+                            <i class="fa-solid fa-plus text-amber"></i> Aggiungi Foto JPG
+                        </button>
+                    </div>
+                    <div class="sombra-tendina-list" id="list-photos">
+                        <!-- Popolato dinamicamente da sombra_floresta_app.js -->
+                    </div>
+                </div>
+
+                <!-- C. Tendina Presentazioni -->
+                <div class="sombra-tendina-container" id="tendina-presentazioni">
+                    <div class="sombra-tendina-header">
+                        <div class="sombra-tendina-title">
+                            <i class="fa-solid fa-file-pdf text-rose"></i>
+                            <span>Documenti & Presentazioni (.pdf) • Accesso con Doppio Clic</span>
+                        </div>
+                        <button type="button" class="sombra-theater-btn" onclick="document.getElementById('sombra-file-input').click()">
+                            <i class="fa-solid fa-plus text-rose"></i> Aggiungi Presentazione PDF
+                        </button>
+                    </div>
+                    <div class="sombra-tendina-list" id="list-presentazioni">
+                        <!-- Popolato dinamicamente da sombra_floresta_app.js -->
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <!-- Application Logic Scripts -->
+    <script src="i18n.js"></script>
+    <script src="sombra_floresta_app.js?v=20261023c"></script>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('theme-light');
+            const isLight = document.body.classList.contains('theme-light');
+            localStorage.setItem('wg_theme', isLight ? 'light' : 'dark');
+            const icon = document.querySelector('#theme-toggle-btn i');
+            if (icon) {
+                icon.className = isLight ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('wg_theme') === 'light') {
+                document.body.classList.add('theme-light');
+                const icon = document.querySelector('#theme-toggle-btn i');
+                if (icon) icon.className = 'fa-solid fa-sun';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documents & Archives Officielles - Watergarden Management Sàrl</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css?v=20261023c">
+    <!-- Auth Guard -->
+    <script src="auth.js?v=20261023c"></script>
+    <link rel="shortcut icon" href="brand_assets/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="brand_assets/apple-touch-icon.png">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar glass-panel">
+            <div class="logo-container">
+                <a href="brand_assets/index.html" title="Charte Graphique et Brand Assets" style="text-decoration: none; display: flex; flex-direction: column; align-items: center;">
+                    <img src="brand_assets/watergarden_symbol_cropped.png" alt="Logo Watergarden" class="logo-img">
+                    <div class="logo-title">Watergarden</div>
+                    <div class="logo-subtitle">Management Sàrl • Lux</div>
+                </a>
+            </div>
+
+            <nav class="nav-menu">
+                <!-- AREA SOCIÉTÉ -->
+                <div class="nav-section-title" data-i18n="nav_section_societe">AREA SOCIÉTÉ</div>
+                <div class="nav-item-container" data-page="index.html">
+                    <a href="index.html" class="nav-item">
+                        <i class="fa-solid fa-chart-pie text-emerald"></i>
+                        <span data-i18n="nav_societe">La Société</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('index.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="partecipazioni.html">
+                    <a href="partecipazioni.html" class="nav-item">
+                        <i class="fa-solid fa-umbrella-beach text-amber"></i>
+                        <span data-i18n="nav_partecipazioni">Participation ArcoIris (Brésil)</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('partecipazioni.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="sombra_floresta.html">
+                    <a href="sombra_floresta.html" class="nav-item">
+                        <i class="fa-solid fa-photo-film text-pink"></i>
+                        <span data-i18n="nav_sombra_floresta">SPA Sombra Floresta</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('sombra_floresta.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+
+                <!-- AREA FINANCES -->
+                <div class="nav-section-title" data-i18n="nav_section_finances">AREA FINANCES</div>
+                <div class="nav-item-container" data-page="contabilita.html">
+                    <a href="contabilita.html" class="nav-item">
+                        <i class="fa-solid fa-book-bookmark text-blue"></i>
+                        <span data-i18n="nav_contabilita">Comptabilité</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('contabilita.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="banca.html">
+                    <a href="banca.html" class="nav-item">
+                        <i class="fa-solid fa-building-columns text-cyan"></i>
+                        <span data-i18n="nav_banca">Comptes Bancaires</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('banca.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="ammortamenti.html">
+                    <a href="ammortamenti.html" class="nav-item">
+                        <i class="fa-solid fa-calculator text-emerald"></i>
+                        <span data-i18n="nav_ammortamenti">Amortissements</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('ammortamenti.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+
+                <!-- AREA DOCUMENTATION -->
+                <div class="nav-section-title" data-i18n="nav_section_documentation">AREA DOCUMENTATION</div>
+                <div class="nav-item-container" data-page="aml.html">
+                    <a href="aml.html" class="nav-item">
+                        <i class="fa-solid fa-shield-halved text-emerald"></i>
+                        <span data-i18n="nav_aml">Conformité AML</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('aml.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="documenti.html">
+                    <a href="documenti.html" class="nav-item active">
+                        <i class="fa-solid fa-folder-open text-blue"></i>
+                        <span data-i18n="nav_documenti">Documents & Archives</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('documenti.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+
+                <div class="nav-section-title" data-i18n="nav_section_tools">GESTION</div>
+                <button class="btn-sidebar-action" onclick="refreshAppGlobalData(this)">
+                    <i class="fa-solid fa-rotate-right"></i>
+                    <span data-i18n="nav_refresh_data">Actualiser</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="update-badge">
+                    <span data-i18n="last_update">Dernière mise à jour :</span>
+                    <strong id="sidebar-updated-at">17/10/2026</strong>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Topbar -->
+            <header class="topbar glass-panel" style="position: relative; z-index: 100;">
+                <div class="topbar-title-area">
+                    <h1><i class="fa-solid fa-folder-open text-blue"></i> <span data-i18n="doc_title">Documents & Archives Officielles</span></h1>
+                    <p data-i18n="doc_desc">Accès direct et téléchargement des liasses fiscales eCDF 2024-2025, Registres des Associés et contrats de participation.</p>
+                </div>
+
+                <div class="topbar-actions">
+                    <!-- Language Selector -->
+                    <div class="lang-selector">
+                        <button class="lang-btn active" data-lang="fr" title="Français">
+                            <img src="https://flagcdn.com/w40/fr.png" alt="FR">
+                        </button>
+                        <button class="lang-btn" data-lang="it" title="Italiano">
+                            <img src="https://flagcdn.com/w40/it.png" alt="IT">
+                        </button>
+                        <button class="lang-btn" data-lang="pt" title="Português">
+                            <img src="https://flagcdn.com/w40/br.png" alt="PT">
+                        </button>
+                        <button class="lang-btn" data-lang="en" title="English">
+                            <img src="https://flagcdn.com/w40/gb.png" alt="EN">
+                        </button>
+                    </div>
+
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle-btn" id="theme-toggle-btn" onclick="toggleTheme()" title="Mode Sombre/Clair">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Entity Switcher Strip: Watergarden (Holding) vs ArcoIris (Controllata) -->
+            <div class="glass-panel" style="padding: 0.85rem 1.25rem; margin-bottom: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; border-radius: 12px;">
+                <div style="display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.6px;">
+                        <i class="fa-solid fa-building-flag text-emerald"></i> <span data-i18n="doc_filter_entity">Périmètre / Entité :</span>
+                    </span>
+                    <button class="entity-toggle-btn active" id="btn-entity-all" onclick="setDocEntity('all', this)">
+                        <i class="fa-solid fa-layer-group"></i> <span data-i18n="doc_entity_all">Consolidé (Tous)</span>
+                    </button>
+                    <button class="entity-toggle-btn" id="btn-entity-watergarden" onclick="setDocEntity('watergarden', this)">
+                        <i class="fa-solid fa-landmark text-blue"></i> <span data-i18n="doc_entity_wg">Watergarden Sàrl (Holding LUX)</span>
+                        <span class="badge badge-entity-count-wg" id="badge-count-wg">37</span>
+                    </button>
+                    <button class="entity-toggle-btn" id="btn-entity-arcoiris" onclick="setDocEntity('arcoiris', this)">
+                        <span style="font-size: 0.95rem;">🇧🇷</span> <span data-i18n="doc_entity_arcoiris">Controllata Arco-Íris Ltda (Brésil)</span>
+                        <span class="badge badge-entity-count-arco" id="badge-count-arcoiris">11</span>
+                    </button>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span class="badge" id="entity-status-badge" style="background: rgba(255, 255, 255, 0.08); color: var(--text-muted); font-size: 0.75rem; font-weight: 600;">
+                        <i class="fa-solid fa-layer-group"></i> Tous les documents du groupe
+                    </span>
+                </div>
+            </div>
+
+            <!-- Dedicated ArcoIris Showcase Banner (Shown when ArcoIris entity or tab is active) -->
+            <div id="arcoiris-dedicated-banner" class="arcoiris-showcase-banner" style="display: none;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.85rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span style="font-size: 2.2rem;">🇧🇷</span>
+                        <div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                                <h3 class="arcoiris-showcase-title">
+                                    Arco-Íris Administradora de Bens e Imóveis Ltda
+                                </h3>
+                                <span class="badge" style="background: #0284c7; color: #fff; font-size: 0.72rem; padding: 0.2rem 0.6rem;">CNPJ 06.036.746/0001-31</span>
+                                <span class="badge badge-doc-arco" style="font-size: 0.72rem; padding: 0.2rem 0.6rem; margin-top: 0;">Filiale Détenue à 99,09%</span>
+                            </div>
+                            <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.25rem; margin-bottom: 0;">
+                                Société de droit brésilien • Siège : Tibau do Sul - Rio Grande do Norte (RN) • Exploitation de l'Actif Hôtelier 'Sombra e Água Fresca SPA Resort'.
+                            </p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <a href="uploads/Documenti/Bilans Arcoiris R$/2025/Balancete 2025 - Arco Iris.pdf" download class="btn btn-primary btn-sm" style="background: #0284c7; font-size: 0.75rem;">
+                            <i class="fa-solid fa-file-pdf"></i> Balancete 2025 (PDF)
+                        </a>
+                        <a href="uploads/Documenti/Bilans Arcoiris R$/2025/Balancete 2025 - Arco Iris.xls" download class="btn btn-secondary btn-sm" style="font-size: 0.75rem;">
+                            <i class="fa-solid fa-file-excel text-emerald"></i> Balancete 2025 (XLS)
+                        </a>
+                        <a href="partecipazioni.html" class="btn btn-secondary btn-sm" style="font-size: 0.75rem;">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Fiche Filiale
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 4 Quick Specs for ArcoIris -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem;">
+                    <div class="arcoiris-spec-box">
+                        <span style="font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase;">Ativo Total (Balanço 2025)</span>
+                        <div class="arcoiris-spec-value arcoiris-val-blue">R$ 14.378.404,85</div>
+                    </div>
+                    <div class="arcoiris-spec-box">
+                        <span style="font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase;">Patrimônio Imobiliário</span>
+                        <div class="arcoiris-spec-value arcoiris-val-emerald">14.500 m² titrés</div>
+                    </div>
+                    <div class="arcoiris-spec-box">
+                        <span style="font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase;">Prêts Holding 7%</span>
+                        <div class="arcoiris-spec-value arcoiris-val-amber">548.306,88 €</div>
+                    </div>
+                    <div class="arcoiris-spec-box">
+                        <span style="font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase;">Gouvernance Brésil</span>
+                        <div class="arcoiris-spec-value arcoiris-val-purple">Franco Toscano (Dir.)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Document Actions & Toolbar -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 1rem;">
+                <!-- Rubriche Tabs -->
+                <div class="doc-rubriche-nav" style="margin-bottom: 0;">
+                    <button class="doc-rubrica-btn active" onclick="setDocRubrica('all', this)">
+                        <i class="fa-solid fa-layer-group"></i>
+                        <span data-i18n="doc_tab_all">Tous les Documents</span>
+                        <span class="doc-badge-count" id="count-all">0</span>
+                    </button>
+                    <button class="doc-rubrica-btn" id="rubrica-btn-arcoiris" onclick="setDocRubrica('Arcoiris', this)" style="border-color: rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.08);">
+                        <span style="font-size: 0.95rem;">🇧🇷</span>
+                        <span data-i18n="doc_tab_arcoiris" style="color: #34d399; font-weight: 700;">Controllata Arco-Íris</span>
+                        <span class="doc-badge-count" id="count-arcoiris" style="background: rgba(16, 185, 129, 0.3); color: #34d399;">11</span>
+                    </button>
+                    <button class="doc-rubrica-btn" onclick="setDocRubrica('Bilanci', this)">
+                        <i class="fa-solid fa-file-invoice text-emerald"></i>
+                        <span data-i18n="doc_tab_bilanci">Bilanci & eCDF</span>
+                        <span class="doc-badge-count" id="count-bilanci">0</span>
+                    </button>
+                    <button class="doc-rubrica-btn" onclick="setDocRubrica('Statuti', this)">
+                        <i class="fa-solid fa-file-contract text-blue"></i>
+                        <span data-i18n="doc_tab_statuti">Statuti & Registri</span>
+                        <span class="doc-badge-count" id="count-statuti">0</span>
+                    </button>
+                    <button class="doc-rubrica-btn" onclick="setDocRubrica('Certificati', this)">
+                        <i class="fa-solid fa-stamp text-amber"></i>
+                        <span data-i18n="doc_tab_certificati">Certificati (RCS / RBE)</span>
+                        <span class="doc-badge-count" id="count-certificati">0</span>
+                    </button>
+                    <button class="doc-rubrica-btn" onclick="setDocRubrica('Estratti Bancari', this)">
+                        <i class="fa-solid fa-building-columns text-cyan"></i>
+                        <span data-i18n="doc_tab_banche">Estratti Bancari</span>
+                        <span class="doc-badge-count" id="count-banche">0</span>
+                    </button>
+                    <button class="doc-rubrica-btn" onclick="setDocRubrica('Loghi', this)">
+                        <i class="fa-solid fa-image text-rose"></i>
+                        <span data-i18n="doc_tab_loghi">Loghi & Brand</span>
+                        <span class="doc-badge-count" id="count-loghi">0</span>
+                    </button>
+                </div>
+
+                <!-- Right Controls: Search & Add Document -->
+                <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                    <div id="indexeddb-pill" class="badge" style="background: rgba(16, 185, 129, 0.12); color: #34d399; font-size: 0.75rem; display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.4rem 0.75rem; border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 20px;" title="Archivio IndexedDB attivo per documenti pesanti (senza limiti di memoria)">
+                        <i class="fa-solid fa-database text-emerald"></i>
+                        <span id="indexeddb-status-text">IndexedDB Actif</span>
+                    </div>
+                    <div style="position: relative;">
+                        <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.8rem;"></i>
+                        <input type="text" class="filter-input" placeholder="Rechercher un document..." data-i18n-placeholder="doc_search_placeholder" oninput="filterDocsBySearch(this.value)" style="padding-left: 2rem; width: 220px;">
+                    </div>
+                    <button class="btn btn-primary" onclick="openAddDocModal()">
+                        <i class="fa-solid fa-plus-circle"></i> <span data-i18n="doc_btn_new">Nouveau Document</span>
+                    </button>
+                    <button class="btn btn-secondary" onclick="resetDefaultDocuments()" title="Réinitialiser l'archive aux valeurs officielles">
+                        <i class="fa-solid fa-arrow-rotate-left"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Documents Table Container -->
+            <div class="glass-panel" style="padding: 1.5rem; margin-bottom: 2rem;">
+                <div class="table-wrapper">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 38px; text-align: center;" title="Trascina in su o in giù per riordinare"><i class="fa-solid fa-arrows-up-down text-muted" style="font-size: 0.85rem;"></i></th>
+                                <th style="width: 45px; text-align: center;" data-i18n="doc_th_format">Format</th>
+                                <th data-i18n="doc_th_title">Intitulé du Document & Description</th>
+                                <th style="width: 140px;" data-i18n="doc_th_category">Rubrique</th>
+                                <th style="width: 160px;" data-i18n="doc_th_ref">Réf. / Taille</th>
+                                <th style="width: 140px;" data-i18n="doc_th_date">Date & Statut</th>
+                                <th class="text-right" style="width: 155px; padding-right: 1.25rem;" data-i18n="doc_th_actions">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="docs-tbody">
+                            <!-- Populated dynamically by documenti_app.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Summary KPI Cards -->
+            <section class="dashboard-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <div class="glass-panel" style="padding: 1.25rem; display: flex; align-items: center; gap: 1rem;">
+                    <div class="kpi-icon bg-emerald" style="width: 44px; height: 44px; min-width: 44px; font-size: 1.2rem;">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </div>
+                    <div>
+                        <div data-i18n="doc_kpi_ecdf" style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Liasses Fiscales eCDF</div>
+                        <strong style="font-size: 1.05rem; color: var(--text-main);">2024 & 2025 Déposées</strong>
+                        <div class="kpi-sub-emerald" style="font-size: 0.72rem;">RCSL B 149.151</div>
+                    </div>
+                </div>
+
+                <div class="glass-panel" style="padding: 1.25rem; display: flex; align-items: center; gap: 1rem;">
+                    <div class="kpi-icon bg-blue" style="width: 44px; height: 44px; min-width: 44px; font-size: 1.2rem;">
+                        <i class="fa-solid fa-stamp"></i>
+                    </div>
+                    <div>
+                        <div data-i18n="doc_kpi_cert" style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Certifications LBR</div>
+                        <strong style="font-size: 1.05rem; color: var(--text-main);">Extrait RCS & RBE 05.2026</strong>
+                        <div class="kpi-sub-cyan" style="font-size: 0.72rem;">Conformité à jour</div>
+                    </div>
+                </div>
+
+                <div class="glass-panel" style="padding: 1.25rem; display: flex; align-items: center; gap: 1rem;">
+                    <div class="kpi-icon bg-amber" style="width: 44px; height: 44px; min-width: 44px; font-size: 1.2rem;">
+                        <i class="fa-solid fa-hotel"></i>
+                    </div>
+                    <div>
+                        <div data-i18n="part_fiche_identite" style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Filiale ArcoIris Brésil</div>
+                        <strong style="font-size: 1.05rem; color: var(--text-main);">Matrícula & Licença IDEMA</strong>
+                        <div style="font-size: 0.72rem; color: #fbbf24;">Sombra SPA • Tibau do Sul</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- MODAL 1: VISUALIZZATORE DOCUMENTO (Eye) -->
+    <div class="modal-overlay" id="view-doc-modal">
+        <div class="modal-container" style="max-width: 950px; height: 88vh; display: flex; flex-direction: column;">
+            <div class="modal-header">
+                <div class="modal-title" style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
+                    <i class="fa-solid fa-file-pdf text-rose"></i>
+                    <span id="view-doc-title">Aperçu du Document</span>
+                    <span id="view-doc-storage-badge" class="badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399; font-size: 0.68rem; display: none;">
+                        <i class="fa-solid fa-database"></i> IndexedDB
+                    </span>
+                </div>
+                <button class="modal-close-btn" onclick="closeViewDocModal()">&times;</button>
+            </div>
+            <div style="flex: 1; padding: 1rem; display: flex; flex-direction: column; min-height: 0;">
+                <iframe id="view-doc-iframe" src="about:blank" style="width: 100%; flex: 1; border: 1px solid var(--border-color); border-radius: 8px; background: #ffffff;"></iframe>
+                <div id="view-doc-excel-container" style="display: none; width: 100%; flex: 1; min-height: 0; flex-direction: column; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-card); overflow: hidden;">
+                    <div id="excel-toolbar" style="padding: 0.6rem 0.85rem; background: rgba(0, 0, 0, 0.25); border-bottom: 1px solid var(--border-color); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+                        <div id="excel-sheet-tabs" style="display: flex; gap: 0.4rem; overflow-x: auto; max-width: 70%; padding-bottom: 2px;"></div>
+                        <div id="excel-sheet-info" style="font-size: 0.75rem; color: var(--text-muted); font-family: monospace;"></div>
+                    </div>
+                    <div id="excel-table-scroll" style="flex: 1; overflow: auto; padding: 0.5rem; background: var(--bg-card);">
+                        <div id="excel-table-output"></div>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-muted); flex-wrap: wrap; gap: 0.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span>Source / Stockage :</span>
+                        <span id="view-doc-source-label" class="badge badge-info" style="font-size: 0.72rem;">Fichier Serveur / uploads</span>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <a id="view-doc-download-btn" href="#" download class="btn btn-secondary btn-sm">
+                            <i class="fa-solid fa-download"></i> Télécharger
+                        </a>
+                        <a id="view-doc-fallback-link" href="#" target="_blank" class="btn btn-primary btn-sm">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Nouvel onglet
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: MODIFICA METADATI DOCUMENTO (Pencil) -->
+    <div class="modal-overlay" id="edit-doc-modal">
+        <div class="modal-container" style="max-width: 580px;">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <i class="fa-solid fa-pen-to-square text-amber"></i>
+                    <span>Modifier les Métadonnées du Document</span>
+                </div>
+                <button class="modal-close-btn" onclick="closeEditDocModal()">&times;</button>
+            </div>
+            <form onsubmit="saveEditDocForm(event)" style="padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                <input type="hidden" id="edit-doc-id">
+                
+                <div>
+                    <label style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 0.35rem;">Titre / Nom du fichier</label>
+                    <input type="text" id="edit-doc-title" class="filter-input" style="width: 100%;" required>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div>
+                        <label style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 0.35rem;">Rubrique</label>
+                        <select id="edit-doc-category" class="filter-select" style="width: 100%;">
+                            <option value="Bilanci">Bilanci (Comptes Annuels)</option>
+                            <option value="Statuti">Statuti (Actes & Registres)</option>
+                            <option value="Certificati">Certificati (RCS / RBE)</option>
+                            <option value="Estratti Bancari">Estratti Bancari</option>
+                            <option value="Loghi">Loghi & Brand</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 0.35rem;">Date du Document</label>
+                        <input type="text" id="edit-doc-date" class="filter-input" style="width: 100%;" placeholder="DD/MM/YYYY">
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div>
+                        <label style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 0.35rem;">Référence / Dépôt</label>
+                        <input type="text" id="edit-doc-ref" class="filter-input" style="width: 100%;" placeholder="eCDF / RCSL ...">
+                    </div>
+                    <div>
+                        <label style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 0.35rem;">Statut Officiel</label>
+                        <input type="text" id="edit-doc-status" class="filter-input" style="width: 100%;" placeholder="Déposé RCSL / Certifié">
+                    </div>
+                </div>
+
+                <div>
+                    <label style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 0.35rem;">Description / Notes</label>
+                    <textarea id="edit-doc-desc" class="filter-input" style="width: 100%; height: 75px; resize: vertical;"></textarea>
+                </div>
+
+                <div style="background: rgba(255, 255, 255, 0.03); border: 1px dashed var(--border-color); border-radius: 8px; padding: 0.85rem; text-align: center; cursor: pointer;" onclick="document.getElementById('edit-doc-file').click()">
+                    <i class="fa-solid fa-cloud-arrow-up text-amber" style="font-size: 1.4rem; margin-bottom: 0.25rem;"></i>
+                    <div id="edit-doc-file-label" style="font-size: 0.8rem; color: var(--text-muted);">
+                        Remplacer ou associer un fichier physique (IndexedDB)
+                    </div>
+                    <div id="edit-doc-file-info" style="font-size: 0.72rem; color: var(--accent-emerald, #10b981); margin-top: 0.25rem; display: none;"></div>
+                    <input type="file" id="edit-doc-file" style="display: none;" onchange="handleEditDocFileSelected(this)">
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 0.5rem;">
+                    <button type="button" class="btn btn-secondary" onclick="closeEditDocModal()">Annuler</button>
+                    <button type="submit" class="btn btn-primary"><i class="fa-solid fa-save"></i> Enregistrer les modifications</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 3: NOUVEAU DOCUMENT -->
+    <div class="modal-overlay" id="add-doc-modal">
+        <div class="modal-container" style="max-width: 580px;">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <i class="fa-solid fa-plus-circle text-emerald"></i>
+                    <span>Ajouter un Nouveau Document à l'Archive</span>
+                </div>
+                <button class="modal-close-btn" onclick="closeAddDocModal()">&times;</button>
+            </div>
+            <form onsubmit="saveNewDocForm(event)" style="padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                <div>
+                    <label style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 0.35rem;">Titre du Document *</label>
+                    <input type="text" id="add-doc-title" class="filter-input" style="width: 100%;" placeholder="ex: Statuts Coordonnés 2026.pdf" required>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div>
+                        <label style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 0.35rem;">Rubrique *</label>
+                        <select id="add-doc-category" class="filter-select" style="width: 100%;">
+                            <option value="Bilanci">Bilanci (Comptes Annuels)</option>
+                            <option value="Statuti">Statuti (Actes & Registres)</option>
+                            <option value="Certificati">Certificati (RCS / RBE)</option>
+                            <option value="Estratti Bancari">Estratti Bancari</option>
+                            <option value="Loghi">Loghi & Brand</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 0.35rem;">Date du Document</label>
+                        <input type="text" id="add-doc-date" class="filter-input" style="width: 100%;" placeholder="DD/MM/YYYY">
+                    </div>
+                </div>
+
+                <div>
+                    <label style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 0.35rem;">Référence / Dépôt LBR</label>
+                    <input type="text" id="add-doc-ref" class="filter-input" style="width: 100%;" placeholder="ex: RCS-B149151-2026">
+                </div>
+
+                <div>
+                    <label style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 0.35rem;">Description du contenu</label>
+                    <textarea id="add-doc-desc" class="filter-input" style="width: 100%; height: 75px; resize: vertical;" placeholder="Brève explication du document et validité juridique..."></textarea>
+                </div>
+
+                <div style="background: rgba(255, 255, 255, 0.03); border: 1px dashed var(--border-color); border-radius: 8px; padding: 1rem; text-align: center; cursor: pointer;" onclick="document.getElementById('add-doc-file').click()">
+                    <i class="fa-solid fa-cloud-arrow-up text-cyan" style="font-size: 1.6rem; margin-bottom: 0.3rem;"></i>
+                    <div id="add-doc-file-label" style="font-size: 0.8rem; color: var(--text-muted);">
+                        Glissez-déposez ou cliquez pour charger un fichier (Stockage IndexedDB sans limite)
+                    </div>
+                    <div id="add-doc-file-info" style="font-size: 0.72rem; color: var(--accent-emerald, #10b981); margin-top: 0.25rem; display: none;"></div>
+                    <input type="file" id="add-doc-file" style="display: none;" onchange="handleNewDocFileSelected(this)">
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 0.5rem;">
+                    <button type="button" class="btn btn-secondary" onclick="closeAddDocModal()">Annuler</button>
+                    <button type="submit" class="btn btn-primary"><i class="fa-solid fa-plus-circle"></i> Ajouter au Registre</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 4: CONFIRMATION SUPPRESSION DOCUMENT (Trash) -->
+    <div class="modal-overlay" id="delete-doc-modal">
+        <div class="modal-container" style="max-width: 500px;">
+            <div class="modal-header" style="border-bottom: 1px solid rgba(244, 63, 94, 0.25);">
+                <div class="modal-title" style="color: #f43f5e;">
+                    <i class="fa-solid fa-trash-can"></i>
+                    <span>Supprimer un Document de l'Archive</span>
+                </div>
+                <button class="modal-close-btn" onclick="closeDeleteDocModal()">&times;</button>
+            </div>
+            <div style="padding: 1.5rem; display: flex; flex-direction: column; gap: 1.25rem;">
+                <div style="background: rgba(244, 63, 94, 0.08); border: 1px solid rgba(244, 63, 94, 0.25); border-radius: 8px; padding: 1rem; display: flex; gap: 0.85rem; align-items: flex-start;">
+                    <i class="fa-solid fa-triangle-exclamation text-rose" style="font-size: 1.4rem; margin-top: 0.1rem; flex-shrink: 0;"></i>
+                    <div style="font-size: 0.85rem; line-height: 1.45; color: var(--text-main);">
+                        Êtes-vous certain de vouloir supprimer définitivement ce document ? Il sera retiré du registre et de la mémoire locale (IndexedDB / LocalStorage).
+                    </div>
+                </div>
+
+                <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem;">
+                    <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 0.35rem;" id="delete-doc-entity">
+                        <i class="fa-solid fa-building-columns"></i> Watergarden Sàrl
+                    </div>
+                    <div id="delete-doc-title" style="font-weight: 700; font-size: 0.95rem; color: var(--text-main); margin-bottom: 0.4rem; word-break: break-word;">
+                        Nom du document
+                    </div>
+                    <div style="display: flex; gap: 0.6rem; align-items: center; font-size: 0.75rem; color: var(--text-muted); flex-wrap: wrap;">
+                        <span><strong style="color: var(--text-main);">Réf:</strong> <span id="delete-doc-ref">-</span></span>
+                        <span>•</span>
+                        <span><strong style="color: var(--text-main);">Rubrique:</strong> <span id="delete-doc-category">-</span></span>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 0.25rem;">
+                    <button type="button" class="btn btn-secondary" onclick="closeDeleteDocModal()">Annuler</button>
+                    <button type="button" class="btn btn-danger" id="confirm-delete-doc-btn" onclick="executeConfirmedDelete()">
+                        <i class="fa-solid fa-trash-can"></i> Supprimer définitivement
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="xlsx.full.min.js"></script>
+    <script src="data.js"></script>
+    <script src="i18n.js"></script>
+    <script src="doc_storage.js"></script>
+    <script src="documenti_app.js?v=20261018d"></script>
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('theme-light');
+            const isLight = document.body.classList.contains('theme-light');
+            localStorage.setItem('wg_theme', isLight ? 'light' : 'dark');
+        }
+
+        function refreshAppGlobalData(btn) {
+            if (btn) {
+                btn.querySelector('i')?.classList.add('fa-spin');
+                setTimeout(() => {
+                    btn.querySelector('i')?.classList.remove('fa-spin');
+                    window.location.reload();
+                }, 500);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('wg_theme') === 'light') {
+                document.body.classList.add('theme-light');
+            }
+        });
+    </script>
+</body>
+</html>

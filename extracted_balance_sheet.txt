@@ -1,0 +1,298 @@
+
+=== PAGE 1 ===
+WATERGARDEN MANAGEMENT S.À R.L. Capital currency: EUR
+B A L A N C E  S H E E T   as of    31/12/2025
+ASSETS 31/12/202431/12/2025
+B. Formation expenses  2,339.75  4,058.78
+ 10,318.71  10,318.71203 Formation and similar expenses - Expenses for increases in 
+capital and various operations (merger, demerger, change of 
+legal form)
+-7,978.96 -6,259.932039 Formation and similar expenses - Expenses for increases in 
+capital and various operations - depreciation
+C. Fixed assets  6,205,953.37  6,205,953.37
+III. Financial assets  6,205,953.37  6,205,953.37
+ 5,657,646.49  5,657,646.492310000 Financial fixed assets - Shares in affiliated undertakings - 
+ARCO IRIS
+ 48,212.05  48,212.05232100002 Fin assets - Loans to affil undertakings - ARCO IRIS 7% - 
+2.700.000 BRL - S.V
+ 3,374.84  3,374.84232100003 Fin assets - Loans to affil undertakings - ARCO IRIS 7% - 
+2.700.000 BRL - JP.M
+ 38,569.64  38,569.64232100004 Fin assets - Loans to affil undertakings - ARCO IRIS 7% - 
+2.700.000 BRL - S.B
+ 28,927.23  28,927.23232100005 Fin assets - Loans to affil undertakings - ARCO IRIS 7% - 
+2.700.000 BRL - M.C
+ 11,088.77  11,088.77232100006 Fin assets - Loans to affil undertakings - ARCO IRIS 7% - 
+2.700.000 BRL - S.H
+ 65,568.38  65,568.38232100007 Fin assets - Loans to affil undertakings - ARCO IRIS 7% - 
+2.700.000 BRL - M.S
+ 26,516.63  26,516.63232100008 Fin assets - Loans to affil undertakings - ARCO IRIS 7% - 
+2.700.000 BRL - G.V
+ 70,871.71  70,871.71232100009 Fin assets - Loans to affil undertakings - ARCO IRIS 7% - 
+2.700.000 BRL - Ed.T
+ 28,927.23  28,927.23232100010 Fin assets - Loans to affil undertakings - ARCO IRIS 7% - 
+2.700.000 BRL - En.T
+ 96,424.09  96,424.09232100011 Fin assets - Loans to affil undertakings - ARCO IRIS 7% - 
+2.700.000 BRL - Glenelg
+ 29,826.31  29,826.31232200001 Fin assets - Loans to affil undertakings - ARCO IRIS 7% - 
+589.720 BRL - G.V.
+ 100,000.00  100,000.00232200002 Fin assets - Loans to affil undertakings - ARCO IRIS 7% - 
+589.720 BRL - Ed.T.
+D. Current assets  212,523.16  189,474.76
+II. Debtors  193,366.28  157,586.23
+a) becoming due and payable within one year  163,366.28  127,586.23
+ 0.00  122,771.234111250 Amounts owed by affiliated undertakings receivable within 
+one year - Loans and advances  - Accrued interest ARCO 
+IRIS
+ 14,886.12  0.0041112502 Amounts owed by affiliated undertakings receivable within 
+one year - Loans and advances  - Accrued interest ARCO 
+IRIS S.V.
+ 1,042.03  0.0041112503 Amounts owed by affiliated undertakings receivable within 
+one year - Loans and advances  - Accrued interest ARCO 
+IRIS /J-P M
+ 11,908.90  0.0041112504 Amounts owed by affiliated undertakings receivable within 
+one year - Loans and advances  - Accrued interest ARCO 
+IRIS / S.B.
+ 8,931.67  0.0041112505 Amounts owed by affiliated undertakings receivable within 
+one year - Loans and advances  - Accrued interest ARCO 
+IRIS / M.C.
+ 3,423.81  0.0041112506 Amounts owed by affiliated undertakings receivable within 
+one year - Loans and advances  - Accrued interest ARCO 
+IRIS / S.H.
+ 20,245.13  0.0041112507 Amounts owed by affiliated undertakings receivable within 
+one year - Loans and advances  - Accrued interest ARCO 
+IRIS / M.S.
+ 14,927.88  0.0041112508 Amounts owed by affiliated undertakings receivable within 
+one year - Loans and advances  - Accrued interest ARCO 
+IRIS / G.V.
+ 44,481.81  0.0041112509 Amounts owed by affiliated undertakings receivable within 
+one year - Loans and advances  - Accrued interest ARCO 
+IRIS /Ed.T.
+ 8,931.67  0.0041112510 Amounts owed by affiliated undertakings receivable within 
+one year - Loans and advances  - Accrued interest ARCO 
+IRIS /En.T.
+ 29,772.26  0.0041112511 Amounts owed by affiliated undertakings receivable within 
+one year - Loans and advances  - Accrued interest ARCO 
+IRIS /G SA
+ 4,815.00  4,815.0042143 Other receivables within one year - Direct Tax Authority 
+(ACD) - Net wealth tax
+b) becoming due and payable after more than one year  30,000.00  30,000.00
+ 30,000.00  30,000.0042288 Other receivables after one year - Miscellaneous receivables - 
+Other miscellaneous receivables - F Toscano 100.000 BRL
+IV. Cash at bank and in hand  19,156.88  31,888.53
+1 11/05/2026 - 09:32:18
+=== PAGE 2 ===
+WATERGARDEN MANAGEMENT S.À R.L. Capital currency: EUR
+B A L A N C E  S H E E T   as of    31/12/2025
+ 19,156.88  31,888.535131000 Cash at bank, cash in postal cheque accounts, cheques and 
+cash in hand - LU54 6060 0020 0000 3393 EUR OLKY PAY
+ 6,420,816.28  6,399,486.91TOTAL (ASSETS)
+2 11/05/2026 - 09:32:18
+=== PAGE 3 ===
+WATERGARDEN MANAGEMENT S.À R.L. Capital currency: EUR
+B A L A N C E  S H E E T   as of    31/12/2025
+LIABILITIES 31/12/202431/12/2025
+A. Capital and reserves  5,389,123.05  5,392,843.56
+I. Subscribed capital  4,342,640.00  4,342,640.00
+ 302,922.00  302,922.001010001 Subscribed capital or branches' assigned capital and owner's 
+account - Subscribed capital - Class A shs - Enrico Tubia
+ 302,922.00  302,922.001010002 Subscribed capital or branches' assigned capital and owner's 
+account - Subscribed capital - Class A shs - Alfonso Belardi
+ 302,922.00  302,922.001010003 Subscribed capital or branches' assigned capital and owner's 
+account - Subscribed capital - Class A shs - Stefano Bosi
+ 302,922.00  302,922.001010004 Subscribed capital or branches' assigned capital and owner's 
+account - Subscribed capital - Class A shs - Marco Canton
+ 605,866.00  605,866.001010005 Subscribed capital or branches' assigned capital and owner's 
+account - Subscribed capital - Class A shs - Glenelg S.A.
+ 295,830.00  295,830.001010006 Subscribed capital or branches' assigned capital and owner's 
+account - Subscribed capital - Class A shs - Hemawiti Susik
+ 302,922.00  302,922.001010007 Subscribed capital or branches' assigned capital and owner's 
+account - Subscribed cap - Class A shs - JP Murgia
+ 151,466.00  151,466.001010008 Subscribed capital or branches' assigned capital and owner's 
+account - Subscribed capital - Class A shs - Marco Sterzi
+ 302,922.00  302,922.001010009 Subscribed capital or branches' assigned capital and owner's 
+account - Subscribed capital - Class A shs - Edoardo Tubia
+ 302,922.00  302,922.001010010 Subscribed capital or branches' assigned capital and owner's 
+account - Subscribed capital - Class A shs - Sergio Vandi
+ 151,466.00  151,466.001010011 Subscribed capital or branches' assigned capital and owner's 
+account - Subscribed capital - Class A shs - Giorgio Vignolle
+ 135,402.00  135,402.001010051 Subscribed capital or branches' assigned capital and owner's 
+account - Subscribed capital - Class B shs - Marylène Alix
+ 212,500.00  212,500.001010052 Subscribed capital or branches' assigned capital and owner's 
+account - Subscribed capital - Class B shs - MMM Finance 
+Sàrl
+ 360,440.00  360,440.001010053 Subscribed capital or branches' assigned capital and owner's 
+account - Subscribed capital - Class B shs - Salvatore 
+Desiderio
+ 147,610.00  147,610.001010054 Subscribed capital or branches' assigned capital and owner's 
+account - Subscribed capital - Class B shs - Enrico Tubia
+ 80,802.00  80,802.001010055 Subscribed capital or branches' assigned capital and owner's 
+account - Subscribed capital - Class B shs - Marco Sterzi
+ 80,804.00  80,804.001010056 Capital souscrit ou dotation des succursales et compte de 
+l'exploitant - Capital souscrit - Class B shs - Adonella 
+Cristina Sterzi
+II. Share premium account  1,199,989.66  1,199,989.66
+ 102,267.67  102,267.671120001 Share premium and similar premiums - Merger premium - 
+class A shs - Enrico Tubia
+ 102,267.67  102,267.671120002 Share premium and similar premiums - Merger premium - 
+class A shs - Alfonso Belardi
+ 102,267.67  102,267.671120003 Share premium and similar premiums - Merger premium - 
+class A shs - Stefano Bosi
+ 102,267.67  102,267.671120004 Share premium and similar premiums - Merger premium - 
+class A shs - Marco Canton
+ 204,538.78  204,538.781120005 Share premium and similar premiums - Merger premium - 
+class A shs - Glenelg SA
+ 102,267.67  102,267.671120006 Share premium and similar premiums - Merger premium - 
+class A shs - Hemawiti Susik
+ 102,267.67  102,267.671120007 Share premium and similar premiums - Merger premium - 
+class A shs - JP Murgia
+ 51,135.56  51,135.561120008 Share premium and similar premiums - Merger premium - 
+class A shs - Marco Sterzi
+ 102,267.67  102,267.671120009 Share premium and similar premiums - Merger premium - 
+class A shs - Edoardo Tubia
+ 102,267.67  102,267.671120010 Share premium and similar premiums - Merger premium - 
+class A shs - Sergio Vandi
+ 51,135.56  51,135.561120011 Share premium and similar premiums - Merger premium - 
+class A shs - Giorgio Vignolle
+ 5,744.52  5,744.521120101 Share premium and similar premiums - Share Premium - 
+class A shs - Enrico Tubia
+ 5,744.52  5,744.521120102 Share premium and similar premiums - Share Premium - 
+class A shs - Alfonso Belardi
+ 5,744.52  5,744.521120103 Share premium and similar premiums - Share Premium - 
+class A shs - Stefano Bosi
+ 5,744.52  5,744.521120104 Share premium and similar premiums - Share Premium - 
+class A shs - Marco Canton
+ 11,498.76  11,498.761120105 Share premium and similar premiums - Share Premium - 
+class A shs - Glenelg SA
+ 5,744.52  5,744.521120107 Share premium and similar premiums - Share Premium - 
+class A shs - JP Murgia
+ 2,872.26  2,872.261120108 Share premium and similar premiums - Share Premium - 
+class A shs - Marco Sterzi
+ 5,744.52  5,744.521120109 Share premium and similar premiums - Share Premium - 
+class A shs - Edoardo Tubia
+3 11/05/2026 - 09:32:18
+=== PAGE 4 ===
+WATERGARDEN MANAGEMENT S.À R.L. Capital currency: EUR
+B A L A N C E  S H E E T   as of    31/12/2025
+ 5,744.52  5,744.521120110 Share premium and similar premiums - Share Premium - 
+class A shs - Sergio Vandi
+ 2,872.26  2,872.261120111 Share premium and similar premiums - Share Premium - 
+class A shs - Giorgio Vignolle
+ 2,958.12  2,958.121120151 Share premium and similar premiums - Share Premium - 
+class B shs - Marylène Alix
+ 6,228.90  6,228.901120153 Share premium and similar premiums - Share Premium - 
+class B shs - Salvatore Desiderio
+ 4,868.10  4,868.101120154 Share premium and similar premiums - Share Premium - 
+class B shs - Enrico Tubia
+ 1,764.18  1,764.181120155 Share premium and similar premiums - Share Premium - 
+class B shs - Marco Sterzi
+ 1,764.18  1,764.181120156 Share premium and similar premiums - Share Premium - 
+class B shs - Adonella Sterzi
+V. Profit or loss brought forward -149,786.10 -87,384.22
+-12,183.39  50,218.491411 Result for the financial year and results brought forward - 
+Results brought forward in the process of assignment
+-137,602.71 -137,602.711412 Result for the financial year and results brought forward - 
+Results brought forward (assigned)
+VI. Profit or loss for the financial year -3,720.51 -62,401.88
+-3,720.51 -62,401.88142 Result for the financial year and results brought forward - 
+Result for the financial year
+C. Creditors  1,031,693.23  1,006,643.35
+a) becoming due and payable within one year  257,016.92  231,967.04
+ 6,844.53  6,840.6844112 Trade payables within one year - Suppliers - invoices not yet 
+received
+ 2,023.25  2,023.2545118 Dettes envers des entreprises liées - dont la durée résiduelle 
+est <= à un an - Autres dettes Arco Iris
+ 10,312.93  7,944.70452180001 Amounts payable to undert. with which the undert. is linked - 
+Other debts - premium SV
+ 721.92  556.14452180002 Amounts payable to undert. with which the undert. is linked - 
+Other debts - premium JP M
+ 8,250.34  6,355.76452180003 Amounts payable to undert. with which the undert. is linked - 
+Other debts - premium SB
+ 6,187.76  4,766.82452180004 Amounts payable to undert. with which the undert. is linked - 
+Other debts - premium MC
+ 2,371.97  1,827.28452180005 Amounts payable to undert. with which the undert. is linked - 
+Other debts - premium SH
+ 14,025.58  10,804.79452180006 Amounts payable to undert. with which the undert. is linked - 
+Other debts - premium MS
+ 10,390.46  8,056.45452180007 Amounts payable to undert. with which the undert. is linked - 
+Other debts - premium GV
+ 30,979.45  24,039.84452180008 Amounts payable to undert. with which the undert. is linked - 
+Other debts - premium EdT
+ 6,187.76  4,766.82452180009 Amounts payable to undert. with which the undert. is linked - 
+Other debts - premium EnT
+ 20,625.86  15,889.40452180010 Amounts payable to undert. with which the undert. is linked - 
+Other debts - premium Glenelg
+ 4,815.00  4,815.00461232 Tax debts - Direct Tax Authority (ACD) -  Net wealth tax 
+(NWT) - Tax payable
+ 70,038.94  70,038.944713000 Other debts payable within one year - Amounts payable to 
+directors, managers, statutory auditors and similar - Edoardo 
+Tubia
+ 35,636.12  35,636.124713005 Other debts payable within one year - Amounts pay to 
+directors, managers, statut.auditors and similar - merger LRD 
+- Edoardo Tubia
+ 27,605.05  27,605.054713006 Other debts payable within one year - Amounts pay to 
+directors, managers, statut.auditors and similar - merger LRD 
+- Marco Sterzi
+b) becoming due and payable after more than one year  774,676.31  774,676.31
+ 19,170.00  19,170.004522200 Amnts payable to undert. with which the undert. is linked by 
+virtue of particip. interests payable > 1 yr - merger LRD - A 
+Belardi
+ 20,957.95  20,957.954522201 Amnts payable to undert. with which the undert. is linked by 
+virtue of particip. interests payable > 1 yr - merger LRD - S 
+Vandi
+ 48,212.05  48,212.0545222010 Amnts payable > 1 yr - merger LRD - part loan Arco 
+2.700.000 BRL - S.V
+ 19,295.16  19,295.164522202 Amnts payable to undert. with which the undert. is linked by 
+virtue of particip. interests payable > 1 yr - merger LRD - JP 
+Murgia
+ 3,374.84  3,374.8445222020 Amnts payable > 1 yr - merger LRD - part loan Arco 
+2.700.000 BRL - JP.M
+ 20,600.36  20,600.364522203 Amnts payable to undert. with which the undert. is linked by 
+virtue of particip. interests payable > 1 yr - merger LRD - S 
+Bosi
+ 38,569.64  38,569.6445222030 Amnts payable > 1 yr - merger LRD - part loan Arco 
+2.700.000 BRL - S.B
+4 11/05/2026 - 09:32:18
+=== PAGE 5 ===
+WATERGARDEN MANAGEMENT S.À R.L. Capital currency: EUR
+B A L A N C E  S H E E T   as of    31/12/2025
+ 20,242.77  20,242.774522204 Amnts payable to undert. with which the undert. is linked by 
+virtue of particip. interests payable > 1 yr - merger LRD - M 
+Canton
+ 28,927.23  28,927.2345222040 Amnts payable > 1 yr - merger LRD - part loan Arco 
+2.700.000 BRL - M.C
+ 19,581.23  19,581.234522205 Amnts payable to undert. with which the undert. is linked by 
+virtue of particip. interests payable > 1 yr - merger LRD -S 
+Hemawiti
+ 11,088.77  11,088.7745222050 Amnts payable > 1 yr - merger LRD - part loan Arco 
+2.700.000 BRL - S.H
+ 10,563.37  10,563.374522206 Amnts payable to undert. with which the undert. is linked by 
+virtue of particip. interests payable > 1 yr - merger LRD -G 
+Vignolle
+ 26,516.63  26,516.6345222060 Amnts payable > 1 yr - merger LRD - part loan Arco 
+2.700.000 BRL - G.V
+ 29,826.31  29,826.3145222061 Amnts payable > 1 yr - merger LRD - part loan Arco 589.720 
+BRL - G.V
+ 12,011.62  12,011.624522207 Amnts payable to undert. with which the undert. is linked by 
+virtue of particip. interests payable > 1 yr - merger LRD - M 
+Sterzi
+ 65,568.38  65,568.3845222070 Amnts payable > 1 yr - merger LRD - part loan Arco 
+2.700.000 BRL - M.S
+ 41,905.91  41,905.914522208 Amnts payable to undert. with which the undert. is linked by 
+virtue of particip. interests payable > 1 yr - merger LRD- 
+Glenelg SA
+ 96,424.09  96,424.0945222080 Amnts payable > 1 yr - merger LRD - part loan Arco 
+2.700.000 BRL - Glenelg
+ 20,242.77  20,242.774522209 Amnts payable to undert. with which the undert. is linked by 
+virtue of particip. interests payable > 1 yr - merger LRD - En 
+Tubia
+ 28,927.23  28,927.2345222090 Amnts payable > 1 yr - merger LRD - part loan Arco 
+2.700.000 BRL - En.T
+ 21,798.29  21,798.294522210 Amnts payable to undert. with which the undert. is linked by 
+virtue of particip. interests payable > 1 yr - merger LRD - Ed 
+Tubia
+ 70,871.71  70,871.7145222100 Amnts payable > 1 yr - merger LRD - part loan Arco 
+2.700.000 BRL - Ed.T
+ 100,000.00  100,000.0045222101 Amnts payable > 1 yr - merger LRD - part loan Arco 589.720 
+BRL - Ed.T
+ 6,420,816.28  6,399,486.91TOTAL (CAPITAL, RESERVES AND LIABILITIES)
+5 11/05/2026 - 09:32:18

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comptes Bancaires & Trésorerie - Watergarden Management Sàrl</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css?v=20261023c">
+    <!-- Auth Guard -->
+    <script src="auth.js?v=20261023c"></script>
+    <link rel="shortcut icon" href="brand_assets/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="brand_assets/apple-touch-icon.png">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar glass-panel">
+            <div class="logo-container">
+                <a href="brand_assets/index.html" title="Charte Graphique et Brand Assets" style="text-decoration: none; display: flex; flex-direction: column; align-items: center;">
+                    <img src="brand_assets/watergarden_symbol_cropped.png" alt="Logo Watergarden" class="logo-img">
+                    <div class="logo-title">Watergarden</div>
+                    <div class="logo-subtitle">Management Sàrl • Lux</div>
+                </a>
+            </div>
+
+            <nav class="nav-menu">
+                <!-- AREA SOCIÉTÉ -->
+                <div class="nav-section-title" data-i18n="nav_section_societe">AREA SOCIÉTÉ</div>
+                <div class="nav-item-container" data-page="index.html">
+                    <a href="index.html" class="nav-item">
+                        <i class="fa-solid fa-chart-pie text-emerald"></i>
+                        <span data-i18n="nav_societe">La Société</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('index.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="partecipazioni.html">
+                    <a href="partecipazioni.html" class="nav-item">
+                        <i class="fa-solid fa-umbrella-beach text-amber"></i>
+                        <span data-i18n="nav_partecipazioni">Participation ArcoIris (Brésil)</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('partecipazioni.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="sombra_floresta.html">
+                    <a href="sombra_floresta.html" class="nav-item">
+                        <i class="fa-solid fa-photo-film text-pink"></i>
+                        <span data-i18n="nav_sombra_floresta">SPA Sombra Floresta</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('sombra_floresta.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+
+                <!-- AREA FINANCES -->
+                <div class="nav-section-title" data-i18n="nav_section_finances">AREA FINANCES</div>
+                <div class="nav-item-container" data-page="contabilita.html">
+                    <a href="contabilita.html" class="nav-item">
+                        <i class="fa-solid fa-book-bookmark text-blue"></i>
+                        <span data-i18n="nav_contabilita">Comptabilité</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('contabilita.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="banca.html">
+                    <a href="banca.html" class="nav-item active">
+                        <i class="fa-solid fa-building-columns text-cyan"></i>
+                        <span data-i18n="nav_banca">Comptes Bancaires</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('banca.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="ammortamenti.html">
+                    <a href="ammortamenti.html" class="nav-item">
+                        <i class="fa-solid fa-calculator text-emerald"></i>
+                        <span data-i18n="nav_ammortamenti">Amortissements</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('ammortamenti.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+
+                <!-- AREA DOCUMENTATION -->
+                <div class="nav-section-title" data-i18n="nav_section_documentation">AREA DOCUMENTATION</div>
+                <div class="nav-item-container" data-page="aml.html">
+                    <a href="aml.html" class="nav-item">
+                        <i class="fa-solid fa-shield-halved text-emerald"></i>
+                        <span data-i18n="nav_aml">Conformité AML</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('aml.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+                <div class="nav-item-container" data-page="documenti.html">
+                    <a href="documenti.html" class="nav-item">
+                        <i class="fa-solid fa-folder-open text-blue"></i>
+                        <span data-i18n="nav_documenti">Documents & Archives</span>
+                    </a>
+                    <button type="button" class="nav-eye-toggle-btn nav-eye-active" title="Visibile allo USER (Verde)" onclick="togglePageVisibility('documenti.html', event)">
+                        <i class="fa-solid fa-eye" style="color: #10b981;"></i>
+                    </button>
+                </div>
+
+                <div class="nav-section-title" data-i18n="nav_section_tools">GESTION</div>
+                <button class="btn-sidebar-action" onclick="refreshAppGlobalData(this)">
+                    <i class="fa-solid fa-rotate-right"></i>
+                    <span data-i18n="nav_refresh_data">Actualiser</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="update-badge">
+                    <span data-i18n="last_update">Dernière mise à jour :</span>
+                    <strong id="sidebar-updated-at">17/10/2026</strong>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Topbar -->
+            <header class="topbar glass-panel">
+                <div class="topbar-title-area">
+                    <h1><i class="fa-solid fa-building-columns text-cyan"></i> <span data-i18n="banca_title">Trésorerie & Comptes Courants</span></h1>
+                    <p data-i18n="banca_desc">Gestion multi-comptes : Olky Pay (Luxembourg - EUR) & Revolut Business (Multidevise).</p>
+                </div>
+
+                <div class="topbar-actions">
+                    <!-- Language Selector -->
+                    <div class="lang-selector">
+                        <button class="lang-btn active" data-lang="fr" title="Français">
+                            <img src="https://flagcdn.com/w40/fr.png" alt="FR">
+                        </button>
+                        <button class="lang-btn" data-lang="it" title="Italiano">
+                            <img src="https://flagcdn.com/w40/it.png" alt="IT">
+                        </button>
+                        <button class="lang-btn" data-lang="pt" title="Português">
+                            <img src="https://flagcdn.com/w40/br.png" alt="PT">
+                        </button>
+                        <button class="lang-btn" data-lang="en" title="English">
+                            <img src="https://flagcdn.com/w40/gb.png" alt="EN">
+                        </button>
+                    </div>
+
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle-btn" id="theme-toggle-btn" onclick="toggleTheme()" title="Mode Sombre/Clair">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+
+                    <!-- Add Record Button -->
+                    <button class="btn-primary" onclick="openNewTransactionModal()">
+                        <i class="fa-solid fa-plus"></i>
+                        <span data-i18n="btn_nouvelle_ecriture">Nouvelle Écriture</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Bank Cards Strip (3 Horizontal Compact Boxes) -->
+            <section class="bank-cards-grid">
+                <!-- Olky Pay Card -->
+                <div class="glass-panel bank-card-compact" style="border-color: rgba(2, 132, 199, 0.4); background: linear-gradient(135deg, rgba(2, 132, 199, 0.12), rgba(15, 23, 42, 0.6));">
+                    <div class="bank-card-header">
+                        <div>
+                            <div class="bank-card-tag" style="color: #38bdf8;" data-i18n="banca_card_principal">Compte Courant Principal</div>
+                            <h2 class="bank-card-title">Olky Pay (EUR)</h2>
+                            <div class="bank-card-sub" data-i18n="banca_sub_olky">Olky Payment Services S.A. • Luxembourg</div>
+                        </div>
+                        <span class="badge" style="background: rgba(2, 132, 199, 0.25); color: #38bdf8; border: 1px solid rgba(2, 132, 199, 0.4); font-size: 0.7rem; font-weight: 700; white-space: nowrap;">
+                            <i class="fa-solid fa-building-columns"></i> LUX
+                        </span>
+                    </div>
+
+                    <div class="bank-card-body">
+                        <span class="bank-card-label" data-i18n="banca_lbl_solde_dispo">Solde Disponible (au 01/10/2026) :</span>
+                        <div id="olky-balance-display" class="bank-card-amount text-blue">11.440,97 €</div>
+                        <div class="bank-card-foot-note">
+                            31/12/2025: 19.156,88 € • 31/12/2024: 31.888,53 €
+                        </div>
+                    </div>
+
+                    <div class="bank-card-footer">
+                        <div class="bank-iban-row"><span>IBAN :</span> <strong class="mono-code">LU54 6060 0020 0000 3393</strong></div>
+                        <div class="bank-iban-row"><span>BIC :</span> <strong class="mono-code">OLKI LUL1 XXX</strong></div>
+                    </div>
+                </div>
+
+                <!-- Revolut Business Card -->
+                <div class="glass-panel bank-card-compact" style="border-color: rgba(16, 185, 129, 0.4); background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(15, 23, 42, 0.6));">
+                    <div class="bank-card-header">
+                        <div>
+                            <div class="bank-card-tag" style="color: #34d399;" data-i18n="banca_card_multidevise">Compte Courant EUR</div>
+                            <h2 class="bank-card-title">Revolut Business</h2>
+                            <div class="bank-card-sub" data-i18n="banca_sub_revolut">Revolut Bank UAB • Lituanie</div>
+                        </div>
+                        <span class="badge" style="background: rgba(16, 185, 129, 0.25); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); font-size: 0.7rem; font-weight: 700; white-space: nowrap;">
+                            <i class="fa-solid fa-credit-card"></i> EUR
+                        </span>
+                    </div>
+
+                    <div class="bank-card-body">
+                        <span class="bank-card-label" data-i18n="banca_lbl_solde_eur">Solde Disponible (au 09/10/2026) :</span>
+                        <div id="revolut-balance-display" class="bank-card-amount text-emerald">652,25 €</div>
+                        <div class="bank-card-foot-note" style="color: var(--text-muted);">
+                            Revolut Business UAB • EUR Account
+                        </div>
+                    </div>
+
+                    <div class="bank-card-footer">
+                        <div class="bank-iban-row"><span>IBAN :</span> <strong class="mono-code">LT92 3250 0340 9644 5618</strong></div>
+                        <div class="bank-iban-row"><span>BIC :</span> <strong class="mono-code">REVO LT21</strong></div>
+                    </div>
+                </div>
+
+                <!-- Combined Summary KPI Card -->
+                <div class="glass-panel bank-card-compact" style="border-color: rgba(16, 185, 129, 0.35); background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(15, 23, 42, 0.6));">
+                    <div class="bank-card-header">
+                        <div>
+                            <div class="bank-card-tag" style="color: var(--text-muted);" data-i18n="banca_card_consolidation">Consolidation Trésorerie</div>
+                            <h2 class="bank-card-title" data-i18n="kpi_solde_global">Trésorerie Globale</h2>
+                            <div class="bank-card-sub" data-i18n="banca_sub_global">Liquidités totales disponibles Watergarden</div>
+                        </div>
+                        <span class="badge" style="background: rgba(16, 185, 129, 0.25); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.4); font-size: 0.7rem; font-weight: 700; white-space: nowrap;">
+                            <i class="fa-solid fa-vault"></i> TOTAL
+                        </span>
+                    </div>
+
+                    <div class="bank-card-body">
+                        <span class="bank-card-label" data-i18n="banca_lbl_total_eur">Total Trésorerie EUR :</span>
+                        <div id="global-treasury-display" class="bank-card-amount text-emerald">12.093,22 €</div>
+                        <div class="bank-card-foot-note">
+                            + 24.693,88 € en réserve BRL (Total : 36.787,10 €)
+                        </div>
+                    </div>
+
+                    <div class="bank-card-footer" style="display: flex; justify-content: space-between; gap: 0.5rem;">
+                        <div style="flex: 1;">
+                            <div style="font-size: 0.68rem; color: var(--text-muted);" data-i18n="kpi_total_entrees">Total Entrées :</div>
+                            <div id="kpi-entrees-total" style="font-weight: 700; color: #10b981; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">+184.717,51 €</div>
+                        </div>
+                        <div style="flex: 1; text-align: right;">
+                            <div style="font-size: 0.68rem; color: var(--text-muted);" data-i18n="kpi_total_sorties">Total Sorties :</div>
+                            <div id="kpi-sorties-total" style="font-weight: 700; color: #f43f5e; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">-172.624,29 €</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bank Accounts Navigation Tabs -->
+            <div style="display: flex; gap: 0.75rem; margin-bottom: 1.25rem; flex-wrap: wrap;">
+                <button class="tab-btn active" data-bank-filter="all" onclick="filterByBankTab('all', this)">
+                    <i class="fa-solid fa-list-check"></i> <span data-i18n="tab_tous_comptes">Tous les Comptes</span>
+                </button>
+                <button class="tab-btn" data-bank-filter="olky" onclick="filterByBankTab('olky', this)">
+                    <i class="fa-solid fa-credit-card text-cyan"></i> <span data-i18n="tab_olky_pay">Olky Pay (EUR)</span>
+                </button>
+                <button class="tab-btn" data-bank-filter="revolut" onclick="filterByBankTab('revolut', this)">
+                    <i class="fa-solid fa-globe text-emerald"></i> <span data-i18n="tab_revolut">Revolut Business</span>
+                </button>
+            </div>
+
+            <!-- Filters Bar -->
+            <section class="glass-panel" style="padding: 1.25rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: flex-end;">
+                    <div style="flex: 2; min-width: 220px;">
+                        <label style="font-size: 0.75rem; color: var(--text-muted); display: block; margin-bottom: 0.25rem;" data-i18n="filter_recherche">Rechercher libellé, tiers...</label>
+                        <input type="text" id="bank-search-input" onkeyup="applyBankFilters()" placeholder="Rechercher une opération..." data-i18n-placeholder="filter_search_placeholder" class="filter-input" style="width: 100%;">
+                    </div>
+                    <div style="flex: 1; min-width: 130px;">
+                        <label style="font-size: 0.75rem; color: var(--text-muted); display: block; margin-bottom: 0.25rem;" data-i18n="filter_annee">Année :</label>
+                        <select id="bank-year-select" onchange="applyBankFilters()" class="filter-input" style="width: 100%;">
+                            <option value="" data-i18n="filter_all_years">Toutes les années (2021-2026)</option>
+                            <option value="2026">2026</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                        </select>
+                    </div>
+                    <div style="flex: 1; min-width: 150px;">
+                        <label style="font-size: 0.75rem; color: var(--text-muted); display: block; margin-bottom: 0.25rem;" data-i18n="filter_categorie">Catégorie :</label>
+                        <select id="bank-category-select" onchange="applyBankFilters()" class="filter-input" style="width: 100%;">
+                            <option value="" data-i18n="filter_all_categories">Toutes les catégories</option>
+                        </select>
+                    </div>
+                    <div style="flex: 1; min-width: 120px;">
+                        <label style="font-size: 0.75rem; color: var(--text-muted); display: block; margin-bottom: 0.25rem;" data-i18n="filter_flux">Type de flux :</label>
+                        <select id="bank-type-select" onchange="applyBankFilters()" class="filter-input" style="width: 100%;">
+                            <option value="" data-i18n="filter_all_flows">Tous les flux</option>
+                            <option value="credit" data-i18n="filter_in_only">Entrées (+) uniquement</option>
+                            <option value="debit" data-i18n="filter_out_only">Sorties (-) uniquement</option>
+                        </select>
+                    </div>
+                    <button class="btn-sidebar-action" onclick="resetBankFilters()" style="padding: 0.65rem 1rem; margin-bottom: 2px;">
+                        <i class="fa-solid fa-filter-circle-xmark"></i> <span data-i18n="btn_reinitialiser">Réinitialiser</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Transactions Table -->
+            <section class="glass-panel" style="padding: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <h2 style="font-size: 1.15rem; font-weight: 700; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fa-solid fa-list text-cyan"></i>
+                        <span data-i18n="banca_table_title">Grand Livre de Trésorerie & Mouvements</span>
+                    </h2>
+                    <span id="records-count-badge" class="badge badge-neutral" style="font-size: 0.8rem;">195 opérations</span>
+                </div>
+
+                <div class="table-wrapper" style="overflow-x: auto;">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 95px;" data-i18n="th_date">Date</th>
+                                <th style="width: 110px;" data-i18n="th_banque">Compte</th>
+                                <th style="width: 75px;" data-i18n="th_pcn_code">PCN</th>
+                                <th data-i18n="th_categorie" style="width: 140px;">Catégorie</th>
+                                <th data-i18n="th_description">Description / Libellé</th>
+                                <th data-i18n="th_tiers" style="width: 170px;">Tiers / Contrepartie</th>
+                                <th class="text-right" style="width: 120px;" data-i18n="th_montant">Montant</th>
+                                <th class="text-right" style="width: 120px;" data-i18n="th_solde">Solde</th>
+                                <th class="text-center" style="width: 50px;" data-i18n="th_actions">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bank-records-tbody">
+                            <!-- Populated dynamically by banca_app.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal Nouvelle Transaction -->
+    <div id="newTransactionModal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.8); z-index: 99999; align-items: center; justify-content: center; backdrop-filter: blur(5px);">
+        <div class="glass-panel" style="width: 90%; max-width: 550px; padding: 2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 1.25rem;">
+                <h3 style="font-size: 1.2rem; font-weight: 700; color: #38bdf8;">
+                    <i class="fa-solid fa-plus-circle"></i> <span data-i18n="modal_tx_title">Nouvelle Écriture Bancaire</span>
+                </h3>
+                <button type="button" onclick="closeNewTransactionModal()" style="background: none; border: none; color: #fff; font-size: 1.2rem; cursor: pointer;">&times;</button>
+            </div>
+
+            <form id="new-tx-form" onsubmit="handleSaveTransaction(event)">
+                <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="flex: 1;">
+                        <label style="display: block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.3rem;" data-i18n="modal_tx_compte">Compte Bancaire</label>
+                        <select id="modal-tx-bank" class="filter-input" style="width: 100%;" required>
+                            <option value="olky">Olky Pay (EUR)</option>
+                            <option value="revolut">Revolut Business</option>
+                        </select>
+                    </div>
+                    <div style="flex: 1;">
+                        <label style="display: block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.3rem;" data-i18n="modal_tx_date">Date de Valeur</label>
+                        <input type="date" id="modal-tx-date" class="filter-input" style="width: 100%;" required>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="flex: 1;">
+                        <label style="display: block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.3rem;" data-i18n="modal_tx_pcn">Compte PCN (Ex. 613500)</label>
+                        <input type="text" id="modal-tx-pcn" class="filter-input" style="width: 100%;" placeholder="613500" required>
+                    </div>
+                    <div style="flex: 1;">
+                        <label style="display: block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.3rem;" data-i18n="modal_tx_montant">Montant en EUR (+ ou -)</label>
+                        <input type="number" step="0.01" id="modal-tx-amount" class="filter-input" style="width: 100%;" placeholder="-150.00" required>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 1rem;">
+                    <label style="display: block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.3rem;" data-i18n="modal_tx_cat">Catégorie</label>
+                    <input type="text" id="modal-tx-cat" class="filter-input" style="width: 100%;" placeholder="Frais Bancaires, Conseil, etc." required>
+                </div>
+
+                <div style="margin-bottom: 1rem;">
+                    <label style="display: block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.3rem;" data-i18n="modal_tx_desc">Libellé / Description</label>
+                    <input type="text" id="modal-tx-desc" class="filter-input" style="width: 100%;" placeholder="Ex. Virement de trésorerie..." required>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.3rem;" data-i18n="modal_tx_party">Tiers / Bénéficiaire</label>
+                    <input type="text" id="modal-tx-party" class="filter-input" style="width: 100%;" placeholder="Ex. Olky, ArcoIris, etc." required>
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+                    <button type="button" class="btn-sidebar-action" onclick="closeNewTransactionModal()" data-i18n="btn_cancel">Annuler</button>
+                    <button type="submit" class="btn-primary" data-i18n="modal_tx_save">Enregistrer l'écriture</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="i18n.js"></script>
+    <script src="banca_app.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="wgGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="50%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <linearGradient id="wgDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <!-- Background Shield -->
+  <circle cx="150" cy="150" r="138" fill="url(#wgDark)" stroke="url(#wgGold)" stroke-width="4" stroke-dasharray="6,4"/>
+  <circle cx="150" cy="150" r="122" fill="none" stroke="rgba(52, 211, 153, 0.25)" stroke-width="2"/>
+  
+  <!-- Stylized Lotus / Waterdrop / Garden Crest -->
+  <g transform="translate(150, 140) scale(1.15)">
+    <!-- Outer Petals / Ripples -->
+    <path d="M 0,-70 C 45,-25 65,30 0,65 C -65,30 -45,-25 0,-70 Z" fill="url(#wgGold)" opacity="0.95" filter="url(#glow)"/>
+    <!-- Inner Core Water Drop -->
+    <path d="M 0,-50 C 25,-15 35,22 0,48 C -35,22 -25,-15 0,-50 Z" fill="#0b132b" opacity="0.9"/>
+    <!-- Center Sprout / Diamond -->
+    <path d="M 0,-30 C 15,-5 18,12 0,28 C -18,12 -15,-5 0,-30 Z" fill="url(#wgGold)"/>
+    <!-- Water Ripple Arcs -->
+    <path d="M -45,15 Q 0,42 45,15" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+    <path d="M -30,28 Q 0,48 30,28" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+  </g>
+  <!-- Crown Elements -->
+  <circle cx="150" cy="50" r="6" fill="#38bdf8"/>
+  <circle cx="120" cy="58" r="4.5" fill="#34d399"/>
+  <circle cx="180" cy="58" r="4.5" fill="#34d399"/>
+</svg>
